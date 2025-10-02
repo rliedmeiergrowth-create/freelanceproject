@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ronan - Marketing Professional</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ronan – Marketing Professional</title>
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <!-- HERO -->
@@ -12,11 +12,19 @@
     <div class="hero-content">
       <p class="intro">👋 HEY, I'M RONAN</p>
       <h1>A SEASONED MARKETING <br> PROFESSIONAL WITH 10+ YEARS <br> OF EXPERIENCE</h1>
+
       <div class="buttons">
+        <a href="#works" class="btn btn-outline">MY WORKS</a>
         <a href="#services" class="btn btn-outline">MY SERVICES</a>
         <a href="#contact" class="btn btn-fill">LET'S TALK</a>
       </div>
     </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works" class="section">
+    <h2>My Works</h2>
+    <p>Here will go portfolio items...</p>
   </section>
 
   <!-- ABOUT -->
@@ -81,14 +89,14 @@
       <input type="text" placeholder="First Name" required>
       <input type="text" placeholder="Last Name" required>
       <input type="email" placeholder="Email Address" required>
-      <select>
-        <option>Select Service</option>
+      <select required>
+        <option value="">Select Service</option>
         <option>Audit</option>
         <option>AI/CRM/Automation</option>
         <option>Strategy</option>
         <option>Operational Management</option>
       </select>
-      <textarea placeholder="Write your message here" rows="5"></textarea>
+      <textarea placeholder="Write your message here" rows="5" required></textarea>
       <button type="submit" class="btn btn-fill">Submit</button>
     </form>
   </section>
@@ -100,4 +108,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-

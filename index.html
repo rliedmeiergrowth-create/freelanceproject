@@ -3,33 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Ronan</title>
+  <title>Ronan - Marketing Professional</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <p class="intro">👋 HEY, I'M RONAN</p>
       <h1>A SEASONED MARKETING <br> PROFESSIONAL WITH 10+ YEARS <br> OF EXPERIENCE</h1>
-
       <div class="buttons">
-        <a href="#works" class="btn btn-outline">MY WORKS</a>
+        <a href="#services" class="btn btn-outline">MY SERVICES</a>
         <a href="#contact" class="btn btn-fill">LET'S TALK</a>
       </div>
     </div>
   </section>
 
-  <!-- WORKS SECTION -->
-  <section id="works" class="section">
-    <h2>My Works</h2>
-    <p>Here will go portfolio items...</p>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped 15+ companies in B2B & B2C ($500k - $100M ARR) supercharge their growth engines.</p>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p>Email: ronan@example.com</p>
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service">
+        <img src="https://via.placeholder.com/300x200" alt="Marketing Audit">
+        <h3>Marketing Audit</h3>
+        <p>Crafting distinct brand identities and ensuring consistency across all channels.</p>
+      </div>
+      <div class="service">
+        <img src="https://via.placeholder.com/300x200" alt="Strategy">
+        <h3>Marketing Strategy</h3>
+        <p>Building go-to-market strategies that drive growth and customer engagement.</p>
+      </div>
+      <div class="service">
+        <img src="https://via.placeholder.com/300x200" alt="AI & Automation">
+        <h3>AI Agents & Automation</h3>
+        <p>Implementing AI-driven workflows, automation, and CRM integrations.</p>
+      </div>
+      <div class="service">
+        <img src="https://via.placeholder.com/300x200" alt="PPC Campaigns">
+        <h3>PPC Campaigns</h3>
+        <p>Creating and managing ad campaigns that maximize ROI across platforms.</p>
+      </div>
+    </div>
   </section>
+
+  <!-- COMPANIES MARQUEE -->
+  <section class="companies">
+    <h2>Companies I've Worked With</h2>
+    <div class="marquee">
+      <div class="marquee-content">
+        <span>HOMEFANS.COM</span>
+        <span>GREYT.NL</span>
+        <span>BCS-HR.COM</span>
+        <span>SIGNPATH.IO</span>
+        <span>WEANOORDHOLLAND.NL</span>
+        <span>KENJO.IO</span>
+        <span>VOLSTORA.COM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Ready to supercharge your growth? Reach out to me now.</p>
+    <ul>
+      <li>📍 Location: Remote (GMT +1)</li>
+      <li>📞 Phone: +31615695130</li>
+      <li>✉️ Email: ronan@example.com</li>
+    </ul>
+    <form class="contact-form">
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <select>
+        <option>Select Service</option>
+        <option>Audit</option>
+        <option>AI/CRM/Automation</option>
+        <option>Strategy</option>
+        <option>Operational Management</option>
+      </select>
+      <textarea placeholder="Write your message here" rows="5"></textarea>
+      <button type="submit" class="btn btn-fill">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© Ronan Liedmeier | RLGrowth</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+

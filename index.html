@@ -5,160 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ronan – Marketing Professional</title>
 
-  <!-- Inline CSS to bypass external-file issues -->
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    /* Page */
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #111;          /* if you see this dark gray, styles are working */
-      color: #fff;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    /* Headings – gradient text */
-    h1, h2, h3 {
-      background: linear-gradient(90deg, #ffb347, #ff6f61, #c850c0);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
-
-    /* Sections */
-    .section {
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      text-align: left;
-      background: #0f0f0f; /* slightly different to visually confirm styling */
-      border-bottom: 1px solid #222;
-    }
-    .hero-content { max-width: 900px; }
-    .intro { font-size: 1.1rem; margin-bottom: 1rem; opacity: 0.9; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
-
-    /* Buttons */
-    .buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: 0.25s ease;
-      border: 2px solid #fff;
-      display: inline-block;
-    }
-    .btn-outline { color: #fff; background: transparent; }
-    .btn-outline:hover { background: #fff; color: #111; }
-    .btn-fill { background: #fff; color: #111; }
-    .btn-fill:hover { background: transparent; color: #fff; }
-
-    /* About */
-    #about p { max-width: 850px; margin: 0 auto; opacity: 0.9; }
-
-    /* Services */
-    .services-grid {
-      width: min(1100px, 92vw);
-      margin: 2rem auto 0;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .service {
-      background: #161616;
-      border: 1px solid #222;
-      border-radius: 14px;
-      padding: 16px;
-      text-align: left;
-    }
-    .service img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 0.75rem;
-      background: #222; /* placeholder bg */
-    }
-    .service h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
-    .service p { color: #ddd; font-size: 0.95rem; }
-
-    /* Companies marquee */
-    .companies { padding: 60px 0; text-align: center; }
-    .marquee {
-      overflow: hidden;
-      position: relative;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-      background: #141414;
-      margin-top: 1rem;
-    }
-    .marquee-track {
-      display: flex;
-      gap: 3rem;
-      padding: 16px 0;
-      will-change: transform;
-      animation: marquee 18s linear infinite;
-      white-space: nowrap;
-    }
-    .marquee-item {
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      opacity: 0.9;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    /* Contact */
-    #contact ul {
-      list-style: none;
-      margin: 0.5rem auto 1.25rem;
-      padding: 0;
-      max-width: 600px;
-      color: #ddd;
-    }
-    #contact li { margin: 0.25rem 0; }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      max-width: 420px;
-      margin: 1.5rem auto 0;
-      gap: 0.85rem;
-    }
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      padding: 12px 14px;
-      border-radius: 10px;
-      border: 1px solid #2a2a2a;
-      background: #161616;
-      color: #fff;
-      outline: none;
-    }
-    .contact-form button { align-self: center; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 22px;
-      background: #121212;
-      color: #aaa;
-      border-top: 1px solid #222;
-    }
-  </style>
+  <!-- Use a cache-busting query so updates always show -->
+  <link rel="stylesheet" href="style.css?v=10" />
 </head>
 <body>
   <!-- HERO -->
@@ -218,7 +66,6 @@
   <section class="companies section">
     <h2>Companies I've Worked With</h2>
     <div class="marquee" aria-label="Scrolling list of companies">
-      <!-- We duplicate the list to enable seamless infinite scrolling -->
       <div class="marquee-track">
         <span class="marquee-item">HOMEFANS.COM</span>
         <span class="marquee-item">GREYT.NL</span>
@@ -228,6 +75,7 @@
         <span class="marquee-item">KENJO.IO</span>
         <span class="marquee-item">VOLSTORA.COM</span>
 
+        <!-- duplicate for seamless infinite loop -->
         <span class="marquee-item">HOMEFANS.COM</span>
         <span class="marquee-item">GREYT.NL</span>
         <span class="marquee-item">BCS-HR.COM</span>
@@ -248,7 +96,8 @@
       <li>📞 Phone: +31615695130</li>
       <li>✉️ Email: ronan@example.com</li>
     </ul>
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks for reaching out! I\'ll get back to you soon.');">
+
+    <form class="contact-form">
       <input type="text" placeholder="First Name" required>
       <input type="text" placeholder="Last Name" required>
       <input type="email" placeholder="Email Address" required>
@@ -268,9 +117,7 @@
     <p>© Ronan Liedmeier | RLGrowth</p>
   </footer>
 
-  <!-- (optional) JS placeholder -->
-  <script>
-    // Nothing needed here right now; form handled inline above
-  </script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
+

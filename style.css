@@ -1,30 +1,26 @@
-/* ---------- Base & Typography ---------- */
+/* ---------- 1. BASE & TYPOGRAPHY ---------- */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 :root {
-  --Dark: #171717;
-  --Light: #FEFAEE;
-  --line: #222;
+    --Dark: #171717;
+    --Light: #FEFAEE;
 }
 body {
-  background: var(--Dark);
-  color: var(--Light);
-  font-family: 'Poppins', 'Montserrat', system-ui, sans-serif;
-  line-height: 1.6;
-}
-a {
-  color: var(--Light);
-  text-decoration: none;
+    background: var(--Dark);
+    color: var(--Light);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
 }
 .container {
-  width: min(1237px, 90vw);
-  margin: 0 auto;
+    width: min(1237px, 90vw);
+    margin: 0 auto;
 }
 .section {
     padding: 96px 0;
+    overflow: hidden; /* Prevents elements from spilling out */
 }
 .eyebrow {
     text-transform: uppercase;
@@ -32,76 +28,65 @@ a {
     font-weight: 600;
     font-size: .8rem;
     opacity: .9;
-    margin-bottom: .6rem;
+    margin-bottom: 1rem;
 }
 
-/* ---------- HERO SECTION ---------- */
+/* ---------- 2. HERO SECTION ---------- */
 .hero {
-  display: flex;
-  align-items: center;
-  min-height: 90vh;
-  padding: 96px 0;
-  position: relative;
-  overflow: hidden;
-  background: var(--Dark);
+    display: flex;
+    align-items: center;
+    min-height: 95vh;
+    padding: 96px 0;
+    position: relative;
+    background: var(--Dark);
 }
 .hero-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-  width: 100%;
-  z-index: 10;
+    z-index: 10;
 }
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(3rem, 7vw, 95px);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -1.9px;
-  text-transform: uppercase;
-  background: linear-gradient(151deg, #FEFAEE 5.26%, #FCD68B 29.9%, #F9784C 53.25%, #9C356D 72.94%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-size: clamp(3rem, 7vw, 95px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -1.9px;
+    text-transform: uppercase;
+    background: linear-gradient(151deg, #FEFAEE 5.26%, #FCD68B 29.9%, #F9784C 53.25%, #9C356D 72.94%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 40px;
 }
 .buttons {
-  display: flex;
-  align-items: flex-start;
-  gap: 17px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 17px;
+    flex-wrap: wrap;
 }
 .btn {
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 40px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  transition: all 0.3s ease;
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 .btn-outline {
-  border: 1px solid var(--Light, #FEFAEE);
-  background: transparent;
-  color: var(--Light);
+    border: 1px solid var(--Light);
+    color: var(--Light);
 }
 .btn-outline:hover {
-  background: rgba(254, 250, 238, 0.1);
+    background: rgba(254, 250, 238, 0.1);
 }
 .btn-fill {
-  background: var(--Light, #FEFAEE);
-  color: var(--Dark);
-  border: 1px solid var(--Light, #FEFAEE);
+    background: var(--Light);
+    color: var(--Dark);
+    border: 1px solid var(--Light);
 }
 .btn-fill:hover {
-  background: transparent;
-  color: var(--Light);
+    background: transparent;
+    color: var(--Light);
 }
 .hero-illustration {
     position: absolute;
-    right: 5%;
+    right: clamp(-50px, 8vw, 150px);
     bottom: 10%;
     width: clamp(320px, 30vw, 450px);
     z-index: 5;
@@ -109,113 +94,98 @@ a {
 }
 .hero-wave {
     position: absolute;
-    bottom: -1px;
+    bottom: -2px;
     left: 0;
     width: 100%;
-    height: auto;
     z-index: 1;
     pointer-events: none;
 }
 
-
-/* ---------- Marquee / Companies Section ---------- */
+/* ---------- 3. COMPANIES MARQUEE ---------- */
 .companies {
-  padding: 0;
-  background: linear-gradient(342deg, #FFFAEF 24.53%, #FCD68B 37.59%, #F9784C 50.72%, #9C356D 62.85%, #171717 76.83%);
+    padding: 0;
+    background: linear-gradient(342deg, #FFFAEF 24.53%, #FCD68B 37.59%, #F9784C 50.72%, #9C356D 62.85%, #171717 76.83%);
 }
 .marquee {
-  display: flex;
-  width: 100%;
-  padding: 40px 56px;
-  justify-content: center;
-  align-items: center;
-  gap: 120px;
-  overflow: hidden;
-  white-space: nowrap;
+    width: 100%;
+    padding: 40px 0;
+    overflow: hidden;
 }
 .marquee-track {
-  display: flex;
-  align-items: center;
-  gap: 120px;
-  animation: marquee 30s linear infinite;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: var(--Light);
-  opacity: 0.8;
+    display: flex;
+    gap: 120px;
+    animation: marquee 30s linear infinite;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--Light);
+    opacity: 0.9;
+    white-space: nowrap;
 }
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
-/* ---------- About Section ---------- */
+/* ---------- 4. ABOUT SECTION ---------- */
 #about {
-  background: #FDFDFD;
-  color: var(--Dark);
-  overflow: hidden;
-  position: relative;
-}
-#about h2, #about .eyebrow {
+    background: #FDFDFD;
     color: var(--Dark);
+    position: relative;
 }
 .about-container {
-  display: flex;
-  align-items: center;
-  gap: 128px;
+    display: flex;
+    align-items: center;
+    gap: 128px;
 }
 .about-image-wrapper {
-  position: relative;
-  width: 432px;
-  height: 696px;
-  flex-shrink: 0;
+    position: relative;
+    width: 432px;
+    height: 696px;
+    flex-shrink: 0;
 }
 .about-image-glow {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 432px;
-  height: 696px;
-  border-radius: 500px;
-  background: url('assets/services-placeholder.svg') 50% / cover no-repeat;
-  filter: blur(28px);
-  z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 500px;
+    background: url('assets/services-placeholder.svg') 50% / cover no-repeat;
+    filter: blur(28px);
+    z-index: 1;
 }
 .about-image {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 432px;
-  height: 696px;
-  border-radius: 500px;
-  background: url('assets/hero-illustration.svg') 50% / cover no-repeat;
-  z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 500px;
+    background: url('assets/hero-illustration.svg') 50% / cover no-repeat;
+    z-index: 2;
 }
 .about-text-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
-  width: 544px;
+    width: 544px;
+}
+#about h2 {
+    color: var(--Dark);
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-bottom: 40px;
 }
 .lead-paragraph {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.36px;
-  color: rgba(23, 23, 23, 0.80);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.36px;
+    color: rgba(23, 23, 23, 0.80);
 }
 .about-button-group {
-    margin-top: 16px;
+    margin-top: 40px;
 }
 .btn-dark-outline {
-    padding: 12px 24px;
-    border-radius: 40px;
     border: 1px solid var(--Dark);
     color: var(--Dark);
-    font-weight: 500;
 }
 .btn-dark-outline:hover {
     background: var(--Dark);
@@ -223,272 +193,247 @@ a {
 }
 
 
-/* ---------- Services Section ---------- */
+/* ---------- 5. SERVICES SECTION ---------- */
 #services {
-  background: #FDFDFD;
-  color: var(--Dark);
-  padding: 96px 56px;
-}
-#services h2,
-#services .eyebrow {
+    background: #FDFDFD;
     color: var(--Dark);
-    text-align: left;
+}
+#services .eyebrow, #services h2 {
+    color: var(--Dark);
 }
 .services-header {
-  margin-bottom: 56px;
+    margin-bottom: 56px;
+}
+#services h2 {
+    font-size: 48px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: -0.96px;
+    line-height: 1;
 }
 .service-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 108px;
-  margin-bottom: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 108px;
+    margin-bottom: 96px;
+}
+.service-item:last-child {
+    margin-bottom: 0;
 }
 .service-item.reverse {
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
 }
-.service-image-large,
-.service-image-small {
-  border-radius: 6px;
-  overflow: hidden;
-  flex-shrink: 0;
+.service-image-large, .service-image-small {
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
 }
-.service-image-large {
-  width: 432px;
-  height: 480px;
-}
-.service-image-small {
-  width: 248px;
-  height: 248px;
-}
-.service-image-large img,
-.service-image-small img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.service-image-large { width: 432px; height: 480px; }
+.service-image-small { width: 248px; height: 248px; }
+.service-image-large img, .service-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .service-text {
-  width: 432px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+    width: 432px;
 }
 .service-title-italic {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.64px;
-  color: var(--Dark);
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.64px;
+    margin-bottom: 16px;
 }
 .service-paragraph {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.36px;
-  color: var(--Dark);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.36px;
+    margin-bottom: 32px;
 }
 .service-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 21px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.42px;
-  color: var(--Dark);
+    font-size: 21px;
+    font-weight: 500;
+    letter-spacing: 0.42px;
+    margin-bottom: 16px;
 }
 .service-paragraph-small {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.32px;
-  color: rgba(23, 23, 23, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.32px;
+    color: rgba(23, 23, 23, 0.80);
 }
 
-/* ---------- My Offer Section ---------- */
+/* ---------- 6. MY OFFER SECTION ---------- */
 #offer {
-  position: relative;
-  background: #FDFDFD;
-  color: var(--Dark);
-  padding: 96px 56px;
-  overflow: hidden;
+    background: #FDFDFD;
+    color: var(--Dark);
+    position: relative;
 }
 .offer-ellipse {
-  position: absolute;
-  width: 636px;
-  height: 637px;
-  background: #EADDC5;
-  border-radius: 50%;
-  filter: blur(100px);
-  transform: rotate(-45deg);
-  top: -200px;
-  left: -200px;
-  z-index: 1;
+    position: absolute;
+    width: 636px;
+    height: 637px;
+    background: #EADDC5;
+    border-radius: 50%;
+    filter: blur(150px);
+    transform: rotate(-45deg);
+    top: -250px;
+    left: -250px;
+    z-index: 1;
 }
 .offer-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: flex-start;
-  gap: 198px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    gap: 198px;
 }
 .offer-intro {
-  width: 474px;
-  flex-shrink: 0;
+    width: 474px;
+    flex-shrink: 0;
 }
 .offer-tagline {
-  color: #F9784C;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+    color: #F9784C;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
 }
 .offer-headline {
-  color: var(--Dark);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.96px;
-  text-transform: uppercase;
-  margin-bottom: 32px;
+    color: var(--Dark);
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
 }
 .offer-intro .btn {
-  border-radius: 24px;
-  padding: 10px 16px;
+    border-radius: 24px;
+    padding: 10px 16px;
 }
 .offer-list {
-  display: flex;
-  width: 544px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 48px;
+    width: 544px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 .offer-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 32px;
-  align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
 }
 .offer-icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 .offer-item-title {
-  color: var(--Dark);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 32px;
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.64px;
-  margin-bottom: 12px;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.64px;
+    margin-bottom: 12px;
 }
 .offer-item-description {
-  color: rgba(23, 23, 23, 0.80);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.36px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.36px;
+    color: rgba(23, 23, 23, 0.80);
 }
 
-/* ---------- Contact Section (Gradient) ---------- */
+
+/* ---------- 7. CONTACT SECTION ---------- */
 #contact {
-  padding: 0;
-  height: 576px;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(342deg, #FFFAEF 24.53%, #FCD68B 37.59%, #F9784C 50.72%, #9C356D 62.85%, #171717 76.83%);
+    padding: 0;
+    height: 576px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(342deg, #FFFAEF 24.53%, #FCD68B 37.59%, #F9784C 50.72%, #9C356D 62.85%, #171717 76.83%);
+    color: var(--Light);
 }
 .contact-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 342px;
-  color: var(--Light);
+    display: flex;
+    align-items: flex-start;
+    gap: 128px; /* Adjusted for better spacing */
+    width: 100%;
+    justify-content: space-between;
 }
 .contact-text {
-  width: 430px;
-  flex-shrink: 0;
+    max-width: 430px;
 }
 .contact-headline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.96px;
-  text-transform: uppercase;
-  margin-bottom: 24px;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
 }
 .contact-paragraph {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.36px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.36px;
 }
 .contact-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex-shrink: 0;
 }
 .contact-info-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 .contact-bold-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.32px;
-  color: var(--Light);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.32px;
 }
 .contact-info-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
-  letter-spacing: 0.32px;
-  color: rgba(254, 250, 238, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0.32px;
+    color: rgba(254, 250, 238, 0.80);
 }
 .btn-contact-outline {
-  width: 274px;
-  padding: 12px 24px;
-  border-radius: 24px;
-  border: 1px solid rgba(254, 250, 238, 0.24);
-  color: var(--Light);
-  text-align: center;
+    padding: 12px 24px;
+    border-radius: 24px;
+    border: 1px solid rgba(254, 250, 238, 0.24);
+    color: var(--Light);
+    text-align: center;
 }
 .btn-contact-outline:hover {
-  background: rgba(254, 250, 238, 0.1);
+    background: rgba(254, 250, 238, 0.1);
 }
 
-/* ---------- Footer ---------- */
+/* ---------- 8. FOOTER ---------- */
 footer {
-  background: var(--Dark);
-  color: rgba(254, 250, 238, 0.80);
-  padding: 0 56px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+    background: var(--Dark);
+    color: rgba(254, 250, 238, 0.80);
+    padding: 0 56px;
+    font-size: 16px;
 }
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 0;
-  border-top: 1px solid rgba(254, 250, 238, 0.16);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    border-top: 1px solid rgba(254, 250, 238, 0.16);
 }
 
-/* --- Responsive Polish --- */
+/* ---------- 9. RESPONSIVE STYLES ---------- */
 @media (max-width: 1200px) {
     .offer-container {
         gap: 64px;
@@ -522,16 +467,25 @@ footer {
         width: 100%;
         max-width: 500px;
     }
-}
-@media (max-width: 960px) {
     .contact-container {
         flex-direction: column;
         gap: 64px;
+        align-items: center;
         text-align: center;
     }
-    .contact-text, .contact-details {
-        width: 100%;
+    .contact-details {
         align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+    .hero-inner {
+        align-items: center;
+    }
+    .hero-illustration {
+        opacity: 0.2;
     }
     .footer-container {
         flex-direction: column;

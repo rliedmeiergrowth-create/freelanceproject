@@ -23,7 +23,7 @@ body {
 }
 .section {
     padding: 96px 0;
-    overflow: hidden;
+    overflow: hidden; /* Prevents elements from spilling out */
 }
 .eyebrow {
     text-transform: uppercase;
@@ -96,6 +96,15 @@ h2 {
 .btn-fill:hover {
     background: transparent;
     color: var(--Light);
+}
+.hero-wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
 
 /* ---------- 3. COMPANIES MARQUEE ---------- */
 .companies {
@@ -458,10 +467,6 @@ footer {
     }
     .hero-inner {
         align-items: center;
-    }
-    .hero-illustration {
-        opacity: 0.2;
-        right: -150px; /* Further off-screen */
     }
     .footer-container {
         flex-direction: column;

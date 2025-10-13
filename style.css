@@ -8,6 +8,9 @@
     --Dark: #171717;
     --Light: #FEFAEE;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     background: var(--Dark);
     color: var(--Light);
@@ -20,17 +23,24 @@ body {
 }
 .section {
     padding: 96px 0;
-    overflow: hidden; /* Prevents elements from spilling out */
+    overflow: hidden;
 }
 .eyebrow {
     text-transform: uppercase;
     letter-spacing: .18em;
-    font-weight: 600;
+    font-weight: 700;
     font-size: .8rem;
     opacity: .9;
     margin-bottom: 1rem;
 }
-
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-transform: uppercase;
+}
 /* ---------- 2. HERO SECTION ---------- */
 .hero {
     display: flex;
@@ -44,6 +54,7 @@ body {
     z-index: 10;
 }
 .hero h1 {
+    font-family: 'Montserrat', sans-serif;
     font-size: clamp(3rem, 7vw, 95px);
     font-weight: 500;
     line-height: 1;
@@ -64,12 +75,14 @@ body {
     display: inline-block;
     padding: 12px 24px;
     border-radius: 40px;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 1px solid transparent; /* Base border */
 }
 .btn-outline {
-    border: 1px solid var(--Light);
+    border-color: var(--Light);
     color: var(--Light);
 }
 .btn-outline:hover {
@@ -78,7 +91,7 @@ body {
 .btn-fill {
     background: var(--Light);
     color: var(--Dark);
-    border: 1px solid var(--Light);
+    border-color: var(--Light);
 }
 .btn-fill:hover {
     background: transparent;
@@ -120,6 +133,7 @@ body {
     color: var(--Light);
     opacity: 0.9;
     white-space: nowrap;
+    padding: 0 60px; /* Add padding to space out from edges */
 }
 @keyframes marquee {
     from { transform: translateX(0); }
@@ -132,9 +146,13 @@ body {
     color: var(--Dark);
     position: relative;
 }
+#about h2 {
+    color: var(--Dark);
+}
 .about-container {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center content */
     gap: 128px;
 }
 .about-image-wrapper {
@@ -161,16 +179,12 @@ body {
     z-index: 2;
 }
 .about-text-wrapper {
-    width: 544px;
+    max-width: 544px;
+}
+#about .eyebrow {
+    color: var(--Dark);
 }
 #about h2 {
-    color: var(--Dark);
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.96px;
-    text-transform: uppercase;
-    margin-top: 8px;
     margin-bottom: 40px;
 }
 .lead-paragraph {
@@ -184,14 +198,13 @@ body {
     margin-top: 40px;
 }
 .btn-dark-outline {
-    border: 1px solid var(--Dark);
+    border-color: var(--Dark);
     color: var(--Dark);
 }
 .btn-dark-outline:hover {
     background: var(--Dark);
     color: var(--Light);
 }
-
 
 /* ---------- 5. SERVICES SECTION ---------- */
 #services {
@@ -203,13 +216,6 @@ body {
 }
 .services-header {
     margin-bottom: 56px;
-}
-#services h2 {
-    font-size: 48px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: -0.96px;
-    line-height: 1;
 }
 .service-item {
     display: flex;
@@ -237,14 +243,16 @@ body {
     object-fit: cover;
 }
 .service-text {
-    width: 432px;
+    max-width: 432px;
 }
 .service-title-italic {
+    font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     font-style: italic;
     font-weight: 500;
     letter-spacing: 0.64px;
     margin-bottom: 16px;
+    line-height: 1.1;
 }
 .service-paragraph {
     font-size: 18px;
@@ -284,13 +292,15 @@ body {
     top: -250px;
     left: -250px;
     z-index: 1;
+    opacity: 0.6;
 }
 .offer-container {
     position: relative;
     z-index: 2;
     display: flex;
     align-items: flex-start;
-    gap: 198px;
+    gap: 128px; /* Adjusted gap */
+    justify-content: center;
 }
 .offer-intro {
     width: 474px;
@@ -307,11 +317,6 @@ body {
 }
 .offer-headline {
     color: var(--Dark);
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.96px;
-    text-transform: uppercase;
     margin-bottom: 32px;
 }
 .offer-intro .btn {
@@ -319,7 +324,7 @@ body {
     padding: 10px 16px;
 }
 .offer-list {
-    width: 544px;
+    max-width: 544px;
     display: flex;
     flex-direction: column;
     gap: 48px;
@@ -336,11 +341,13 @@ body {
     margin-top: 4px;
 }
 .offer-item-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 32px;
     font-style: italic;
     font-weight: 500;
     letter-spacing: 0.64px;
     margin-bottom: 12px;
+    color: var(--Dark);
 }
 .offer-item-description {
     font-size: 18px;
@@ -349,7 +356,6 @@ body {
     letter-spacing: 0.36px;
     color: rgba(23, 23, 23, 0.80);
 }
-
 
 /* ---------- 7. CONTACT SECTION ---------- */
 #contact {
@@ -363,19 +369,14 @@ body {
 .contact-container {
     display: flex;
     align-items: flex-start;
-    gap: 128px; /* Adjusted for better spacing */
-    width: 100%;
     justify-content: space-between;
+    gap: 64px;
+    width: 100%;
 }
 .contact-text {
     max-width: 430px;
 }
 .contact-headline {
-    font-size: 48px;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.96px;
-    text-transform: uppercase;
     margin-bottom: 24px;
 }
 .contact-paragraph {
@@ -413,6 +414,7 @@ body {
     border: 1px solid rgba(254, 250, 238, 0.24);
     color: var(--Light);
     text-align: center;
+    width: 100%; /* Make button full width of its container */
 }
 .btn-contact-outline:hover {
     background: rgba(254, 250, 238, 0.1);
@@ -435,29 +437,19 @@ footer {
 
 /* ---------- 9. RESPONSIVE STYLES ---------- */
 @media (max-width: 1200px) {
-    .offer-container {
+    .offer-container, .about-container {
         gap: 64px;
         flex-direction: column;
-    }
-    .offer-intro, .offer-list {
-        width: 100%;
-    }
-}
-@media (max-width: 1100px) {
-    .about-container {
-        flex-direction: column;
-        gap: 64px;
+        align-items: center;
         text-align: center;
     }
-    .about-text-wrapper {
-        align-items: center;
+    .offer-intro, .offer-list, .about-text-wrapper {
         width: 100%;
         max-width: 600px;
     }
 }
 @media (max-width: 1024px) {
-    .service-item,
-    .service-item.reverse {
+    .service-item, .service-item.reverse {
         flex-direction: column;
         text-align: center;
         gap: 48px;
@@ -465,7 +457,7 @@ footer {
     .service-text {
         align-items: center;
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
     }
     .contact-container {
         flex-direction: column;
@@ -486,15 +478,19 @@ footer {
     }
     .hero-illustration {
         opacity: 0.2;
+        right: -150px; /* Further off-screen */
     }
     .footer-container {
         flex-direction: column;
         gap: 16px;
     }
+    .about-image-wrapper {
+        transform: scale(0.9);
+    }
 }
 @media (max-width: 600px) {
     .about-image-wrapper {
         transform: scale(0.8);
-        margin-bottom: -100px;
+        margin-bottom: -100px; /* Pull text up */
     }
 }

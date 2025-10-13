@@ -1,142 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ronan – Marketing Professional</title>
-    <meta name="description" content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronan – Marketing Professional</title>
+  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=30" />
 </head>
 <body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">HEY, I'M RONAN</p>
+      <h1>A SEASONED MARKETING <br> PROFESSIONAL WITH 10+ YEARS <br> OF EXPERIENCE</h1>
 
-    <header class="hero">
-        <div class="container hero__container">
-            <div class="hero__text">
-                <h1>A SEASONED MARKETING <br> PROFESSIONAL WITH 10+ YEARS <br> OF EXPERIENCE</h1>
-                <nav class="hero__buttons">
-                    <a href="#services" class="btn btn--outline">MY SERVICES</a>
-                    <a href="#contact" class="btn btn--fill">LET'S TALK</a>
-                </nav>
-            </div>
+      <nav class="buttons">
+        <a href="#works" class="btn btn-outline">MY WORKS</a>
+        <a href="#services" class="btn btn-outline">MY SERVICES</a>
+        <a href="#contact" class="btn btn-fill">LET'S TALK</a>
+      </nav>
+    </div>
+
+    <img class="hero-ellipse" src="assets/hero-ellipse.svg" alt="" aria-hidden="true" />
+    <img class="hero-illustration" src="assets/hero-illustration.svg" alt="" aria-hidden="true" />
+    <img class="hero-wave"   src="assets/hero-wave.svg" alt="" aria-hidden="true" />
+  </header>
+
+  <section id="works" class="section">
+    <div class="container">
+      <p class="eyebrow">WORK</p>
+      <h2>My Works</h2>
+      <p class="lead">Here will go portfolio items...</p>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <p class="eyebrow">ABOUT</p>
+      <h2>SUPERCHARGING GROWTH ENGINES SINCE 2015</h2>
+      <p class="lead">
+        Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped
+        15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+      </p>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <p class="eyebrow">SERVICES</p>
+      <h2>HOW CAN I HELP</h2>
+
+      <div class="services-grid">
+        <article class="service">
+          <div class="thumb" role="img" aria-label="Marketing Audit image"></div>
+          <h3>Marketing Audit</h3>
+          <p>Crafting distinct brand identities and ensuring consistency across all channels.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
+
+        <article class="service">
+          <div class="thumb" role="img" aria-label="Marketing Strategy image"></div>
+          <h3>Marketing Strategy</h3>
+          <p>Building go-to-market strategies that drive growth and customer engagement.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
+
+        <article class="service">
+          <div class="thumb" role="img" aria-label="AI Agents & Automation image"></div>
+          <h3>AI Agents &amp; Automation</h3>
+          <p>Implementing AI-driven workflows, automation, and CRM integrations.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
+
+        <article class="service">
+          <div class="thumb" role="img" aria-label="PPC Campaigns image"></div>
+          <h3>PPC Campaigns</h3>
+          <p>Creating and managing ad campaigns that maximize ROI across platforms.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="companies section">
+    <div class="container">
+      <p class="eyebrow">CLIENTS</p>
+      <h2>Companies I've Worked With</h2>
+    </div>
+
+    <div class="marquee" aria-label="Scrolling list of companies">
+      <div class="marquee-track">
+        <span>HOMEFANS.COM</span>
+        <span>GREYT.NL</span>
+        <span>BCS-HR.COM</span>
+        <span>SIGNPATH.IO</span>
+        <span>WEANOORDHOLLAND.NL</span>
+        <span>KENJO.IO</span>
+        <span>VOLSTORA.COM</span>
+
+        <span>HOMEFANS.COM</span>
+        <span>GREYT.NL</span>
+        <span>BCS-HR.COM</span>
+        <span>SIGNPATH.IO</span>
+        <span>WEANOORDHOLLAND.NL</span>
+        <span>KENJO.IO</span>
+        <span>VOLSTORA.COM</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <p class="eyebrow">CONTACT</p>
+      <h2>Ready to supercharge your growth?</h2>
+      <ul class="contact-list">
+        <li>📍 Remote (GMT +1)</li>
+        <li>📞 +31 6 1569 5130</li>
+        <li>✉️ <a href="mailto:ronan@example.com">ronan@example.com</a></li>
+      </ul>
+
+      <form class="contact-form">
+        <div class="grid-2">
+          <label>First Name
+            <input type="text" placeholder="Your First Name" required>
+          </label>
+          <label>Last Name
+            <input type="text" placeholder="Your Last Name" required>
+          </label>
         </div>
-        <img class="hero__wave" src="assets/hero-wave.svg" alt="" aria-hidden="true" />
-    </header>
 
-    <section class="marquee-section">
-        <div class="marquee">
-            <div class="marquee__track">
-                <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
-                <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
-            </div>
+        <div class="grid-2">
+          <label>Email Address
+            <input type="email" placeholder="Email Address" required>
+          </label>
+          <label>Select Service
+            <select required>
+              <option value="">Select Service</option>
+              <option>Audit</option>
+              <option>AI/CRM/Automation</option>
+              <option>Strategy</option>
+              <option>Operational Management</option>
+            </select>
+          </label>
         </div>
-    </section>
 
-    <section id="about" class="about-section">
-        <div class="container about__container">
-            <div class="about__image-wrapper">
-                <div class="about__image-glow"></div>
-                <div class="about__image"></div>
-            </div>
-            <div class="about__text-wrapper">
-                <p class="eyebrow">ABOUT</p>
-                <h2>SUPERCHARGING GROWTH ENGINES</h2>
-                <p class="about__paragraph">
-                    Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped 15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
-                </p>
-                <div class="about__button-group">
-                    <a href="#" class="btn btn--dark-outline">LEARN MORE</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <label>Message
+          <textarea rows="5" placeholder="Write your message here" required></textarea>
+        </label>
 
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="services__header">
-                <p class="eyebrow">SERVICES</p>
-                <h2>HOW CAN I HELP</h2>
-            </div>
-            <div class="service-item">
-                <div class="service-item__image service-item__image--large">
-                    <img src="assets/services-placeholder.svg" alt="Service Image">
-                </div>
-                <div class="service-item__text">
-                    <h3 class="service-item__title">Marketing Audit</h3>
-                    <p class="service-item__paragraph">Crafting distinct brand identities and ensuring consistency across all channels.</p>
-                    <h4 class="service-item__subtitle">What's Included?</h4>
-                    <p class="service-item__paragraph--small">A detailed analysis of your current marketing efforts, competitor analysis, and a roadmap for improvement.</p>
-                </div>
-            </div>
-            <div class="service-item service-item--reverse">
-                <div class="service-item__image service-item__image--small">
-                    <img src="assets/services-placeholder.svg" alt="Service Image">
-                </div>
-                <div class="service-item__text">
-                    <h3 class="service-item__title">AI & Automation</h3>
-                    <p class="service-item__paragraph">Implementing AI-driven workflows, automation, and CRM integrations to boost efficiency.</p>
-                    <h4 class="service-item__subtitle">What's Included?</h4>
-                    <p class="service-item__paragraph--small">Workflow automation, CRM setup and integration, and implementation of AI customer service agents.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <button type="submit" class="btn btn-fill">Submit</button>
 
-    <section id="offer" class="offer-section">
-        <div class="offer__ellipse"></div>
-        <div class="container offer__container">
-            <div class="offer__intro">
-                <p class="offer__tagline">ART OF VISUAL ALCHEMY</p>
-                <h2 class="offer__headline">MY OFFER</h2>
-                <a href="#" class="btn btn--dark-outline btn--small">SEE ALL</a>
-            </div>
-            <div class="offer__list">
-                <div class="offer-item">
-                    <div class="offer-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg></div>
-                    <div class="offer-item__text">
-                        <h3 class="offer-item__title">Tailored Services</h3>
-                        <p class="offer-item__description">Crafting unique brand identities that transcend, ensuring your brand captivates and stands out in the digital landscape.</p>
-                    </div>
-                </div>
-                <div class="offer-item">
-                    <div class="offer-item__icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg></div>
-                    <div class="offer-item__text">
-                        <h3 class="offer-item__title">End-to-End Support</h3>
-                        <p class="offer-item__description">Elevating designs with a keen eye, seamlessly transitioning between print and digital for a visually cohesive experience.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <p class="legal">
+          By submitting this form you read and agree to the <a href="#">Terms &amp; Conditions</a> and our <a href="#">privacy policy</a>.
+        </p>
+      </form>
+    </div>
+  </section>
 
-    <section id="contact" class="contact-section">
-        <div class="container contact__container">
-            <div class="contact__text">
-                <h2 class="contact__headline">Ready to supercharge your growth?</h2>
-                <p class="contact__paragraph">Implement best practices and grow your business. Reach out to me now and let's see how I can help you.</p>
-            </div>
-            <div class="contact__details">
-                <div class="contact-info-group">
-                    <p class="contact-info-group__title">Location</p>
-                    <p class="contact-info-group__text">Remote (GMT +1)</p>
-                </div>
-                <div class="contact-info-group">
-                    <p class="contact-info-group__title">Phone</p>
-                    <p class="contact-info-group__text">+31 6 1569 5130</p>
-                </div>
-                <a href="mailto:ronan@example.com" class="btn btn--contact-outline">GET IN TOUCH</a>
-            </div>
-        </div>
-    </section>
+  <footer>
+    <div class="container footer-inner">
+      <p>© Ronan Liedmeier · <a href="#">RLGrowth</a> · <a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></p>
+    </div>
+  </footer>
 
-    <footer class="footer">
-        <div class="container footer__container">
-            <p>© Ronan Liedmeier · RLGrowth</p>
-            <p>Privacy Policy · Cookie Policy</p>
-        </div>
-    </footer>
-
+  <script>
+    // simple form handler
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector(".contact-form");
+      form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thanks for reaching out! I'll get back to you soon.");
+      });
+    });
+  </script>
 </body>
 </html>

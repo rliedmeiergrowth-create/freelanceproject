@@ -4,24 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ronan – Marketing Professional</title>
-
-  <!-- Use a cache-busting query so updates always show -->
-  <link rel="stylesheet" href="style.css?v=10" />
+  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years experience driving growth for B2B & B2C brands." />
+  <link rel="stylesheet" href="style.css?v=20" />
 </head>
 <body>
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
+  <header class="hero">
+    <div class="hero-inner">
       <p class="intro">👋 HEY, I'M RONAN</p>
-      <h1>A SEASONED MARKETING <br> PROFESSIONAL WITH 10+ YEARS <br> OF EXPERIENCE</h1>
+      <h1>
+        A SEASONED MARKETING <br />
+        PROFESSIONAL WITH 10+ YEARS <br />
+        OF EXPERIENCE
+      </h1>
 
-      <div class="buttons">
+      <nav class="buttons">
         <a href="#works" class="btn btn-outline">MY WORKS</a>
         <a href="#services" class="btn btn-outline">MY SERVICES</a>
         <a href="#contact" class="btn btn-fill">LET'S TALK</a>
-      </div>
+      </nav>
     </div>
-  </section>
+
+    <!-- decorative assets -->
+    <img class="hero-ellipse" src="assets/Ellipse%204.svg" alt="" aria-hidden="true" />
+    <img class="hero-image" src="assets/Image.svg" alt="" aria-hidden="true" />
+    <img class="hero-wave" src="assets/Bg%20(1).svg" alt="" aria-hidden="true" />
+  </header>
 
   <!-- WORKS -->
   <section id="works" class="section">
@@ -32,33 +40,38 @@
   <!-- ABOUT -->
   <section id="about" class="section">
     <h2>About Me</h2>
-    <p>Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped 15+ companies in B2B & B2C ($500k - $100M ARR) supercharge their growth engines.</p>
+    <p>
+      Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped 15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+    </p>
   </section>
 
   <!-- SERVICES -->
   <section id="services" class="section">
     <h2>Services</h2>
     <div class="services-grid">
-      <div class="service">
-        <img src="https://via.placeholder.com/600x400?text=Marketing+Audit" alt="Marketing Audit">
+      <article class="service">
+        <div class="thumb" role="img" aria-label="Marketing Audit visual"></div>
         <h3>Marketing Audit</h3>
         <p>Crafting distinct brand identities and ensuring consistency across all channels.</p>
-      </div>
-      <div class="service">
-        <img src="https://via.placeholder.com/600x400?text=Marketing+Strategy" alt="Marketing Strategy">
+      </article>
+
+      <article class="service">
+        <div class="thumb" role="img" aria-label="Marketing Strategy visual"></div>
         <h3>Marketing Strategy</h3>
         <p>Building go-to-market strategies that drive growth and customer engagement.</p>
-      </div>
-      <div class="service">
-        <img src="https://via.placeholder.com/600x400?text=AI+%26+Automation" alt="AI & Automation">
-        <h3>AI Agents & Automation</h3>
+      </article>
+
+      <article class="service">
+        <div class="thumb" role="img" aria-label="AI & Automation visual"></div>
+        <h3>AI Agents &amp; Automation</h3>
         <p>Implementing AI-driven workflows, automation, and CRM integrations.</p>
-      </div>
-      <div class="service">
-        <img src="https://via.placeholder.com/600x400?text=PPC+Campaigns" alt="PPC Campaigns">
+      </article>
+
+      <article class="service">
+        <div class="thumb" role="img" aria-label="PPC Campaigns visual"></div>
         <h3>PPC Campaigns</h3>
         <p>Creating and managing ad campaigns that maximize ROI across platforms.</p>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -74,8 +87,7 @@
         <span class="marquee-item">WEANOORDHOLLAND.NL</span>
         <span class="marquee-item">KENJO.IO</span>
         <span class="marquee-item">VOLSTORA.COM</span>
-
-        <!-- duplicate for seamless infinite loop -->
+        <!-- duplicate for seamless loop -->
         <span class="marquee-item">HOMEFANS.COM</span>
         <span class="marquee-item">GREYT.NL</span>
         <span class="marquee-item">BCS-HR.COM</span>
@@ -91,16 +103,16 @@
   <section id="contact" class="section">
     <h2>Contact</h2>
     <p>Ready to supercharge your growth? Reach out to me now.</p>
-    <ul>
-      <li>📍 Location: Remote (GMT +1)</li>
-      <li>📞 Phone: +31615695130</li>
-      <li>✉️ Email: ronan@example.com</li>
+    <ul class="contact-list">
+      <li>📍 Remote (GMT +1)</li>
+      <li>📞 +31 6 1569 5130</li>
+      <li>✉️ <a href="mailto:ronan@example.com">ronan@example.com</a></li>
     </ul>
 
     <form class="contact-form">
-      <input type="text" placeholder="First Name" required>
-      <input type="text" placeholder="Last Name" required>
-      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="First Name" required />
+      <input type="text" placeholder="Last Name" required />
+      <input type="email" placeholder="Email Address" required />
       <select required>
         <option value="">Select Service</option>
         <option>Audit</option>
@@ -108,7 +120,7 @@
         <option>Strategy</option>
         <option>Operational Management</option>
       </select>
-      <textarea placeholder="Write your message here" rows="5" required></textarea>
+      <textarea rows="5" placeholder="Write your message here" required></textarea>
       <button type="submit" class="btn btn-fill">Submit</button>
     </form>
   </section>
@@ -117,7 +129,6 @@
     <p>© Ronan Liedmeier | RLGrowth</p>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
-

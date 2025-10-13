@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ronan – Marketing Professional</title>
-  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years experience driving growth for B2B & B2C brands." />
-  <link rel="stylesheet" href="style.css?v=20" />
+  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
+
+  <!-- Typography closer to the PDF -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=30" />
 </head>
 <body>
   <!-- HERO -->
   <header class="hero">
-    <div class="hero-inner">
-      <p class="intro">👋 HEY, I'M RONAN</p>
-      <h1>
-        A SEASONED MARKETING <br />
-        PROFESSIONAL WITH 10+ YEARS <br />
-        OF EXPERIENCE
-      </h1>
+    <div class="container hero-inner">
+      <p class="eyebrow">HEY, I'M RONAN</p>
+      <h1>A SEASONED MARKETING <br> PROFESSIONAL WITH 10+ YEARS <br> OF EXPERIENCE</h1>
 
       <nav class="buttons">
         <a href="#works" class="btn btn-outline">MY WORKS</a>
@@ -26,109 +26,163 @@
     </div>
 
     <!-- decorative assets -->
-    <img class="hero-ellipse" src="assets/Ellipse%204.svg" alt="" aria-hidden="true" />
-    <img class="hero-image" src="assets/Image.svg" alt="" aria-hidden="true" />
-    <img class="hero-wave" src="assets/Bg%20(1).svg" alt="" aria-hidden="true" />
+    <img class="hero-ellipse" src="assets/hero-ellipse.svg" alt="" aria-hidden="true" />
+    <img class="hero-image"  src="assets/hero-illustration.svg" alt="" aria-hidden="true" />
+    <img class="hero-wave"   src="assets/hero-wave.svg" alt="" aria-hidden="true" />
   </header>
 
   <!-- WORKS -->
   <section id="works" class="section">
-    <h2>My Works</h2>
-    <p>Here will go portfolio items...</p>
+    <div class="container">
+      <p class="eyebrow">WORK</p>
+      <h2>My Works</h2>
+      <p class="lead">Here will go portfolio items...</p>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped 15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
-    </p>
+    <div class="container">
+      <p class="eyebrow">ABOUT</p>
+      <h2>SUPERCHARGING GROWTH ENGINES SINCE 2015</h2>
+      <p class="lead">
+        Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped
+        15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+      </p>
+    </div>
   </section>
 
   <!-- SERVICES -->
   <section id="services" class="section">
-    <h2>Services</h2>
-    <div class="services-grid">
-      <article class="service">
-        <div class="thumb" role="img" aria-label="Marketing Audit visual"></div>
-        <h3>Marketing Audit</h3>
-        <p>Crafting distinct brand identities and ensuring consistency across all channels.</p>
-      </article>
+    <div class="container">
+      <p class="eyebrow">SERVICES</p>
+      <h2>HOW CAN I HELP</h2>
 
-      <article class="service">
-        <div class="thumb" role="img" aria-label="Marketing Strategy visual"></div>
-        <h3>Marketing Strategy</h3>
-        <p>Building go-to-market strategies that drive growth and customer engagement.</p>
-      </article>
+      <div class="services-grid">
+        <article class="service">
+          <div class="thumb" role="img" aria-label="Marketing Audit image"></div>
+          <h3>Marketing Audit</h3>
+          <p>Crafting distinct brand identities and ensuring consistency across all channels.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
 
-      <article class="service">
-        <div class="thumb" role="img" aria-label="AI & Automation visual"></div>
-        <h3>AI Agents &amp; Automation</h3>
-        <p>Implementing AI-driven workflows, automation, and CRM integrations.</p>
-      </article>
+        <article class="service">
+          <div class="thumb" role="img" aria-label="Marketing Strategy image"></div>
+          <h3>Marketing Strategy</h3>
+          <p>Building go-to-market strategies that drive growth and customer engagement.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
 
-      <article class="service">
-        <div class="thumb" role="img" aria-label="PPC Campaigns visual"></div>
-        <h3>PPC Campaigns</h3>
-        <p>Creating and managing ad campaigns that maximize ROI across platforms.</p>
-      </article>
+        <article class="service">
+          <div class="thumb" role="img" aria-label="AI Agents & Automation image"></div>
+          <h3>AI Agents &amp; Automation</h3>
+          <p>Implementing AI-driven workflows, automation, and CRM integrations.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
+
+        <article class="service">
+          <div class="thumb" role="img" aria-label="PPC Campaigns image"></div>
+          <h3>PPC Campaigns</h3>
+          <p>Creating and managing ad campaigns that maximize ROI across platforms.</p>
+          <a class="link" href="#">What’s Included?</a>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- COMPANIES MARQUEE -->
   <section class="companies section">
-    <h2>Companies I've Worked With</h2>
+    <div class="container">
+      <p class="eyebrow">CLIENTS</p>
+      <h2>Companies I've Worked With</h2>
+    </div>
+
     <div class="marquee" aria-label="Scrolling list of companies">
       <div class="marquee-track">
-        <span class="marquee-item">HOMEFANS.COM</span>
-        <span class="marquee-item">GREYT.NL</span>
-        <span class="marquee-item">BCS-HR.COM</span>
-        <span class="marquee-item">SIGNPATH.IO</span>
-        <span class="marquee-item">WEANOORDHOLLAND.NL</span>
-        <span class="marquee-item">KENJO.IO</span>
-        <span class="marquee-item">VOLSTORA.COM</span>
+        <span>HOMEFANS.COM</span>
+        <span>GREYT.NL</span>
+        <span>BCS-HR.COM</span>
+        <span>SIGNPATH.IO</span>
+        <span>WEANOORDHOLLAND.NL</span>
+        <span>KENJO.IO</span>
+        <span>VOLSTORA.COM</span>
+
         <!-- duplicate for seamless loop -->
-        <span class="marquee-item">HOMEFANS.COM</span>
-        <span class="marquee-item">GREYT.NL</span>
-        <span class="marquee-item">BCS-HR.COM</span>
-        <span class="marquee-item">SIGNPATH.IO</span>
-        <span class="marquee-item">WEANOORDHOLLAND.NL</span>
-        <span class="marquee-item">KENJO.IO</span>
-        <span class="marquee-item">VOLSTORA.COM</span>
+        <span>HOMEFANS.COM</span>
+        <span>GREYT.NL</span>
+        <span>BCS-HR.COM</span>
+        <span>SIGNPATH.IO</span>
+        <span>WEANOORDHOLLAND.NL</span>
+        <span>KENJO.IO</span>
+        <span>VOLSTORA.COM</span>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Ready to supercharge your growth? Reach out to me now.</p>
-    <ul class="contact-list">
-      <li>📍 Remote (GMT +1)</li>
-      <li>📞 +31 6 1569 5130</li>
-      <li>✉️ <a href="mailto:ronan@example.com">ronan@example.com</a></li>
-    </ul>
+    <div class="container">
+      <p class="eyebrow">CONTACT</p>
+      <h2>Ready to supercharge your growth?</h2>
+      <ul class="contact-list">
+        <li>📍 Remote (GMT +1)</li>
+        <li>📞 +31 6 1569 5130</li>
+        <li>✉️ <a href="mailto:ronan@example.com">ronan@example.com</a></li>
+      </ul>
 
-    <form class="contact-form">
-      <input type="text" placeholder="First Name" required />
-      <input type="text" placeholder="Last Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <select required>
-        <option value="">Select Service</option>
-        <option>Audit</option>
-        <option>AI/CRM/Automation</option>
-        <option>Strategy</option>
-        <option>Operational Management</option>
-      </select>
-      <textarea rows="5" placeholder="Write your message here" required></textarea>
-      <button type="submit" class="btn btn-fill">Submit</button>
-    </form>
+      <form class="contact-form">
+        <div class="grid-2">
+          <label>First Name
+            <input type="text" placeholder="Your First Name" required>
+          </label>
+          <label>Last Name
+            <input type="text" placeholder="Your Last Name" required>
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label>Email Address
+            <input type="email" placeholder="Email Address" required>
+          </label>
+          <label>Select Service
+            <select required>
+              <option value="">Select Service</option>
+              <option>Audit</option>
+              <option>AI/CRM/Automation</option>
+              <option>Strategy</option>
+              <option>Operational Management</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Message
+          <textarea rows="5" placeholder="Write your message here" required></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-fill">Submit</button>
+
+        <p class="legal">
+          By submitting this form you read and agree to the <a href="#">Terms &amp; Conditions</a> and our <a href="#">privacy policy</a>.
+        </p>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>© Ronan Liedmeier | RLGrowth</p>
+    <div class="container footer-inner">
+      <p>© Ronan Liedmeier · <a href="#">RLGrowth</a> · <a href="#">Privacy Policy</a> · <a href="#">Cookie Policy</a></p>
+    </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script>
+    // simple form handler
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector(".contact-form");
+      form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Thanks for reaching out! I'll get back to you soon.");
+      });
+    });
+  </script>
 </body>
 </html>

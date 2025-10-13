@@ -23,7 +23,7 @@ body {
 }
 .section {
     padding: 96px 0;
-    overflow: hidden;
+    overflow: hidden; /* Prevents elements from spilling out */
 }
 .eyebrow {
     text-transform: uppercase;
@@ -96,14 +96,6 @@ h2 {
 .btn-fill:hover {
     background: transparent;
     color: var(--Light);
-}
-.hero-illustration {
-    position: absolute;
-    right: clamp(-50px, 8vw, 150px);
-    bottom: 10%;
-    width: clamp(320px, 30vw, 450px);
-    z-index: 5;
-    pointer-events: none;
 }
 .hero-wave {
     position: absolute;
@@ -475,10 +467,6 @@ footer {
     }
     .hero-inner {
         align-items: center;
-    }
-    .hero-illustration {
-        opacity: 0.2;
-        right: -150px; /* Further off-screen */
     }
     .footer-container {
         flex-direction: column;

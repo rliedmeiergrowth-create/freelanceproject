@@ -96,23 +96,6 @@ h2 {
 .btn-fill:hover {
     background: transparent;
     color: var(--Light);
-}
-.hero-illustration {
-    position: absolute;
-    right: clamp(-50px, 8vw, 150px);
-    bottom: 10%;
-    width: clamp(320px, 30vw, 450px);
-    z-index: 5;
-    pointer-events: none;
-}
-.hero-wave {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    pointer-events: none;
-}
 
 /* ---------- 3. COMPANIES MARQUEE ---------- */
 .companies {

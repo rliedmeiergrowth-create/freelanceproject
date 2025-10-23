@@ -157,33 +157,4 @@ h1, h2, h3 {
 /* ===== Offer ===== */
 #offer { position:relative; overflow:hidden; }
 .offer-ellipse{
-  position:absolute; inset:-20% -10% auto -10%;
-  background: radial-gradient(50% 50% at 30% 40%, rgba(200,80,192,.25), transparent 60%),
-              radial-gradient(40% 40% at 70% 60%, rgba(255,111,97,.18), transparent 70%);
-  filter: blur(18px); z-index:0; height:60vh;
-}
-.offer-container{ position:relative; z-index:1; display:grid; grid-template-columns:1fr 1.4fr; gap:2.2rem; align-items:start; }
-.offer-intro{ display:grid; align-content:start; gap:.85rem; }
-.offer-tagline{ text-transform:uppercase; letter-spacing:.18em; opacity:.85; font-size:.8rem; }
-.offer-headline{ text-transform:uppercase; }
-.offer-list{ display:grid; gap:1rem; }
-.offer-item{ display:flex; gap:1rem; align-items:flex-start; padding:14px; border:1px solid var(--line); border-radius:14px; background:var(--card); }
-.offer-icon{ width:44px; height:44px; display:grid; place-items:center; border-radius:50%; background:#0f0f0f; border:1px solid var(--line); }
-.offer-item-title{ font-weight:700; margin-bottom:.25rem; }
-.offer-item-description{ color:var(--dim); }
-@media (max-width:980px){ .offer-container{ grid-template-columns:1fr; } }
-
-/* ===== Contact ===== */
-.contact-container{ display:grid; grid-template-columns:1.3fr .9fr; gap:2.2rem; align-items:center; }
-@media (max-width:900px){ .contact-container{ grid-template-columns:1fr; } }
-.contact-headline{ text-transform:uppercase; }
-.contact-paragraph{ color:var(--dim); margin-top:.6rem; }
-.contact-details{ display:grid; gap:1rem; }
-.contact-info-group{ display:grid; gap:.15rem; }
-.contact-bold-text{ font-weight:700; }
-.contact-info-text{ color:var(--dim); }
-
-/* ===== Footer ===== */
-footer { border-top:1px solid var(--line); background:#121212; color:#aaa; }
-.footer-container { padding:22px 0; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:space-between; }
-@media (max-width:640px){ .footer-container { flex-direction:column; gap:.25rem; } }
+  position:absolute; inset:-20% -10% auto -1

@@ -8,73 +8,88 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=95" />
+  <link rel="stylesheet" href="style.css?v=96" />
   <style>
-    .about-hero { min-height: 38vh; border-bottom: 1px solid var(--line); display: grid; align-items: end; }
-    .about-hero .container { padding: 48px 0; }
-
-    .about-body { padding: 80px 0; }
-    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.2rem; align-items: start; }
-
-    .about-body p { color: var(--dim); }
-    .about-card { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 18px; }
-    .about-list { margin: .5rem 0 0 1.1rem; color: var(--dim); }
+    /* ---- HERO (top section) ---- */
+    .about-hero {
+      border-bottom: 1px solid var(--line);
+      padding: 48px 0 42px;
+    }
+    .about-hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;  /* text | portrait */
+      gap: 2.2rem;
+      align-items: center;
+    }
     .about-cta-group { display:flex; gap:.6rem; flex-wrap:wrap; margin-top: 18px; }
 
-    /* Portrait on the RIGHT column */
+    /* Portrait (now in hero) */
     .about-portrait-wrap{
-      display:flex;
-      justify-content:flex-end;   /* right align on desktop */
-      margin-bottom: 1rem;
+      display:flex; justify-content:flex-end;
     }
     .about-portrait{
-      width: 80%;
-      max-width: 360px;           /* keep it smaller */
-      height:auto;
-      display:block;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:#121212;
-      box-shadow:none;
+      width: 85%;
+      max-width: 420px;
+      height:auto; display:block;
+      border-radius:16px; border:1px solid var(--line); background:#121212;
     }
 
+    /* ---- BODY ---- */
+    .about-body { padding: 70px 0 80px; }
+    .about-grid { display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.2rem; align-items: start; }
+    .about-card { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .about-list { margin:.5rem 0 0 1.1rem; color: var(--dim); }
+
+    /* Responsive */
     @media (max-width: 980px){
-      .about-grid { grid-template-columns: 1fr; }
-      .about-portrait-wrap{ justify-content:center; } /* center on mobile */
+      .about-hero-grid{ grid-template-columns: 1fr; }
+      .about-portrait-wrap{ justify-content:center; }
       .about-portrait{ width: 100%; max-width: 420px; }
+      .about-grid{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
+  <!-- TOP ABOUT SECTION (portrait included here) -->
   <header class="about-hero">
-    <div class="container">
-      <p class="eyebrow">ABOUT</p>
-      <h1>Hey, I’m Ronan</h1>
-      <p class="lead-paragraph" style="max-width: 780px; margin-top: .5rem;">
-        Entrepreneurial growth marketer & strategist with hands-on experience building and scaling startups and scale-ups.
-        I’ve co-founded companies, shipped end-to-end growth programs, and supported European scale-ups as a Senior Growth Strategist.
-      </p>
-      <div class="about-cta-group">
-        <a href="index.html#contact" class="btn btn-fill">Let’s talk</a>
-        <a href="https://www.linkedin.com/in/startup-growthhacker/" class="btn btn-linkedin" target="_blank" rel="noopener" aria-label="Ronan on LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;">
-            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.84v1.98h.05c.53-.99 1.84-2.03 3.79-2.03 4.05 0 4.8 2.67 4.8 6.14V23h-4v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.09V23h-4V8.5z"/>
-          </svg>
-          LinkedIn
-        </a>
+    <div class="container about-hero-grid">
+      <!-- Left: heading + intro + CTAs -->
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h1>Hey, I’m Ronan</h1>
+        <p class="lead-paragraph" style="max-width: 780px; margin-top: .5rem;">
+          Entrepreneurial growth marketer & strategist with hands-on experience building and scaling
+          startups and scale-ups. I’ve co-founded companies, shipped end-to-end growth programs, and
+          supported European scale-ups as a Senior Growth Strategist.
+        </p>
+        <div class="about-cta-group">
+          <a href="index.html#contact" class="btn btn-fill">Let’s talk</a>
+          <a href="https://www.linkedin.com/in/startup-growthhacker/" class="btn btn-linkedin" target="_blank" rel="noopener" aria-label="Ronan on LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.84v1.98h.05c.53-.99 1.84-2.03 3.79-2.03 4.05 0 4.8 2.67 4.8 6.14V23h-4v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.09V23h-4V8.5z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: portrait -->
+      <div class="about-portrait-wrap">
+        <img src="assets/ronan.svg" alt="Ronan portrait" class="about-portrait" />
       </div>
     </div>
   </header>
 
+  <!-- MAIN BODY -->
   <main class="about-body">
     <div class="container about-grid">
-      <!-- LEFT column: text -->
       <section>
         <h2>My approach</h2>
-        <p>
-          I combine pragmatic strategy with hands-on execution: identify the few moves that matter, ship early, measure clearly, and iterate fast.
-          My work spans GTM, performance marketing (PPC), revenue operations (HubSpot/ActiveCampaign), CRO, analytics, and product-adjacent consulting.
+        <p style="color:var(--dim);">
+          I combine pragmatic strategy with hands-on execution: identify the few moves that matter,
+          ship early, measure clearly, and iterate fast. My work spans GTM, performance marketing (PPC),
+          revenue operations (HubSpot/ActiveCampaign), CRO, analytics, and product-adjacent consulting.
         </p>
 
         <div class="about-card" style="margin-top:1rem;">
@@ -101,13 +116,8 @@
         </div>
       </section>
 
-      <!-- RIGHT column: portrait + highlights -->
       <aside>
-        <div class="about-portrait-wrap">
-          <img src="assets/ronan.svg" alt="Ronan portrait" class="about-portrait" />
-        </div>
-
-        <h2 style="margin-top:.25rem;">Highlights</h2>
+        <h2>Highlights</h2>
         <div class="about-card" style="margin-top:.5rem;">
           <ul class="about-list">
             <li>10+ years across B2B & B2C ($500k – $100M ARR)</li>

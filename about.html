@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=92" />
+  <link rel="stylesheet" href="style.css?v=94" />
   <style>
     .about-hero { min-height: 38vh; border-bottom: 1px solid var(--line); display: grid; align-items: end; }
     .about-hero .container { padding: 48px 0; }
@@ -17,8 +17,17 @@
     .about-body p { color: var(--dim); }
     .about-card { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 18px; }
     .about-list { margin: .5rem 0 0 1.1rem; color: var(--dim); }
-    @media (max-width: 980px){ .about-grid { grid-template-columns: 1fr; } }
     .about-cta-group { display:flex; gap:.6rem; flex-wrap:wrap; margin-top: 18px; }
+
+    /* portrait */
+    .about-portrait{
+      width:100%; height:auto; display:block;
+      border-radius:16px; border:1px solid var(--line); background:#121212;
+    }
+
+    @media (max-width: 980px){
+      .about-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -29,7 +38,7 @@
       <h1>Hey, I’m Ronan</h1>
       <p class="lead-paragraph" style="max-width: 780px; margin-top: .5rem;">
         Entrepreneurial growth marketer & strategist with hands-on experience building and scaling startups and scale-ups.
-        I’ve co-founded companies, shipped end-to-end growth programs, and supported European scale-ups as a Senior Growth Strategist. :contentReference[oaicite:1]{index=1}
+        I’ve co-founded companies, shipped end-to-end growth programs, and supported European scale-ups as a Senior Growth Strategist.
       </p>
       <div class="about-cta-group">
         <a href="index.html#contact" class="btn btn-fill">Let’s talk</a>
@@ -49,15 +58,15 @@
         <h2>My approach</h2>
         <p>
           I combine pragmatic strategy with hands-on execution: identify the few moves that matter, ship early, measure clearly, and iterate fast.
-          My work spans GTM, performance marketing (PPC), revenue operations (HubSpot/ActiveCampaign), CRO, analytics, and product-adjacent consulting. :contentReference[oaicite:2]{index=2}
+          My work spans GTM, performance marketing (PPC), revenue operations (HubSpot/ActiveCampaign), CRO, analytics, and product-adjacent consulting.
         </p>
 
         <div class="about-card" style="margin-top:1rem;">
           <h3 class="service-title-italic">Recent focus</h3>
           <ul class="about-list">
-            <li>Senior Growth Strategist at RocketX, supporting ambitious European scale-ups with scalable growth strategies and execution. :contentReference[oaicite:3]{index=3}</li>
-            <li>Mentor at GrowthMentor, advising founders and marketers on practical growth challenges. :contentReference[oaicite:4]{index=4}</li>
-            <li>Previously contributed to Fangage’s growth efforts prior to its acquisition by Triller in 2022. :contentReference[oaicite:5]{index=5}</li>
+            <li>Senior Growth Strategist at RocketX, supporting ambitious European scale-ups with scalable growth strategies and execution.</li>
+            <li>Mentor at GrowthMentor, advising founders and marketers on practical growth challenges.</li>
+            <li>Previously contributed to Fangage’s growth efforts prior to its acquisition by Triller in 2022.</li>
           </ul>
         </div>
 
@@ -77,21 +86,24 @@
       </section>
 
       <aside>
-        <h2>Highlights</h2>
+        <!-- NEW: Your portrait -->
+        <img src="assets/ronan.svg" alt="Ronan portrait" class="about-portrait" />
+
+        <h2 style="margin-top: 1rem;">Highlights</h2>
         <div class="about-card" style="margin-top:.5rem;">
           <ul class="about-list">
             <li>10+ years across B2B & B2C ($500k – $100M ARR)</li>
             <li>End-to-end: strategy → setup → reporting</li>
-            <li>PPC across Google, LinkedIn, Bing, Meta; RevOps in HubSpot & ActiveCampaign; CRO & analytics. :contentReference[oaicite:6]{index=6}</li>
-            <li>Clients and roles across Egerie, Homefans, Greyt, Kenjo, Datenna, SignPath, Volstora, and more. :contentReference[oaicite:7]{index=7}</li>
+            <li>PPC across Google, LinkedIn, Bing, Meta; RevOps in HubSpot & ActiveCampaign; CRO & analytics.</li>
+            <li>Clients and roles across Egerie, Homefans, Greyt, Kenjo, Datenna, SignPath, Volstora, and more.</li>
           </ul>
         </div>
 
         <div class="about-card" style="margin-top:1rem;">
           <h3 class="service-title-italic">Languages & Certs</h3>
           <ul class="about-list">
-            <li>EN/DE (Native or Bilingual), NL (Full Professional), FR (Limited). :contentReference[oaicite:8]{index=8}</li>
-            <li>Google Ads (Search), Shopify Store Optimization, TNW T500 2022. :contentReference[oaicite:9]{index=9}</li>
+            <li>EN/DE (Native or Bilingual), NL (Full Professional), FR (Limited).</li>
+            <li>Google Ads (Search), Shopify Store Optimization, TNW T500 2022.</li>
           </ul>
         </div>
 

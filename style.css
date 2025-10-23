@@ -51,6 +51,11 @@ h1, h2, h3 {
 .btn-dark-outline { border-color:#3a3a3a; color:#fff; background:transparent; }
 .btn-dark-outline:hover { background:#fff; color:#111; }
 .btn-contact-outline { background:transparent; color:#fff; border:2px solid #fff; padding:.85rem 1.5rem; border-radius:999px; text-align:center; }
+.btn-linkedin{
+  display:inline-flex; align-items:center; gap:.4rem;
+  border-color:#0A66C2; color:#0A66C2; background:transparent;
+}
+.btn-linkedin:hover{ background:#0A66C2; color:#fff; border-color:#0A66C2; }
 
 /* ===== Sections ===== */
 .section { padding: 100px 0; }

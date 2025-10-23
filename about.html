@@ -8,25 +8,40 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=94" />
+  <link rel="stylesheet" href="style.css?v=95" />
   <style>
     .about-hero { min-height: 38vh; border-bottom: 1px solid var(--line); display: grid; align-items: end; }
     .about-hero .container { padding: 48px 0; }
+
     .about-body { padding: 80px 0; }
     .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.2rem; align-items: start; }
+
     .about-body p { color: var(--dim); }
     .about-card { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 18px; }
     .about-list { margin: .5rem 0 0 1.1rem; color: var(--dim); }
     .about-cta-group { display:flex; gap:.6rem; flex-wrap:wrap; margin-top: 18px; }
 
-    /* portrait */
+    /* Portrait on the RIGHT column */
+    .about-portrait-wrap{
+      display:flex;
+      justify-content:flex-end;   /* right align on desktop */
+      margin-bottom: 1rem;
+    }
     .about-portrait{
-      width:100%; height:auto; display:block;
-      border-radius:16px; border:1px solid var(--line); background:#121212;
+      width: 80%;
+      max-width: 360px;           /* keep it smaller */
+      height:auto;
+      display:block;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#121212;
+      box-shadow:none;
     }
 
     @media (max-width: 980px){
       .about-grid { grid-template-columns: 1fr; }
+      .about-portrait-wrap{ justify-content:center; } /* center on mobile */
+      .about-portrait{ width: 100%; max-width: 420px; }
     }
   </style>
 </head>
@@ -54,6 +69,7 @@
 
   <main class="about-body">
     <div class="container about-grid">
+      <!-- LEFT column: text -->
       <section>
         <h2>My approach</h2>
         <p>
@@ -85,11 +101,13 @@
         </div>
       </section>
 
+      <!-- RIGHT column: portrait + highlights -->
       <aside>
-        <!-- NEW: Your portrait -->
-        <img src="assets/ronan.svg" alt="Ronan portrait" class="about-portrait" />
+        <div class="about-portrait-wrap">
+          <img src="assets/ronan.svg" alt="Ronan portrait" class="about-portrait" />
+        </div>
 
-        <h2 style="margin-top: 1rem;">Highlights</h2>
+        <h2 style="margin-top:.25rem;">Highlights</h2>
         <div class="about-card" style="margin-top:.5rem;">
           <ul class="about-list">
             <li>10+ years across B2B & B2C ($500k – $100M ARR)</li>

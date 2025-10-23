@@ -47,15 +47,23 @@ h1, h2, h3 {
 .btn-dark-outline:hover { background:#fff; color:#111; }
 .btn-contact-outline { background:transparent; color:#fff; border:2px solid #fff; padding:.85rem 1.5rem; border-radius:999px; text-align:center; }
 
-/* ===== Hero (portrait removed, gradient shifted down) ===== */
+/* ===== Sections ===== */
+.section { padding: 100px 0; }
+
+/* ===== Hero (portrait removed, wave lowered) ===== */
 .hero {
-  position: relative; min-height: 92vh; display:grid; align-items:center;
-  border-bottom:1px solid var(--line); overflow:hidden; background:#0f0f0f;
+  position: relative;
+  min-height: 92vh;             /* tall enough, but allows scroll to others */
+  display: grid;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;              /* only clips decorations, not sections */
+  background: #0f0f0f;
 }
-.hero-inner { position:relative; z-index:3; padding: 6vh 0 14vh; }
+.hero-inner { position: relative; z-index: 3; padding: 6vh 0 14vh; }
 .hero h1 {
-  text-transform: uppercase; font-weight:700; letter-spacing:.01em;
-  line-height:1.08; font-size: clamp(2rem, 5vw, 3.8rem); max-width: 20ch;
+  text-transform: uppercase; font-weight: 700; letter-spacing: .01em;
+  line-height: 1.08; font-size: clamp(2rem, 5vw, 3.8rem); max-width: 20ch;
 }
 
 /* Ellipse (keep) */
@@ -68,10 +76,10 @@ h1, h2, h3 {
   pointer-events:none; z-index:1;
 }
 
-/* Wave — shift further down so text area is darker/cleaner */
+/* Wave — shifted down for better text contrast */
 .hero-wave{
   position:absolute; left:50%; bottom:-160px; transform:translateX(-50%);
-  width: clamp(1280px, 120vw, 1920px); max-width:none; pointer-events:none; z-index:0;
+  width: clamp(1280px, 120vw, 1920px); max-width:none; z-index:0; pointer-events:none;
 }
 @media (max-width: 900px){
   .hero-ellipse{ left:-28px; top:-36px; width:180px; opacity:.48; }
@@ -92,38 +100,26 @@ h1, h2, h3 {
 }
 @keyframes marquee { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
-/* ===== Sections ===== */
-.section { padding: 100px 0; }
-
-/* ===== About (no box/card; placeholder sits BEHIND photo) ===== */
+/* ===== About (no box; backdrop behind photo) ===== */
 .about-container { display:grid; grid-template-columns: 1fr 1.1fr; align-items:center; gap:3rem; }
 @media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
 
 .about-image-wrapper { position:relative; min-height: 380px; }
 .about-photo{
   position:relative; z-index:2; display:block; width:100%; height:auto;
-  border-radius: 16px; /* no border, no card box */
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
-/* new backdrop using services placeholder */
 .about-backdrop{
   position:absolute; inset:-18px -22px -22px -18px;
-  background: #1a1a1a url("assets/services-placeholder.svg") center/cover no-repeat;
-  border-radius: 20px;
-  filter: blur(1px) saturate(110%);
-  opacity: .5;
-  z-index:1;
+  background:#1a1a1a url("assets/services-placeholder.svg") center/cover no-repeat;
+  border-radius:20px; filter: blur(1px) saturate(110%); opacity:.5; z-index:1;
 }
 
-/* ===== Services (text-only rows now) ===== */
+/* ===== Services (text-only rows) ===== */
 .services-header { margin-bottom: 1.25rem; }
 #services h2 { text-transform: uppercase; }
-
-.service-item{
-  display:block; padding:24px 0; border-top:1px solid var(--line);
-}
+.service-item{ display:block; padding:24px 0; border-top:1px solid var(--line); }
 .service-item:last-of-type{ border-bottom:1px solid var(--line); }
-
 .service-title-italic { font-style: italic; font-weight:700; font-size:1.25rem; margin-bottom:.35rem; }
 .service-paragraph { color: var(--dim); margin-bottom:.5rem; }
 .service-subtitle { font-weight:700; margin:.35rem 0; }

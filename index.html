@@ -1,112 +1,250 @@
-<!-- SERVICES (image + text for each service) -->
-<section id="services" class="section">
-  <div class="container">
-    <div class="services-header">
-      <p class="eyebrow">SERVICES</p>
-      <h2>HOW CAN I HELP</h2>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronan – Marketing Professional</title>
+  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
 
-    <!-- 1) Marketing Audit -->
-    <div class="service-item">
-      <div class="service-image service-image-large">
-        <img src="assets/services-placeholder.svg" alt="Marketing Audit" />
-      </div>
-      <div class="service-text">
-        <h3 class="service-title-italic">Marketing Audit</h3>
-        <p class="service-paragraph">
-          Holistic review of your brand, funnel, campaigns, and analytics to pinpoint what’s working and what’s wasting spend.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Channel & funnel analysis, messaging review, tracking/attribution checks, growth levers, and an actionable 90-day plan.
-        </p>
-      </div>
-    </div>
+  <!-- Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
 
-    <!-- 2) AI & Automation (reverse) -->
-    <div class="service-item reverse">
-      <div class="service-text">
-        <h3 class="service-title-italic">AI &amp; Automation</h3>
-        <p class="service-paragraph">
-          Implement AI agents and automated workflows that remove repetitive tasks, accelerate ops, and improve CX.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Journey mapping, tool selection, workflow build-out, CRM/CS integration, QA, and team enablement.
-        </p>
-      </div>
-      <div class="service-image service-image-small">
-        <img src="assets/services-placeholder.svg" alt="AI & Automation" />
-      </div>
-    </div>
+  <!-- cache-bust -->
+  <link rel="stylesheet" href="style.css?v=77" />
+</head>
+<body>
 
-    <!-- 3) Go-to-Market Strategy -->
-    <div class="service-item">
-      <div class="service-image service-image-large">
-        <img src="assets/services-placeholder.svg" alt="Go-to-Market Strategy" />
-      </div>
-      <div class="service-text">
-        <h3 class="service-title-italic">Go-to-Market Strategy</h3>
-        <p class="service-paragraph">
-          A focused plan to introduce or expand your product in market—who to target, what to say, where to show up, and how to win.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          ICP & segmentation, positioning & messaging, channel mix, pricing/packaging guidance, launch calendar, and success metrics.
-        </p>
+  <!-- HERO (clean: no ellipse, no wave) -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <h1>
+        A SEASONED MARKETING <br />
+        PROFESSIONAL WITH 10+ YEARS <br />
+        OF EXPERIENCE
+      </h1>
+
+      <nav class="buttons">
+        <a href="#services" class="btn btn-outline">MY SERVICES</a>
+        <a href="#contact" class="btn btn-fill">LET'S TALK</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CLIENTS / MARQUEE -->
+  <section class="companies">
+    <div class="marquee" aria-label="Scrolling list of companies">
+      <div class="marquee-track">
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
       </div>
     </div>
+  </section>
 
-    <!-- 4) Marketing Strategy (reverse) -->
-    <div class="service-item reverse">
-      <div class="service-text">
-        <h3 class="service-title-italic">Marketing Strategy</h3>
-        <p class="service-paragraph">
-          A data-driven roadmap that aligns brand, content, and demand gen with revenue goals—built to scale as you grow.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Annual/quarterly plans, content pillars, campaign themes, budget allocation, KPI framework, and reporting cadence.
-        </p>
+  <!-- ABOUT (gradient starts at top of this section; photo only) -->
+  <section id="about" class="section">
+    <div class="container about-container">
+      <div class="about-image-wrapper">
+        <img class="about-photo" src="assets/hero-illustration.svg" alt="Ronan portrait" />
       </div>
-      <div class="service-image service-image-small">
-        <img src="assets/services-placeholder.svg" alt="Marketing Strategy" />
+
+      <div class="about-text-wrapper">
+        <p class="eyebrow">ABOUT</p>
+        <h2>SUPERCHARGING GROWTH ENGINES SINCE 2015</h2>
+        <p class="lead-paragraph">
+          Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped
+          15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+        </p>
+        <div class="about-button-group">
+          <a href="#" class="btn btn-dark-outline">LEARN MORE</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- 5) CRM Implementation -->
-    <div class="service-item">
-      <div class="service-image service-image-large">
-        <img src="assets/services-placeholder.svg" alt="CRM Implementation" />
+  <!-- SERVICES (image + text for each service) -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="services-header">
+        <p class="eyebrow">SERVICES</p>
+        <h2>HOW CAN I HELP</h2>
       </div>
-      <div class="service-text">
-        <h3 class="service-title-italic">CRM Implementation</h3>
-        <p class="service-paragraph">
-          Architect and deploy a CRM that supports your full revenue funnel—clean data, clear stages, and reliable reporting.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Tool selection (e.g., HubSpot/Salesforce), data model & pipelines, integrations, automations, playbooks, and team training.
-        </p>
+
+      <!-- 1) Marketing Audit -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="Marketing Audit" />
+        </div>
+        <div class="service-text">
+          <h3 class="service-title-italic">Marketing Audit</h3>
+          <p class="service-paragraph">
+            Holistic review of your brand, funnel, campaigns, and analytics to pinpoint what’s working and what’s wasting spend.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Channel &amp; funnel analysis, messaging review, tracking/attribution checks, growth levers, and an actionable 90-day plan.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2) AI & Automation (reverse) -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <h3 class="service-title-italic">AI &amp; Automation</h3>
+          <p class="service-paragraph">
+            Implement AI agents and automated workflows that remove repetitive tasks, accelerate ops, and improve CX.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Journey mapping, tool selection, workflow build-out, CRM/CS integration, QA, and team enablement.
+          </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="AI & Automation" />
+        </div>
+      </div>
+
+      <!-- 3) Go-to-Market Strategy -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="Go-to-Market Strategy" />
+        </div>
+        <div class="service-text">
+          <h3 class="service-title-italic">Go-to-Market Strategy</h3>
+          <p class="service-paragraph">
+            A focused plan to introduce or expand your product—who to target, what to say, where to show up, and how to win.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            ICP &amp; segmentation, positioning &amp; messaging, channel mix, pricing/packaging guidance, launch calendar, and success metrics.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4) Marketing Strategy (reverse) -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <h3 class="service-title-italic">Marketing Strategy</h3>
+          <p class="service-paragraph">
+            A data-driven roadmap that aligns brand, content, and demand gen with revenue goals—built to scale as you grow.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Annual/quarterly plans, content pillars, campaign themes, budget allocation, KPI framework, and reporting cadence.
+          </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="Marketing Strategy" />
+        </div>
+      </div>
+
+      <!-- 5) CRM Implementation -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="CRM Implementation" />
+        </div>
+        <div class="service-text">
+          <h3 class="service-title-italic">CRM Implementation</h3>
+          <p class="service-paragraph">
+            Architect and deploy a CRM that supports your full revenue funnel—clean data, clear stages, and reliable reporting.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Tool selection (e.g., HubSpot/Salesforce), data model &amp; pipelines, integrations, automations, playbooks, and team training.
+          </p>
+        </div>
+      </div>
+
+      <!-- 6) PPC Campaigns (reverse) -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <h3 class="service-title-italic">PPC Campaigns</h3>
+          <p class="service-paragraph">
+            Full-funnel paid search &amp; social management optimized for CAC/LTV—creative, targeting, and bidding tuned to outcomes.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Account structure, keyword/audience research, creative variants, conversion tracking, bid strategies, and ongoing optimization.
+          </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="PPC Campaigns" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer" class="section">
+    <div class="offer-ellipse" aria-hidden="true"></div>
+    <div class="container offer-container">
+      <div class="offer-intro">
+        <p class="offer-tagline">ART OF VISUAL ALCHEMY</p>
+        <h2 class="offer-headline">MY OFFER</h2>
+        <a href="#" class="btn btn-dark-outline">SEE ALL</a>
+      </div>
+
+      <div class="offer-list">
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">Tailored Services</h3>
+            <p class="offer-item-description">
+              Crafting unique brand identities that transcend, ensuring your brand captivates and stands out in the digital landscape.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">End-to-End Support</h3>
+            <p class="offer-item-description">
+              Elevating designs with a keen eye, seamlessly transitioning between print and digital for a visually cohesive experience.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- 6) PPC Campaigns (reverse) -->
-    <div class="service-item reverse">
-      <div class="service-text">
-        <h3 class="service-title-italic">PPC Campaigns</h3>
-        <p class="service-paragraph">
-          Full-funnel paid search & social management optimized for CAC/LTV—creative, targeting, and bidding tuned to outcomes.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Account structure, keyword/audience research, creative variants, conversion tracking, bid strategies, and ongoing optimization.
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <div class="contact-text">
+        <h2 class="contact-headline">Ready to supercharge your growth?</h2>
+        <p class="contact-paragraph">
+          Implement best practices and grow your business. Reach out to me now and let's see how I can help you.
         </p>
       </div>
-      <div class="service-image service-image-small">
-        <img src="assets/services-placeholder.svg" alt="PPC Campaigns" />
+
+      <div class="contact-details">
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Location</p>
+          <p class="contact-info-text">Remote (GMT +1)</p>
+        </div>
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Phone</p>
+          <p class="contact-info-text">+31 6 1569 5130</p>
+        </div>
+        <a href="mailto:ronan@example.com" class="btn btn-contact-outline">GET IN TOUCH</a>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <p>© Ronan Liedmeier · RLGrowth</p>
+      <p>Privacy Policy · Cookie Policy</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — RLGrowth</title>
+  <meta name="description" content="About Ronan — RLGrowth" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=91" />
+  <style>
+    .about-hero { min-height: 38vh; border-bottom: 1px solid var(--line); display: grid; align-items: end; }
+    .about-hero .container { padding: 48px 0; }
+    .about-body { padding: 80px 0; }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.2rem; align-items: start; }
+    .about-body p { color: var(--dim); }
+    .about-card { background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 18px; }
+    .about-list { margin: .5rem 0 0 1.1rem; color: var(--dim); }
+    @media (max-width: 980px){ .about-grid { grid-template-columns: 1fr; } }
+    .back-link { display:inline-block; margin-top: 28px; }
+  </style>
+</head>
+<body>
+
+  <header class="about-hero">
+    <div class="container">
+      <p class="eyebrow">ABOUT</p>
+      <h1>Hey, I’m Ronan</h1>
+      <p class="lead-paragraph" style="max-width: 780px; margin-top: .5rem;">
+        I help B2B and B2C teams build growth engines that actually ship—aligning strategy, execution, and analytics.
+      </p>
+    </div>
+  </header>
+
+  <main class="about-body">
+    <div class="container about-grid">
+      <section>
+        <h2>My approach</h2>
+        <p>
+          I blend hands-on execution with a pragmatic strategy lens. That means we focus on the few moves that matter,
+          ship early, measure clearly, and iterate fast.
+        </p>
+        <div class="about-card" style="margin-top:1rem;">
+          <h3 class="service-title-italic">What I bring</h3>
+          <ul class="about-list">
+            <li>Go-to-market and marketing strategy tuned to revenue goals</li>
+            <li>CRM implementations that sales/CS actually use</li>
+            <li>AI & automation to remove repetitive work and speed operations</li>
+            <li>PPC programs optimized for CAC/LTV—not just clicks</li>
+          </ul>
+        </div>
+
+        <div class="about-card" style="margin-top:1rem;">
+          <h3 class="service-title-italic">Ways to work together</h3>
+          <ul class="about-list">
+            <li>Fixed-scope audit with 90-day roadmap</li>
+            <li>Monthly retainer for execution + iteration</li>
+            <li>Fractional leadership or embedded partner</li>
+          </ul>
+        </div>
+
+        <a href="index.html#contact" class="btn btn-fill back-link">Let’s talk</a>
+      </section>
+
+      <aside>
+        <h2>Highlights</h2>
+        <div class="about-card" style="margin-top:.5rem;">
+          <ul class="about-list">
+            <li>10+ years across B2B & B2C ($500k – $100M ARR)</li>
+            <li>Shipped programs end-to-end: strategy → setup → reporting</li>
+            <li>Comfortable across tools (HubSpot/Salesforce/GA4/Meta/Google Ads)</li>
+            <li>Remote-first, async-friendly, with clear weekly milestones</li>
+          </ul>
+        </div>
+
+        <div class="about-card" style="margin-top:1rem;">
+          <h3 class="service-title-italic">Contact</h3>
+          <p><a href="mailto:rliedmeier.growth@gmail.com">rliedmeier.growth@gmail.com</a></p>
+        </div>
+
+        <a href="index.html" class="btn btn-dark-outline back-link">← Back to Home</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>© Ronan Liedmeier · RLGrowth</p>
+      <p><a href="privacy.html">Privacy Policy</a> · Cookie Policy</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -12,11 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
 
   <!-- cache-bust -->
-  <link rel="stylesheet" href="style.css?v=74" />
+  <link rel="stylesheet" href="style.css?v=76" />
 </head>
 <body>
 
-  <!-- HERO (ellipse removed entirely, no wave) -->
+  <!-- HERO (no ellipse, no wave) -->
   <header class="hero">
     <div class="container hero-inner">
       <h1>
@@ -46,8 +46,7 @@
   <section id="about" class="section">
     <div class="container about-container">
       <div class="about-image-wrapper">
-        <!-- soft backdrop behind the portrait (not a shadow) -->
-        <div class="about-backdrop" aria-hidden="true"></div>
+        <!-- Photo only (no box/backdrop) -->
         <img class="about-photo" src="assets/hero-illustration.svg" alt="Ronan portrait" />
       </div>
 
@@ -65,7 +64,7 @@
     </div>
   </section>
 
-  <!-- SERVICES (text-only) -->
+  <!-- SERVICES (image + text for each service) -->
   <section id="services" class="section">
     <div class="container">
       <div class="services-header">
@@ -73,7 +72,11 @@
         <h2>HOW CAN I HELP</h2>
       </div>
 
+      <!-- item 1 -->
       <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="Marketing Audit" />
+        </div>
         <div class="service-text">
           <h3 class="service-title-italic">Marketing Audit</h3>
           <p class="service-paragraph">
@@ -86,7 +89,8 @@
         </div>
       </div>
 
-      <div class="service-item">
+      <!-- item 2 (reversed) -->
+      <div class="service-item reverse">
         <div class="service-text">
           <h3 class="service-title-italic">AI &amp; Automation</h3>
           <p class="service-paragraph">
@@ -96,6 +100,9 @@
           <p class="service-paragraph-small">
             Workflow automation, CRM setup and integration, and implementation of AI customer service agents.
           </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="AI & Automation" />
         </div>
       </div>
     </div>

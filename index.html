@@ -11,12 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
 
-  <!-- cache-bust -->
-  <link rel="stylesheet" href="style.css?v=81" />
+  <link rel="stylesheet" href="style.css?v=90" />
 </head>
 <body>
 
-  <!-- HERO (clean: no ellipse, no wave) -->
+  <!-- HERO -->
   <header class="hero">
     <div class="container hero-inner">
       <h1>
@@ -32,7 +31,7 @@
     </div>
   </header>
 
-  <!-- CLIENTS / MARQUEE -->
+  <!-- COMPANIES / MARQUEE (fills the rest of the fold height) -->
   <section class="companies">
     <div class="marquee" aria-label="Scrolling list of companies">
       <div class="marquee-track">
@@ -42,7 +41,7 @@
     </div>
   </section>
 
-  <!-- ABOUT (gradient starts at top of this section; photo only) -->
+  <!-- ABOUT (gradient begins here; photo only) -->
   <section id="about" class="section">
     <div class="container about-container">
       <div class="about-image-wrapper">
@@ -63,123 +62,143 @@
     </div>
   </section>
 
-  <!-- SERVICES (image + text for each service) -->
-<!-- SERVICES (image + text for each service) -->
-<section id="services" class="section">
-  <div class="container">
-    <div class="services-header">
-      <p class="eyebrow">SERVICES</p>
-      <h2>HOW CAN I HELP</h2>
+  <!-- SERVICES (desktop: images + text; mobile: accordion) -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="services-header">
+        <p class="eyebrow">SERVICES</p>
+        <h2>HOW CAN I HELP</h2>
+      </div>
+
+      <!-- 1) Marketing Audit -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/marketing_audit.svg" alt="Marketing Audit" />
+        </div>
+        <div class="service-text">
+          <button class="service-title-btn service-title-italic" aria-expanded="false" type="button">
+            <span class="chev" aria-hidden="true"></span> Marketing Audit
+          </button>
+          <div class="service-collapse">
+            <p class="service-paragraph">
+              Holistic review of your brand, funnel, campaigns, and analytics to pinpoint what’s working and what’s wasting spend.
+            </p>
+            <h4 class="service-subtitle">What's Included?</h4>
+            <p class="service-paragraph-small">
+              Channel &amp; funnel analysis, messaging review, tracking/attribution checks, growth levers, and an actionable 90-day plan.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2) AI & Automation -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <button class="service-title-btn service-title-italic" aria-expanded="false" type="button">
+            <span class="chev" aria-hidden="true"></span> AI &amp; Automation
+          </button>
+          <div class="service-collapse">
+            <p class="service-paragraph">
+              Implement AI agents and automated workflows that remove repetitive tasks, accelerate ops, and improve CX.
+            </p>
+            <h4 class="service-subtitle">What's Included?</h4>
+            <p class="service-paragraph-small">
+              Journey mapping, tool selection, workflow build-out, CRM/CS integration, QA, and team enablement.
+            </p>
+          </div>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/ai_automation.svg" alt="AI & Automation" />
+        </div>
+      </div>
+
+      <!-- 3) Go-to-Market Strategy -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/GTM.svg" alt="Go-to-Market Strategy" />
+        </div>
+        <div class="service-text">
+          <button class="service-title-btn service-title-italic" aria-expanded="false" type="button">
+            <span class="chev" aria-hidden="true"></span> Go-to-Market Strategy
+          </button>
+          <div class="service-collapse">
+            <p class="service-paragraph">
+              A focused plan to introduce or expand your product—who to target, what to say, where to show up, and how to win.
+            </p>
+            <h4 class="service-subtitle">What's Included?</h4>
+            <p class="service-paragraph-small">
+              ICP &amp; segmentation, positioning &amp; messaging, channel mix, pricing/packaging guidance, launch calendar, and success metrics.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4) Marketing Strategy -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <button class="service-title-btn service-title-italic" aria-expanded="false" type="button">
+            <span class="chev" aria-hidden="true"></span> Marketing Strategy
+          </button>
+          <div class="service-collapse">
+            <p class="service-paragraph">
+              A data-driven roadmap that aligns brand, content, and demand gen with revenue goals—built to scale as you grow.
+            </p>
+            <h4 class="service-subtitle">What's Included?</h4>
+            <p class="service-paragraph-small">
+              Annual/quarterly plans, content pillars, campaign themes, budget allocation, KPI framework, and reporting cadence.
+            </p>
+          </div>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/marketing_strategy.svg" alt="Marketing Strategy" />
+        </div>
+      </div>
+
+      <!-- 5) CRM Implementation -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/CRM.svg" alt="CRM Implementation" />
+        </div>
+        <div class="service-text">
+          <button class="service-title-btn service-title-italic" aria-expanded="false" type="button">
+            <span class="chev" aria-hidden="true"></span> CRM Implementation
+          </button>
+          <div class="service-collapse">
+            <p class="service-paragraph">
+              Architect and deploy a CRM that supports your full revenue funnel—clean data, clear stages, and reliable reporting.
+            </p>
+            <h4 class="service-subtitle">What's Included?</h4>
+            <p class="service-paragraph-small">
+              Tool selection (e.g., HubSpot/Salesforce), data model &amp; pipelines, integrations, automations, playbooks, and team training.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6) PPC Campaigns -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <button class="service-title-btn service-title-italic" aria-expanded="false" type="button">
+            <span class="chev" aria-hidden="true"></span> PPC Campaigns
+          </button>
+          <div class="service-collapse">
+            <p class="service-paragraph">
+              Full-funnel paid search &amp; social management optimized for CAC/LTV—creative, targeting, and bidding tuned to outcomes.
+            </p>
+            <h4 class="service-subtitle">What's Included?</h4>
+            <p class="service-paragraph-small">
+              Account structure, keyword/audience research, creative variants, conversion tracking, bid strategies, and ongoing optimization.
+            </p>
+          </div>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/PPC.svg" alt="PPC Campaigns" />
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- 1) Marketing Audit -->
-    <div class="service-item">
-      <div class="service-image service-image-large">
-        <img src="assets/marketing_audit.svg" alt="Marketing Audit" />
-      </div>
-      <div class="service-text">
-        <h3 class="service-title-italic">Marketing Audit</h3>
-        <p class="service-paragraph">
-          Holistic review of your brand, funnel, campaigns, and analytics to pinpoint what’s working and what’s wasting spend.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Channel &amp; funnel analysis, messaging review, tracking/attribution checks, growth levers, and an actionable 90-day plan.
-        </p>
-      </div>
-    </div>
-
-    <!-- 2) AI & Automation (reverse) -->
-    <div class="service-item reverse">
-      <div class="service-text">
-        <h3 class="service-title-italic">AI &amp; Automation</h3>
-        <p class="service-paragraph">
-          Implement AI agents and automated workflows that remove repetitive tasks, accelerate ops, and improve CX.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Journey mapping, tool selection, workflow build-out, CRM/CS integration, QA, and team enablement.
-        </p>
-      </div>
-      <div class="service-image service-image-small">
-        <img src="assets/ai_automation.svg" alt="AI & Automation" />
-      </div>
-    </div>
-
-    <!-- 3) Go-to-Market Strategy -->
-    <div class="service-item">
-      <div class="service-image service-image-large">
-        <img src="assets/GTM.svg" alt="Go-to-Market Strategy" />
-      </div>
-      <div class="service-text">
-        <h3 class="service-title-italic">Go-to-Market Strategy</h3>
-        <p class="service-paragraph">
-          A focused plan to introduce or expand your product—who to target, what to say, where to show up, and how to win.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          ICP &amp; segmentation, positioning &amp; messaging, channel mix, pricing/packaging guidance, launch calendar, and success metrics.
-        </p>
-      </div>
-    </div>
-
-    <!-- 4) Marketing Strategy (reverse) -->
-    <div class="service-item reverse">
-      <div class="service-text">
-        <h3 class="service-title-italic">Marketing Strategy</h3>
-        <p class="service-paragraph">
-          A data-driven roadmap that aligns brand, content, and demand gen with revenue goals—built to scale as you grow.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Annual/quarterly plans, content pillars, campaign themes, budget allocation, KPI framework, and reporting cadence.
-        </p>
-      </div>
-      <div class="service-image service-image-small">
-        <img src="assets/marketing_strategy.svg" alt="Marketing Strategy" />
-      </div>
-    </div>
-
-    <!-- 5) CRM Implementation -->
-    <div class="service-item">
-      <div class="service-image service-image-large">
-        <img src="assets/CRM.svg" alt="CRM Implementation" />
-      </div>
-      <div class="service-text">
-        <h3 class="service-title-italic">CRM Implementation</h3>
-        <p class="service-paragraph">
-          Architect and deploy a CRM that supports your full revenue funnel—clean data, clear stages, and reliable reporting.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Tool selection (e.g., HubSpot/Salesforce), data model &amp; pipelines, integrations, automations, playbooks, and team training.
-        </p>
-      </div>
-    </div>
-
-    <!-- 6) PPC Campaigns (reverse) -->
-    <div class="service-item reverse">
-      <div class="service-text">
-        <h3 class="service-title-italic">PPC Campaigns</h3>
-        <p class="service-paragraph">
-          Full-funnel paid search &amp; social management optimized for CAC/LTV—creative, targeting, and bidding tuned to outcomes.
-        </p>
-        <h4 class="service-subtitle">What's Included?</h4>
-        <p class="service-paragraph-small">
-          Account structure, keyword/audience research, creative variants, conversion tracking, bid strategies, and ongoing optimization.
-        </p>
-      </div>
-      <div class="service-image service-image-small">
-        <img src="assets/PPC.svg" alt="PPC Campaigns" />
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-  <!-- OFFER (reverted two-column layout + diamond + divider + 3 tiles) -->
+  <!-- OFFER (two-column layout; diamond + divider; 3 tiles) -->
   <section id="offer" class="section">
     <div class="offer-ellipse" aria-hidden="true"></div>
     <div class="container offer-container">
@@ -190,7 +209,6 @@
       </div>
 
       <div class="offer-list">
-        <!-- Tile 1 -->
         <div class="offer-item">
           <span class="offer-bullet" aria-hidden="true"></span>
           <span class="offer-divider" aria-hidden="true"></span>
@@ -202,7 +220,6 @@
           </div>
         </div>
 
-        <!-- Tile 2 -->
         <div class="offer-item">
           <span class="offer-bullet" aria-hidden="true"></span>
           <span class="offer-divider" aria-hidden="true"></span>
@@ -214,7 +231,6 @@
           </div>
         </div>
 
-        <!-- Tile 3 (Flexibility) -->
         <div class="offer-item">
           <span class="offer-bullet" aria-hidden="true"></span>
           <span class="offer-divider" aria-hidden="true"></span>
@@ -225,43 +241,40 @@
             </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <!-- CONTACT -->
-<section id="contact" class="section contact-section">
-  <div class="container contact-container">
-    <div class="contact-text">
-      <p class="eyebrow">CONTACT</p>
-      <h2 class="contact-headline">Let’s build your growth engine</h2>
-      <p class="contact-paragraph">
-        Ready to take your marketing to the next level? Whether you’re scaling your first campaigns or optimizing a multi-channel funnel, I can help you build a system that performs.
-      </p>
-      <a href="mailto:ronan@example.com" class="btn btn-fill contact-cta">Get in Touch</a>
-    </div>
-
-    <div class="contact-info">
-      <div class="contact-info-group">
-        <h4 class="contact-info-label">Based</h4>
-        <p class="contact-info-text">Remote (GMT +1)</p>
-      </div>
-      <div class="contact-info-group">
-        <h4 class="contact-info-label">Phone</h4>
-        <p class="contact-info-text">+31 6 1569 5130</p>
-      </div>
-      <div class="contact-info-group">
-        <h4 class="contact-info-label">Email</h4>
-        <p class="contact-info-text">
-          <a href="mailto:ronan@example.com">ronan@example.com</a>
+  <section id="contact" class="section contact-section">
+    <div class="container contact-container">
+      <div class="contact-text">
+        <p class="eyebrow">CONTACT</p>
+        <h2 class="contact-headline">Let’s build your growth engine</h2>
+        <p class="contact-paragraph">
+          Ready to take your marketing to the next level? Whether you’re scaling your first campaigns or optimizing a multi-channel funnel, I can help you build a system that performs.
         </p>
+        <a href="mailto:rliedmeier.growth@gmail.com" class="btn btn-fill contact-cta">Get in Touch</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-info-group">
+          <h4 class="contact-info-label">Based</h4>
+          <p class="contact-info-text">Remote (GMT +1)</p>
+        </div>
+        <div class="contact-info-group">
+          <h4 class="contact-info-label">Phone</h4>
+          <p class="contact-info-text">+31 6 1569 5130</p>
+        </div>
+        <div class="contact-info-group">
+          <h4 class="contact-info-label">Email</h4>
+          <p class="contact-info-text">
+            <a href="mailto:rliedmeier.growth@gmail.com">rliedmeier.growth@gmail.com</a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer>
@@ -271,5 +284,6 @@
     </div>
   </footer>
 
+  <script src="script.js?v=90"></script>
 </body>
 </html>

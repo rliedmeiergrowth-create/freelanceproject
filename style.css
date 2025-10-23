@@ -76,6 +76,19 @@ h1, h2, h3 {
   line-height: 1.08; font-size: clamp(2rem, 5vw, 3.8rem); max-width: 20ch;
 }
 
+/* NEW: soft color that begins in hero and fades out near the bottom to transition into the marquee */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-6vh 0 -12vh 0;          /* bleed a bit above/below so there’s no hard edge */
+  z-index:0; pointer-events:none;
+  background:
+    radial-gradient(70% 100% at 18% 20%, rgba(200,80,192,0.28), transparent 62%),
+    radial-gradient(70% 100% at 78% 30%, rgba(255,111,97,0.22), transparent 68%),
+    linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.55) 100%); /* gentle dark fade at bottom */
+  filter: blur(18px);
+}
+
 /* ===== Companies marquee ===== */
 .companies{
   height: var(--marquee-h);
@@ -100,7 +113,6 @@ h1, h2, h3 {
 
 /* ===== About ===== */
 #about { position: relative; overflow: visible; }
-/* no gradient here—continuous gradient starts at Services */
 .about-container {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: 3rem;
@@ -207,7 +219,7 @@ footer { border-top:1px solid var(--line); background:#121212; color:#aaa; }
 .footer-container { padding:22px 0; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:space-between; }
 @media (max-width:640px){ .footer-container { flex-direction:column; gap:.25rem; } }
 
-/* ===== Unified continuous gradient: Services → Offer → Contact ===== */
+/* ===== Unified continuous gradient: Hero → Services → Offer → Contact ===== */
 #services, #offer, .contact-section {
   position: relative;
   z-index: 0;
@@ -225,35 +237,36 @@ footer { border-top:1px solid var(--line); background:#121212; color:#aaa; }
   top: -120px;                          /* begins just above Services */
   transform: translateX(-50%);
   width: 100vw;                          /* full viewport width */
-  height: 2600px;                        /* tall enough: Services + Offer + Contact */
+  height: 2700px;                        /* tall enough: Services + Offer + Contact */
   z-index: -1;
   pointer-events: none;
 
   /* Layer order: top-most first */
   background:
-    /* TOP color bloom (Services area) */
-    radial-gradient(60% 90% at 25% 10%, rgba(200,80,192,0.28), transparent 70%),
-    radial-gradient(60% 90% at 75% 28%, rgba(255,111,97,0.22), transparent 72%),
+    /* TOP color bloom (Services) */
+    radial-gradient(60% 90% at 25% 10%, rgba(200,80,192,0.28), transparent 62%),
+    radial-gradient(60% 90% at 75% 26%, rgba(255,111,97,0.22), transparent 68%),
 
-    /* BOTTOM comeback color (Contact end) */
-    radial-gradient(70% 85% at 30% 88%, rgba(200,80,192,0.24), transparent 70%),
-    radial-gradient(65% 90% at 72% 96%, rgba(255,180,70,0.22), transparent 72%),
-
-    /* DARKEN + fade band (lets it go dark before color returns) */
+    /* MID fade to dark */
     linear-gradient(
       to bottom,
       rgba(0,0,0,0) 0%,
-      rgba(14,14,14,0.55) 48%,
-      rgba(14,14,14,0.85) 66%,
-      rgba(14,14,14,0.70) 82%,
-      rgba(14,14,14,0.00) 100%   /* transparent at the very bottom so color shows */
-    );
+      rgba(14,14,14,0.55) 46%,
+      rgba(14,14,14,0.88) 64%,
+      rgba(14,14,14,0.70) 80%,
+      rgba(14,14,14,0.00) 86%  /* start revealing bottom color */
+    ),
+
+    /* BOTTOM comeback color (Contact end) */
+    radial-gradient(70% 85% at 30% 92%, rgba(200,80,192,0.26), transparent 70%),
+    radial-gradient(65% 90% at 72% 98%, rgba(255,180,70,0.24), transparent 74%);
+
   filter: blur(18px);
 }
 
 /* Optional: tweak the gradient span for very tall screens */
 @media (min-height: 1100px){
-  #services::before{ height: 3000px; }
+  #services::before{ height: 3200px; }
 }
 
 /* ===== About page portrait helper (safe globally) ===== */

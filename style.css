@@ -50,30 +50,17 @@ h1, h2, h3 {
 /* ===== Sections ===== */
 .section { padding: 100px 0; }
 
-/* ===== Hero (wave removed here) ===== */
+/* ===== Hero (no ellipse, no wave) ===== */
 .hero {
-  position: relative; min-height: 72vh;  /* a bit shorter now that wave is gone */
+  position: relative; min-height: 64vh;
   display: grid; align-items: center;
   border-bottom: 1px solid var(--line);
   overflow: hidden; background: #0f0f0f;
 }
-.hero-inner { position: relative; z-index: 3; padding: 6vh 0 10vh; }
+.hero-inner { position: relative; z-index: 1; padding: 6vh 0 10vh; }
 .hero h1 {
   text-transform: uppercase; font-weight: 700; letter-spacing: .01em;
   line-height: 1.08; font-size: clamp(2rem, 5vw, 3.8rem); max-width: 20ch;
-}
-
-/* keep the ellipse only in hero */
-.hero-ellipse{
-  position:absolute;
-  left: clamp(-40px, calc((100vw - var(--container-w))/2 - 24px), 40px);
-  top: -90px;
-  width: clamp(180px, 18vw, 300px);
-  opacity:.55; filter: blur(12px) saturate(120%); mix-blend-mode: screen;
-  pointer-events:none; z-index:1;
-}
-@media (max-width: 900px){
-  .hero-ellipse{ left:-28px; top:-36px; width:180px; opacity:.48; }
 }
 
 /* ===== Companies marquee ===== */
@@ -90,24 +77,39 @@ h1, h2, h3 {
 }
 @keyframes marquee { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
-/* ===== About ===== */
+/* ===== About (gradient starts RIGHT BELOW marquee) ===== */
 #about { position: relative; overflow: visible; }
 
-/* wave now lives in About (behind content) */
-.about-wave{
+/* Gradient begins at the very TOP of #about */
+#about::before{
+  content:"";
   position: absolute;
+  top: 0;                      /* <-- starts directly below the company names section */
   left: 50%;
-  bottom: -120px;             /* tuck it slightly below for a nice fade */
   transform: translateX(-50%);
   width: clamp(1280px, 120vw, 1920px);
-  max-width: none;
-  opacity: 1;
-  z-index: 0;                 /* behind everything in About */
+  height: 520px;
   pointer-events: none;
+  z-index: 0;
+
+  /* CSS fallback gradient (no asset dependency) */
+  background:
+    radial-gradient(120% 100% at 50% 0%,
+      rgba(255,111,97,0.28) 0%,
+      rgba(200,80,192,0.22) 38%,
+      rgba(20,20,20,0) 70%);
+  /* If you want to layer the SVG wave on top too, uncomment the next line:
+     background:
+       radial-gradient(120% 100% at 50% 0%,
+         rgba(255,111,97,0.28) 0%,
+         rgba(200,80,192,0.22) 38%,
+         rgba(20,20,20,0) 70%),
+       url("assets/hero-wave.svg") center top / contain no-repeat;
+  */
 }
 
 .about-container {
-  position: relative; z-index: 1;            /* keep content above the wave */
+  position: relative; z-index: 1;  /* keep content above the gradient */
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   align-items: center;
@@ -115,25 +117,26 @@ h1, h2, h3 {
 }
 @media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
 
-/* image area: center content so scaling is easy */
+/* image area */
 .about-image-wrapper {
   position: relative; min-height: 360px; display: grid; place-items: center;
 }
 
-/* 75% sized portrait (was 100%) */
+/* Portrait at 75% width, with NO shadow now */
 .about-photo{
-  position:relative; z-index:2; display:block; width:75%; height:auto;
-  border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.35);
+  position:relative; z-index:2; display:block;
+  width:75%; height:auto;
+  border-radius:16px; box-shadow:none;   /* <-- removed any shadow */
 }
 
-/* backdrop sits behind the photo, sized to the same “block” */
+/* Soft backdrop (kept subtle, not a shadow) */
 .about-backdrop{
   position:absolute;
   width: 85%;
   height: 85%;
   top: 50%; left: 50%; transform: translate(-50%, -50%);
   background:#1a1a1a url("assets/services-placeholder.svg") center/cover no-repeat;
-  border-radius:20px; filter: blur(1px) saturate(110%); opacity:.5; z-index:1;
+  border-radius:20px; filter:none; opacity:.35; z-index:1;  /* no blur, lighter opacity */
 }
 
 .lead-paragraph { margin-top: .6rem; }

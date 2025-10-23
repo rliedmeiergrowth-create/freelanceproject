@@ -2,22 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ronan – Marketing Professional</title>
-  <meta
-    name="description"
-    content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
+  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
 
-  <!-- Montserrat (your current font) -->
+  <!-- Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=50" />
+  <link rel="stylesheet" href="style.css?v=60" />
 </head>
 <body>
 
@@ -36,5 +30,150 @@
       </nav>
     </div>
 
-    <!-- hero decorations (NO portrait here) -->
-    <img class="hero-ellipse" src="assets/hero-ellipse.svg" alt="" ari
+    <!-- DECORATIONS (portrait intentionally removed) -->
+    <img class="hero-ellipse" src="assets/hero-ellipse.svg" alt="" aria-hidden="true" />
+    <img class="hero-wave"   src="assets/hero-wave.svg"    alt="" aria-hidden="true" />
+  </header>
+  <!-- END HERO -->
+
+  <!-- CLIENTS / MARQUEE -->
+  <section class="companies">
+    <div class="marquee" aria-label="Scrolling list of companies">
+      <div class="marquee-track">
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about-container">
+      <div class="about-image-wrapper">
+        <!-- the former services placeholder sits behind your photo -->
+        <div class="about-backdrop" aria-hidden="true"></div>
+        <img class="about-photo" src="assets/hero-illustration.svg" alt="Ronan portrait" />
+      </div>
+
+      <div class="about-text-wrapper">
+        <p class="eyebrow">ABOUT</p>
+        <h2>SUPERCHARGING GROWTH ENGINES SINCE 2015</h2>
+        <p class="lead-paragraph">
+          Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped
+          15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+        </p>
+        <div class="about-button-group">
+          <a href="#" class="btn btn-dark-outline">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES (text-only items now) -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="services-header">
+        <p class="eyebrow">SERVICES</p>
+        <h2>HOW CAN I HELP</h2>
+      </div>
+
+      <div class="service-item">
+        <div class="service-text">
+          <h3 class="service-title-italic">Marketing Audit</h3>
+          <p class="service-paragraph">
+            Crafting distinct brand identities and ensuring consistency across all channels.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            A detailed analysis of your current marketing efforts, competitor analysis, and a roadmap for improvement.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="service-text">
+          <h3 class="service-title-italic">AI &amp; Automation</h3>
+          <p class="service-paragraph">
+            Implementing AI-driven workflows, automation, and CRM integrations to boost efficiency.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Workflow automation, CRM setup and integration, and implementation of AI customer service agents.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section id="offer" class="section">
+    <div class="offer-ellipse" aria-hidden="true"></div>
+    <div class="container offer-container">
+      <div class="offer-intro">
+        <p class="offer-tagline">ART OF VISUAL ALCHEMY</p>
+        <h2 class="offer-headline">MY OFFER</h2>
+        <a href="#" class="btn btn-dark-outline">SEE ALL</a>
+      </div>
+
+      <div class="offer-list">
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">Tailored Services</h3>
+            <p class="offer-item-description">
+              Crafting unique brand identities that transcend, ensuring your brand captivates and stands out in the digital landscape.
+            </p>
+          </div>
+        </div>
+
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">End-to-End Support</h3>
+            <p class="offer-item-description">
+              Elevating designs with a keen eye, seamlessly transitioning between print and digital for a visually cohesive experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <div class="contact-text">
+        <h2 class="contact-headline">Ready to supercharge your growth?</h2>
+        <p class="contact-paragraph">
+          Implement best practices and grow your business. Reach out to me now and let's see how I can help you.
+        </p>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Location</p>
+          <p class="contact-info-text">Remote (GMT +1)</p>
+        </div>
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Phone</p>
+          <p class="contact-info-text">+31 6 1569 5130</p>
+        </div>
+        <a href="mailto:ronan@example.com" class="btn btn-contact-outline">GET IN TOUCH</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <p>© Ronan Liedmeier · RLGrowth</p>
+      <p>Privacy Policy · Cookie Policy</p>
+    </div>
+  </footer>
+
+</body>
+</html>

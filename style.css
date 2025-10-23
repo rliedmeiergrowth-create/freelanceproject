@@ -1,400 +1,187 @@
-/* ===== Base ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #0e0e0e;
-  --card: #161616;
-  --line: #222;
-  --dim: #d7d7d7;
-  --white: #fff;
-  --container-w: min(1100px, 92vw);
-}
-html, body { height: 100%; }
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-.container { width: var(--container-w); margin: 0 auto; }
-a { color: var(--white); text-decoration: none; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <title>Ronan – Marketing Professional</title>
+  <meta
+    name="description"
+    content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
 
-/* Gradient headings */
-h1, h2, h3 {
-  background: linear-gradient(90deg, #ffb347, #ff6f61, #c850c0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
+  <!-- Montserrat (your current font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+    rel="stylesheet" />
 
-/* Eyebrow (overline) + lead */
-.eyebrow{
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  font-weight: 600;
-  font-size: .8rem;
-  opacity: .85;
-  margin-bottom: .6rem;
-}
-.lead-paragraph { color: var(--dim); max-width: 850px; }
+  <link rel="stylesheet" href="style.css?v=50" />
+</head>
+<body>
 
-/* Buttons */
-.buttons { display: flex; gap: 1rem; margin-top: 1.25rem; flex-wrap: wrap; }
-.btn {
-  padding: .85rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  border: 2px solid #fff;
-  transition: .25s ease;
-  display: inline-block;
-}
-.btn-outline { background: transparent; color: #fff; }
-.btn-outline:hover { background: #fff; color: #111; }
-.btn-fill { background: #fff; color: #111; }
-.btn-fill:hover { background: transparent; color: #fff; }
-.btn-dark-outline {
-  border-color: #3a3a3a; color: #fff;
-  background: transparent;
-}
-.btn-dark-outline:hover { background: #fff; color: #111; }
-.btn-contact-outline {
-  background: transparent; color: #fff;
-  border: 2px solid #fff; padding: .85rem 1.5rem; border-radius: 999px; text-align: center;
-}
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <h1>
+        A SEASONED MARKETING <br />
+        PROFESSIONAL WITH 10+ YEARS <br />
+        OF EXPERIENCE
+      </h1>
 
-/* ===== Hero (anchored to container) ===== */
-.hero {
-  position: relative;
-  min-height: 92vh;
-  display: grid;
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-  background: #0f0f0f;
-}
-.hero-inner { position: relative; z-index: 3; }
-.hero h1 {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: .01em;
-  line-height: 1.08;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-}
+      <nav class="buttons">
+        <a href="#services" class="btn btn-outline">MY SERVICES</a>
+        <a href="#contact" class="btn btn-fill">LET'S TALK</a>
+      </nav>
+    </div>
 
-/* Hero decorations aligned to same left/right as .container */
-.hero-ellipse{
-  position: absolute;
-  left: clamp(-40px, calc((100vw - var(--container-w))/2 - 24px), 40px);
-  top: -96px;
-  width: clamp(180px, 18vw, 300px);
-  opacity: .55;
-  filter: blur(12px) saturate(120%);
-  mix-blend-mode: screen;
-  pointer-events: none;
-  z-index: 1; /* below text, above wave */
-}
-.hero-image{
-  position: absolute;
-  right: clamp(12px, calc((100vw - var(--container-w))/2 - 8px), 120px);
-  bottom: clamp(56px, 15vh, 200px);
-  width: clamp(360px, 30vw, 460px);
-  max-width: 46vw;
-  opacity: .9;
-  pointer-events: none;
-  z-index: 2;
-}
-.hero-wave{
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  transform: translateX(-50%);
-  width: clamp(1280px, 120vw, 1920px);
-  max-width: none;
-  pointer-events: none;
-  z-index: 0;
-}
-@media (max-width: 900px){
-  .hero-image{ display: none; }
-  .hero-ellipse{ left: -28px; top: -36px; width: 180px; opacity: .48; }
-}
+    <!-- hero decorations (NO portrait here) -->
+    <img class="hero-ellipse" src="assets/hero-ellipse.svg" alt="" aria-hidden="true" />
+    <img class="hero-wave"   src="assets/hero-wave.svg"    alt="" aria-hidden="true" />
+  </header>
 
-/* ===== Companies marquee ===== */
-.companies {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: #141414;
-}
-.marquee {
-  overflow: hidden;
-  position: relative;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-}
-.marquee-track {
-  display: inline-flex;
-  gap: 3rem;
-  padding: 16px 0;
-  animation: marquee 24s linear infinite;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  white-space: nowrap;
-}
-@keyframes marquee { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+  <!-- CLIENTS / MARQUEE -->
+  <section class="companies">
+    <div class="marquee" aria-label="Scrolling list of companies">
+      <div class="marquee-track">
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+      </div>
+    </div>
+  </section>
 
-/* ===== About ===== */
-.section { padding: 100px 0; }
-.about-container {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  align-items: center;
-  gap: 3rem;
-}
-.about-image-wrapper { position: relative; min-height: 320px; }
-.about-image-glow {
-  position: absolute; inset: 0;
-  background: radial-gradient(40% 40% at 30% 30%, rgba(200,80,192,.35), transparent 60%),
-              radial-gradient(35% 35% at 70% 60%, rgba(255,111,97,.25), transparent 70%);
-  filter: blur(12px);
-}
-.about-image {
-  position: relative; z-index: 1;
-  height: 100%; min-height: 320px; border-radius: 16px;
-  background: #1a1a1a url("assets/hero-illustration.svg") center/contain no-repeat;
-  border: 1px solid var(--line);
-}
-.about-button-group { margin-top: 1rem; }
-.lead-paragraph { margin-top: .6rem; }
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container about-container">
+      <div class="about-image-wrapper">
+        <!-- new backdrop using the former services placeholder -->
+        <div class="about-backdrop" aria-hidden="true"></div>
+        <!-- your photo (no card/box) -->
+        <img class="about-photo" src="assets/hero-illustration.svg" alt="Ronan portrait" />
+      </div>
 
-/* ===== Services ===== */
-.services-header { margin-bottom: 1.25rem; }
-#services h2 { text-transform: uppercase; }
+      <div class="about-text-wrapper">
+        <p class="eyebrow">ABOUT</p>
+        <h2>SUPERCHARGING GROWTH ENGINES SINCE 2015</h2>
+        <p class="lead-paragraph">
+          Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped
+          15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+        </p>
+        <div class="about-button-group">
+          <a href="#" class="btn btn-dark-outline">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.service-item {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  padding: 20px 0;
-  border-top: 1px solid var(--line);
-}
-.service-item:last-of-type { border-bottom: 1px solid var(--line); }
-.service-item.reverse { grid-template-columns: 1fr 1.25fr; }
+  <!-- SERVICES (images removed) -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="services-header">
+        <p class="eyebrow">SERVICES</p>
+        <h2>HOW CAN I HELP</h2>
+      </div>
 
-.service-image-large img,
-.service-image-small img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background: #121212;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-}
+      <!-- item 1 (text only) -->
+      <div class="service-item">
+        <div class="service-text">
+          <h3 class="service-title-italic">Marketing Audit</h3>
+          <p class="service-paragraph">
+            Crafting distinct brand identities and ensuring consistency across all channels.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            A detailed analysis of your current marketing efforts, competitor analysis, and a roadmap for improvement.
+          </p>
+        </div>
+      </div>
 
-.service-title-italic { font-style: italic; font-weight: 700; font-size: 1.25rem; margin-bottom: .35rem; }
-.service-paragraph { color: var(--dim); margin-bottom: .5rem; }
-.service-subtitle { font-weight: 700; margin: .35rem 0; }
-.service-paragraph-small { color: var(--dim); font-size: .95rem; }
+      <!-- item 2 (text only) -->
+      <div class="service-item">
+        <div class="service-text">
+          <h3 class="service-title-italic">AI &amp; Automation</h3>
+          <p class="service-paragraph">
+            Implementing AI-driven workflows, automation, and CRM integrations to boost efficiency.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Workflow automation, CRM setup and integration, and implementation of AI customer service agents.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-@media (max-width: 950px){
-  .service-item,
-  .service-item.reverse { grid-template-columns: 1fr; }
-}
+  <!-- OFFER -->
+  <section id="offer" class="section">
+    <div class="offer-ellipse" aria-hidden="true"></div>
+    <div class="container offer-container">
+      <div class="offer-intro">
+        <p class="offer-tagline">ART OF VISUAL ALCHEMY</p>
+        <h2 class="offer-headline">MY OFFER</h2>
+        <a href="#" class="btn btn-dark-outline">SEE ALL</a>
+      </div>
 
-/* ===== Offer ===== */
-#offer { position: relative; overflow: hidden; }
-.offer-ellipse{
-  position: absolute; inset: -20% -10% auto -10%;
-  background: radial-gradient(50% 50% at 30% 40%, rgba(200,80,192,.25), transparent 60%),
-              radial-gradient(40% 40% at 70% 60%, rgba(255,111,97,.18), transparent 70%);
-  filter: blur(18px);
-  z-index: 0;
-  height: 60vh;
-}
-.offer-container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1.4fr; gap: 2.2rem; align-items: start; }
-.offer-intro { display: grid; align-content: start; gap: .85rem; }
-.offer-tagline { text-transform: uppercase; letter-spacing: .18em; opacity: .85; font-size: .8rem; }
-.offer-headline { text-transform: uppercase; }
-.offer-list { display: grid; gap: 1rem; }
-.offer-item { display: flex; gap: 1rem; align-items: flex-start; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
-.offer-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: #0f0f0f; border: 1px solid var(--line); }
-.offer-item-title { font-weight: 700; margin-bottom: .25rem; }
-.offer-item-description { color: var(--dim); }
+      <div class="offer-list">
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">Tailored Services</h3>
+            <p class="offer-item-description">
+              Crafting unique brand identities that transcend, ensuring your brand captivates and stands out in the digital landscape.
+            </p>
+          </div>
+        </div>
 
-@media (max-width: 980px){
-  .offer-container { grid-template-columns: 1fr; }
-}
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">End-to-End Support</h3>
+            <p class="offer-item-description">
+              Elevating designs with a keen eye, seamlessly transitioning between print and digital for a visually cohesive experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ===== Contact ===== */
-.contact-container{
-  display: grid; grid-template-columns: 1.3fr .9fr; gap: 2.2rem; align-items: center;
-}
-.contact-headline { text-transform: uppercase; }
-.contact-paragraph { color: var(--dim); margin-top: .6rem; }
-.contact-details { display: grid; gap: 1rem; }
-.contact-info-group { display: grid; gap: .15rem; }
-.contact-bold-text { font-weight: 700; }
-.contact-info-text { color: var(--dim); }
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <div class="contact-text">
+        <h2 class="contact-headline">Ready to supercharge your growth?</h2>
+        <p class="contact-paragraph">
+          Implement best practices and grow your business. Reach out to me now and let's see how I can help you.
+        </p>
+      </div>
 
-@media (max-width: 900px){
-  .about-container { grid-template-columns: 1fr; }
-  .contact-container { grid-template-columns: 1fr; }
-}
+      <div class="contact-details">
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Location</p>
+          <p class="contact-info-text">Remote (GMT +1)</p>
+        </div>
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Phone</p>
+          <p class="contact-info-text">+31 6 1569 5130</p>
+        </div>
+        <a href="mailto:ronan@example.com" class="btn btn-contact-outline">GET IN TOUCH</a>
+      </div>
+    </div>
+  </section>
 
-/* ===== Footer ===== */
-footer { border-top: 1px solid var(--line); background: #121212; color: #aaa; }
-.footer-container { padding: 22px 0; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: space-between; }
-@media (max-width: 640px){ .footer-container { flex-direction: column; gap: .25rem; } }
-/* =========================
-   DESIGN LOCK (drop-in fix)
-   ========================= */
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <p>© Ronan Liedmeier · RLGrowth</p>
+      <p>Privacy Policy · Cookie Policy</p>
+    </div>
+  </footer>
 
-/* Make sure we're all using the same container width reference */
-:root { --container-w: min(1100px, 92vw); }
-
-/* HERO — anchor decorations to the container edge and tighten the header */
-.hero { position: relative; overflow: hidden; min-height: 92vh; }
-.hero-inner { position: relative; z-index: 3; padding: 4vh 0 12vh; }
-.hero h1 {
-  text-transform: uppercase;
-  font-weight: 700;           /* Montserrat: strong but not too heavy */
-  letter-spacing: .01em;
-  line-height: 1.08;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  max-width: 20ch;            /* prevents super-wide lines */
-}
-
-/* If your ellipse/illustration are included, lock them to container edges */
-.hero-ellipse{
-  position:absolute;
-  /* snap to the container’s left edge regardless of viewport width */
-  left: clamp(-40px, calc((100vw - var(--container-w))/2 - 24px), 40px);
-  top: -96px;
-  width: clamp(180px, 18vw, 300px);
-  opacity:.55; filter: blur(12px) saturate(120%); mix-blend-mode: screen;
-  pointer-events:none; z-index:1;
-}
-.hero-image{
-  position:absolute;
-  /* snap to the container’s right edge */
-  right: clamp(12px, calc((100vw - var(--container-w))/2 - 8px), 120px);
-  bottom: clamp(56px, 15vh, 200px);
-  width: clamp(360px, 30vw, 460px); max-width: 46vw;
-  opacity:.9; pointer-events:none; z-index:2;
-}
-
-/* Bottom wave — perfectly centered, a bit wider than viewport */
-.hero-wave{
-  position:absolute; left:50%; bottom:-2px; transform:translateX(-50%);
-  width: clamp(1280px, 120vw, 1920px); max-width:none; pointer-events:none; z-index:0;
-}
-
-/* MARQUEE — give breathing room and edge fade to match design */
-.companies { border-top: 1px solid #222; border-bottom: 1px solid #222; background:#141414; }
-.marquee {
-  overflow:hidden; position:relative;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-}
-.marquee-track {
-  display:inline-flex; gap:3rem; padding:16px 0;
-  animation: marquee 24s linear infinite;
-  text-transform: uppercase; letter-spacing:.1em; white-space:nowrap;
-}
-@keyframes marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
-
-/* ABOUT — ensure the two-column balance and glow behave like the comp */
-.section { padding: 100px 0; }
-.about-container { display:grid; grid-template-columns: 1fr 1.1fr; align-items:center; gap:3rem; }
-@media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
-.about-image-wrapper { position:relative; min-height:320px; }
-.about-image-glow{
-  position:absolute; inset:0;
-  background: radial-gradient(40% 40% at 30% 30%, rgba(200,80,192,.35), transparent 60%),
-              radial-gradient(35% 35% at 70% 60%, rgba(255,111,97,.25), transparent 70%);
-  filter: blur(12px);
-}
-.about-image{
-  position:relative; z-index:1;
-  height:100%; min-height:320px; border-radius:16px;
-  background:#1a1a1a url("assets/hero-illustration.svg") center/contain no-repeat;
-  border:1px solid #222;
-}
-
-/* SERVICES — keep the alternating rows tidy on desktop and stack on mobile */
-.service-item{
-  display:grid; grid-template-columns: 1.25fr 1fr; gap:2rem; align-items:center;
-  padding:20px 0; border-top:1px solid #222;
-}
-.service-item:last-of-type{ border-bottom:1px solid #222; }
-.service-item.reverse{ grid-template-columns: 1fr 1.25fr; }
-@media (max-width: 950px){
-  .service-item, .service-item.reverse{ grid-template-columns: 1fr; }
-}
-
-/* OFFER — subtle background glow */
-#offer { position:relative; overflow:hidden; }
-.offer-ellipse{
-  position:absolute; inset:-20% -10% auto -10%;
-  background: radial-gradient(50% 50% at 30% 40%, rgba(200,80,192,.25), transparent 60%),
-              radial-gradient(40% 40% at 70% 60%, rgba(255,111,97,.18), transparent 70%);
-  filter: blur(18px); z-index:0; height:60vh;
-}
-.offer-container{ position:relative; z-index:1; display:grid; grid-template-columns:1fr 1.4fr; gap:2.2rem; align-items:start; }
-@media (max-width:980px){ .offer-container{ grid-template-columns:1fr; } }
-
-/* CONTACT — two columns on desktop */
-.contact-container{ display:grid; grid-template-columns:1.3fr .9fr; gap:2.2rem; align-items:center; }
-@media (max-width:900px){ .contact-container{ grid-template-columns:1fr; } }
-
-/* MOBILE: keep hero clean */
-@media (max-width: 900px){
-  .hero-image{ display:none; }
-  .hero-ellipse{ left:-28px; top:-36px; width:180px; opacity:.48; }
-}
-
-/* ======= HERO DESIGN LOCK (container-anchored) ======= */
-:root { --container-w: min(1100px, 92vw); }
-
-.hero { position: relative; overflow: hidden; min-height: 92vh; }
-.hero-inner { position: relative; z-index: 3; padding: 4vh 0 12vh; }
-.hero h1 {
-  text-transform: uppercase;
-  font-weight: 700;           /* Montserrat */
-  letter-spacing: .01em;
-  line-height: 1.08;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  max-width: 20ch;
-}
-
-/* bottom wave — centered and wide */
-.hero-wave{
-  position:absolute; left:50%; bottom:-2px; transform:translateX(-50%);
-  width: clamp(1280px, 120vw, 1920px); max-width:none; z-index:0; pointer-events:none;
-}
-
-/* top-left ellipse glow — snap to container left */
-.hero-ellipse{
-  position:absolute;
-  left: clamp(-40px, calc((100vw - var(--container-w))/2 - 24px), 40px);
-  top: -96px;
-  width: clamp(180px, 18vw, 300px);
-  opacity:.55; filter: blur(12px) saturate(120%); mix-blend-mode: screen;
-  pointer-events:none; z-index:1; /* below text, above wave */
-}
-
-/* right illustration — snap to container right */
-.hero-image{
-  position:absolute;
-  right: clamp(12px, calc((100vw - var(--container-w))/2 - 8px), 120px);
-  bottom: clamp(56px, 15vh, 200px);
-  width: clamp(360px, 30vw, 460px); max-width: 46vw;
-  opacity:.9; pointer-events:none; z-index:2;
-}
-
-/* mobile cleanup */
-@media (max-width: 900px){
-  .hero-image{ display:none; }
-  .hero-ellipse{ left:-28px; top:-36px; width:180px; opacity:.48; }
-}
-
+</body>
+</html>

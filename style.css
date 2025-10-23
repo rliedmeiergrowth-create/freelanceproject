@@ -245,3 +245,110 @@ h1, h2, h3 {
 footer { border-top: 1px solid var(--line); background: #121212; color: #aaa; }
 .footer-container { padding: 22px 0; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: space-between; }
 @media (max-width: 640px){ .footer-container { flex-direction: column; gap: .25rem; } }
+/* =========================
+   DESIGN LOCK (drop-in fix)
+   ========================= */
+
+/* Make sure we're all using the same container width reference */
+:root { --container-w: min(1100px, 92vw); }
+
+/* HERO — anchor decorations to the container edge and tighten the header */
+.hero { position: relative; overflow: hidden; min-height: 92vh; }
+.hero-inner { position: relative; z-index: 3; padding: 4vh 0 12vh; }
+.hero h1 {
+  text-transform: uppercase;
+  font-weight: 700;           /* Montserrat: strong but not too heavy */
+  letter-spacing: .01em;
+  line-height: 1.08;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  max-width: 20ch;            /* prevents super-wide lines */
+}
+
+/* If your ellipse/illustration are included, lock them to container edges */
+.hero-ellipse{
+  position:absolute;
+  /* snap to the container’s left edge regardless of viewport width */
+  left: clamp(-40px, calc((100vw - var(--container-w))/2 - 24px), 40px);
+  top: -96px;
+  width: clamp(180px, 18vw, 300px);
+  opacity:.55; filter: blur(12px) saturate(120%); mix-blend-mode: screen;
+  pointer-events:none; z-index:1;
+}
+.hero-image{
+  position:absolute;
+  /* snap to the container’s right edge */
+  right: clamp(12px, calc((100vw - var(--container-w))/2 - 8px), 120px);
+  bottom: clamp(56px, 15vh, 200px);
+  width: clamp(360px, 30vw, 460px); max-width: 46vw;
+  opacity:.9; pointer-events:none; z-index:2;
+}
+
+/* Bottom wave — perfectly centered, a bit wider than viewport */
+.hero-wave{
+  position:absolute; left:50%; bottom:-2px; transform:translateX(-50%);
+  width: clamp(1280px, 120vw, 1920px); max-width:none; pointer-events:none; z-index:0;
+}
+
+/* MARQUEE — give breathing room and edge fade to match design */
+.companies { border-top: 1px solid #222; border-bottom: 1px solid #222; background:#141414; }
+.marquee {
+  overflow:hidden; position:relative;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+.marquee-track {
+  display:inline-flex; gap:3rem; padding:16px 0;
+  animation: marquee 24s linear infinite;
+  text-transform: uppercase; letter-spacing:.1em; white-space:nowrap;
+}
+@keyframes marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ABOUT — ensure the two-column balance and glow behave like the comp */
+.section { padding: 100px 0; }
+.about-container { display:grid; grid-template-columns: 1fr 1.1fr; align-items:center; gap:3rem; }
+@media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
+.about-image-wrapper { position:relative; min-height:320px; }
+.about-image-glow{
+  position:absolute; inset:0;
+  background: radial-gradient(40% 40% at 30% 30%, rgba(200,80,192,.35), transparent 60%),
+              radial-gradient(35% 35% at 70% 60%, rgba(255,111,97,.25), transparent 70%);
+  filter: blur(12px);
+}
+.about-image{
+  position:relative; z-index:1;
+  height:100%; min-height:320px; border-radius:16px;
+  background:#1a1a1a url("assets/hero-illustration.svg") center/contain no-repeat;
+  border:1px solid #222;
+}
+
+/* SERVICES — keep the alternating rows tidy on desktop and stack on mobile */
+.service-item{
+  display:grid; grid-template-columns: 1.25fr 1fr; gap:2rem; align-items:center;
+  padding:20px 0; border-top:1px solid #222;
+}
+.service-item:last-of-type{ border-bottom:1px solid #222; }
+.service-item.reverse{ grid-template-columns: 1fr 1.25fr; }
+@media (max-width: 950px){
+  .service-item, .service-item.reverse{ grid-template-columns: 1fr; }
+}
+
+/* OFFER — subtle background glow */
+#offer { position:relative; overflow:hidden; }
+.offer-ellipse{
+  position:absolute; inset:-20% -10% auto -10%;
+  background: radial-gradient(50% 50% at 30% 40%, rgba(200,80,192,.25), transparent 60%),
+              radial-gradient(40% 40% at 70% 60%, rgba(255,111,97,.18), transparent 70%);
+  filter: blur(18px); z-index:0; height:60vh;
+}
+.offer-container{ position:relative; z-index:1; display:grid; grid-template-columns:1fr 1.4fr; gap:2.2rem; align-items:start; }
+@media (max-width:980px){ .offer-container{ grid-template-columns:1fr; } }
+
+/* CONTACT — two columns on desktop */
+.contact-container{ display:grid; grid-template-columns:1.3fr .9fr; gap:2.2rem; align-items:center; }
+@media (max-width:900px){ .contact-container{ grid-template-columns:1fr; } }
+
+/* MOBILE: keep hero clean */
+@media (max-width: 900px){
+  .hero-image{ display:none; }
+  .hero-ellipse{ left:-28px; top:-36px; width:180px; opacity:.48; }
+}

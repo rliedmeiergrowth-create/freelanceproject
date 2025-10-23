@@ -11,11 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=62" />
+  <!-- cache-bust -->
+  <link rel="stylesheet" href="style.css?v=74" />
 </head>
 <body>
 
-  <!-- HERO (wave removed) -->
+  <!-- HERO (ellipse removed entirely, no wave) -->
   <header class="hero">
     <div class="container hero-inner">
       <h1>
@@ -29,9 +30,6 @@
         <a href="#contact" class="btn btn-fill">LET'S TALK</a>
       </nav>
     </div>
-
-    <!-- keep only the ellipse in hero -->
-    <img class="hero-ellipse" src="assets/hero-ellipse.svg" alt="" aria-hidden="true" />
   </header>
 
   <!-- CLIENTS / MARQUEE -->
@@ -44,13 +42,11 @@
     </div>
   </section>
 
-  <!-- ABOUT (wave moved here + photo at 75%) -->
+  <!-- ABOUT (gradient begins at the very top of this section) -->
   <section id="about" class="section">
-    <!-- about wave sits behind the whole section -->
-    <img class="about-wave" src="assets/hero-wave.svg" alt="" aria-hidden="true" />
     <div class="container about-container">
       <div class="about-image-wrapper">
-        <!-- backdrop stays behind the photo -->
+        <!-- soft backdrop behind the portrait (not a shadow) -->
         <div class="about-backdrop" aria-hidden="true"></div>
         <img class="about-photo" src="assets/hero-illustration.svg" alt="Ronan portrait" />
       </div>

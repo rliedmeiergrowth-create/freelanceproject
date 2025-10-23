@@ -158,3 +158,5 @@ h1, h2, h3 {
 #offer { position:relative; overflow:hidden; }
 .offer-ellipse{
   position:absolute; inset:-20% -10% auto -1
+  .offer-list { display: grid; gap: 1rem; }  /* single column, like before */
+

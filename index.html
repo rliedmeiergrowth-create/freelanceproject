@@ -1,189 +1,265 @@
-/* ===== Base ===== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg: #0e0e0e;
-  --card: #161616;
-  --line: #222;
-  --dim: #d7d7d7;
-  --white: #fff;
-  --container-w: min(1100px, 92vw);
-}
-html, body { height: 100%; }
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-.container { width: var(--container-w); margin: 0 auto; }
-a { color: var(--white); text-decoration: none; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronan – Marketing Professional</title>
+  <meta name="description" content="Ronan — seasoned marketing professional with 10+ years of experience driving growth for B2B & B2C brands." />
 
-/* Gradient headings */
-h1, h2, h3 {
-  background: linear-gradient(90deg, #ffb347, #ff6f61, #c850c0);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
+  <!-- Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
 
-/* Eyebrow + lead */
-.eyebrow{
-  text-transform: uppercase; letter-spacing:.18em; font-weight:600;
-  font-size:.8rem; opacity:.85; margin-bottom:.6rem;
-}
-.lead-paragraph { color: var(--dim); max-width: 850px; }
+  <!-- cache-bust -->
+  <link rel="stylesheet" href="style.css?v=78" />
+</head>
+<body>
 
-/* Buttons */
-.buttons { display:flex; gap:1rem; margin-top:1.25rem; flex-wrap:wrap; }
-.btn {
-  padding:.85rem 1.5rem; border-radius:999px; font-weight:600;
-  border:2px solid #fff; transition:.25s ease; display:inline-block;
-}
-.btn-outline { background:transparent; color:#fff; }
-.btn-outline:hover { background:#fff; color:#111; }
-.btn-fill { background:#fff; color:#111; }
-.btn-fill:hover { background:transparent; color:#fff; }
-.btn-dark-outline { border-color:#3a3a3a; color:#fff; background:transparent; }
-.btn-dark-outline:hover { background:#fff; color:#111; }
-.btn-contact-outline { background:transparent; color:#fff; border:2px solid #fff; padding:.85rem 1.5rem; border-radius:999px; text-align:center; }
+  <!-- HERO (clean: no ellipse, no wave) -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <h1>
+        A SEASONED MARKETING <br />
+        PROFESSIONAL WITH 10+ YEARS <br />
+        OF EXPERIENCE
+      </h1>
 
-/* ===== Sections ===== */
-.section { padding: 100px 0; }
+      <nav class="buttons">
+        <a href="#services" class="btn btn-outline">MY SERVICES</a>
+        <a href="#contact" class="btn btn-fill">LET'S TALK</a>
+      </nav>
+    </div>
+  </header>
 
-/* ===== Hero (clean) ===== */
-.hero {
-  position: relative; min-height: 64vh;
-  display: grid; align-items: center;
-  border-bottom: 1px solid var(--line);
-  overflow: hidden; background: #0f0f0f;
-}
-.hero-inner { position: relative; z-index: 1; padding: 6vh 0 10vh; }
-.hero h1 {
-  text-transform: uppercase; font-weight: 700; letter-spacing: .01em;
-  line-height: 1.08; font-size: clamp(2rem, 5vw, 3.8rem); max-width: 20ch;
-}
+  <!-- CLIENTS / MARQUEE -->
+  <section class="companies">
+    <div class="marquee" aria-label="Scrolling list of companies">
+      <div class="marquee-track">
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+        <span>HOMEFANS.COM</span><span>GREYT.NL</span><span>BCS-HR.COM</span><span>SIGNPATH.IO</span><span>WEANOORDHOLLAND.NL</span><span>KENJO.IO</span><span>VOLSTORA.COM</span>
+      </div>
+    </div>
+  </section>
 
-/* ===== Companies marquee ===== */
-.companies { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#141414; }
-.marquee {
-  overflow:hidden; position:relative;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-          mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
-}
-.marquee-track {
-  display:inline-flex; gap:3rem; padding:16px 0;
-  animation: marquee 24s linear infinite;
-  text-transform: uppercase; letter-spacing:.1em; white-space:nowrap;
-}
-@keyframes marquee { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+  <!-- ABOUT (gradient starts at top of this section; photo only) -->
+  <section id="about" class="section">
+    <div class="container about-container">
+      <div class="about-image-wrapper">
+        <img class="about-photo" src="assets/hero-illustration.svg" alt="Ronan portrait" />
+      </div>
 
-/* ===== About (gradient starts at top of section) ===== */
-#about { position: relative; overflow: visible; }
+      <div class="about-text-wrapper">
+        <p class="eyebrow">ABOUT</p>
+        <h2>SUPERCHARGING GROWTH ENGINES SINCE 2015</h2>
+        <p class="lead-paragraph">
+          Since starting my own company in 2015 that took me through the depths of Silicon Valley, I’ve helped
+          15+ companies in B2B &amp; B2C ($500k – $100M ARR) supercharge their growth engines.
+        </p>
+        <div class="about-button-group">
+          <a href="#" class="btn btn-dark-outline">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Gradient begins at the very TOP of #about */
-#about::before{
-  content:"";
-  position: absolute;
-  top: 0; left: 50%; transform: translateX(-50%);
-  width: clamp(1280px, 120vw, 1920px);
-  height: 520px;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(120% 100% at 50% 0%,
-      rgba(255,111,97,0.28) 0%,
-      rgba(200,80,192,0.22) 38%,
-      rgba(20,20,20,0) 70%);
-}
+  <!-- SERVICES (image + text for each service) -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="services-header">
+        <p class="eyebrow">SERVICES</p>
+        <h2>HOW CAN I HELP</h2>
+      </div>
 
-.about-container {
-  position: relative; z-index: 1;  /* above the gradient */
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  align-items: center;
-  gap: 3rem;
-}
-@media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
+      <!-- 1) Marketing Audit -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="Marketing Audit" />
+        </div>
+        <div class="service-text">
+          <h3 class="service-title-italic">Marketing Audit</h3>
+          <p class="service-paragraph">
+            Holistic review of your brand, funnel, campaigns, and analytics to pinpoint what’s working and what’s wasting spend.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Channel &amp; funnel analysis, messaging review, tracking/attribution checks, growth levers, and an actionable 90-day plan.
+          </p>
+        </div>
+      </div>
 
-/* image area */
-.about-image-wrapper {
-  position: relative; min-height: 360px; display: grid; place-items: center;
-}
+      <!-- 2) AI & Automation (reverse) -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <h3 class="service-title-italic">AI &amp; Automation</h3>
+          <p class="service-paragraph">
+            Implement AI agents and automated workflows that remove repetitive tasks, accelerate ops, and improve CX.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Journey mapping, tool selection, workflow build-out, CRM/CS integration, QA, and team enablement.
+          </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="AI & Automation" />
+        </div>
+      </div>
 
-/* Portrait at 75% width, no shadow */
-.about-photo{
-  position:relative; z-index:2; display:block;
-  width:75%; height:auto;
-  border-radius:16px; box-shadow:none;
-}
+      <!-- 3) Go-to-Market Strategy -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="Go-to-Market Strategy" />
+        </div>
+        <div class="service-text">
+          <h3 class="service-title-italic">Go-to-Market Strategy</h3>
+          <p class="service-paragraph">
+            A focused plan to introduce or expand your product—who to target, what to say, where to show up, and how to win.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            ICP &amp; segmentation, positioning &amp; messaging, channel mix, pricing/packaging guidance, launch calendar, and success metrics.
+          </p>
+        </div>
+      </div>
 
-/* Button spacing tweak (a few px more) */
-.about-button-group { margin-top: 18px; }
+      <!-- 4) Marketing Strategy (reverse) -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <h3 class="service-title-italic">Marketing Strategy</h3>
+          <p class="service-paragraph">
+            A data-driven roadmap that aligns brand, content, and demand gen with revenue goals—built to scale as you grow.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Annual/quarterly plans, content pillars, campaign themes, budget allocation, KPI framework, and reporting cadence.
+          </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="Marketing Strategy" />
+        </div>
+      </div>
 
-/* ===== Services (image + text) ===== */
-.services-header { margin-bottom: 1.25rem; }
-#services h2 { text-transform: uppercase; }
+      <!-- 5) CRM Implementation -->
+      <div class="service-item">
+        <div class="service-image service-image-large">
+          <img src="assets/services-placeholder.svg" alt="CRM Implementation" />
+        </div>
+        <div class="service-text">
+          <h3 class="service-title-italic">CRM Implementation</h3>
+          <p class="service-paragraph">
+            Architect and deploy a CRM that supports your full revenue funnel—clean data, clear stages, and reliable reporting.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Tool selection (e.g., HubSpot/Salesforce), data model &amp; pipelines, integrations, automations, playbooks, and team training.
+          </p>
+        </div>
+      </div>
 
-.service-item{
-  display:grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap:2rem;
-  align-items:center;
-  padding:20px 0;
-  border-top:1px solid var(--line);
-}
-.service-item:last-of-type{ border-bottom:1px solid var(--line); }
-.service-item.reverse{ grid-template-columns: 1fr 1.25fr; }
+      <!-- 6) PPC Campaigns (reverse) -->
+      <div class="service-item reverse">
+        <div class="service-text">
+          <h3 class="service-title-italic">PPC Campaigns</h3>
+          <p class="service-paragraph">
+            Full-funnel paid search &amp; social management optimized for CAC/LTV—creative, targeting, and bidding tuned to outcomes.
+          </p>
+          <h4 class="service-subtitle">What's Included?</h4>
+          <p class="service-paragraph-small">
+            Account structure, keyword/audience research, creative variants, conversion tracking, bid strategies, and ongoing optimization.
+          </p>
+        </div>
+        <div class="service-image service-image-small">
+          <img src="assets/services-placeholder.svg" alt="PPC Campaigns" />
+        </div>
+      </div>
 
-.service-image img{
-  width:100%; height:auto; display:block;
-  background:#121212;
-  border:1px solid var(--line);
-  border-radius:14px;
-}
-.service-image-large img { aspect-ratio: 4 / 3; object-fit: cover; }
-.service-image-small img { aspect-ratio: 1 / 1; object-fit: cover; }
+    </div>
+  </section>
 
-.service-title-italic { font-style: italic; font-weight:700; font-size:1.25rem; margin-bottom:.35rem; }
-.service-paragraph { color: var(--dim); margin-bottom:.5rem; }
-.service-subtitle { font-weight:700; margin:.35rem 0; }
-.service-paragraph-small { color: var(--dim); font-size:.95rem; }
+  <!-- OFFER (updated: new tagline + 3 tiles) -->
+  <section id="offer" class="section">
+    <div class="offer-ellipse" aria-hidden="true"></div>
+    <div class="container offer-container">
+      <div class="offer-intro">
+        <p class="offer-tagline">Benefits of working with me</p>
+        <h2 class="offer-headline">MY OFFER</h2>
+        <a href="#" class="btn btn-dark-outline">SEE ALL</a>
+      </div>
 
-@media (max-width: 950px){
-  .service-item,
-  .service-item.reverse { grid-template-columns: 1fr; }
-}
+      <div class="offer-list">
+        <!-- Tile 1 -->
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">Tailored Services</h3>
+            <p class="offer-item-description">
+              No off-the-shelf playbooks. I build a plan around your stage, goals, and constraints—combining audit, GTM, CRM, PPC, and AI automation to move the revenue needle.
+            </p>
+          </div>
+        </div>
 
-/* ===== Offer ===== */
-#offer { position:relative; overflow:hidden; }
-.offer-ellipse{
-  position:absolute; inset:-20% -10% auto -10%;
-  background: radial-gradient(50% 50% at 30% 40%, rgba(200,80,192,.25), transparent 60%),
-              radial-gradient(40% 40% at 70% 60%, rgba(255,111,97,.18), transparent 70%);
-  filter: blur(18px); z-index:0; height:60vh;
-}
-.offer-container{ position:relative; z-index:1; display:grid; grid-template-columns:1fr 1.4fr; gap:2.2rem; align-items:start; }
-.offer-intro{ display:grid; align-content:start; gap:.85rem; }
-.offer-tagline{ text-transform:uppercase; letter-spacing:.18em; opacity:.85; font-size:.8rem; }
-.offer-headline{ text-transform:uppercase; }
-.offer-list{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.offer-item{ display:flex; gap:1rem; align-items:flex-start; padding:14px; border:1px solid var(--line); border-radius:14px; background:var(--card); }
-.offer-icon{ width:44px; height:44px; display:grid; place-items:center; border-radius:50%; background:#0f0f0f; border:1px solid var(--line); }
-.offer-item-title{ font-weight:700; margin-bottom:.25rem; }
-.offer-item-description{ color:var(--dim); }
-@media (max-width:980px){ .offer-container{ grid-template-columns:1fr; } }
+        <!-- Tile 2 -->
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">End-to-End Support</h3>
+            <p class="offer-item-description">
+              I don’t stop at the deck. I run the play with you—strategy, setup, execution, tracking, and enablement—so the plan ships and the numbers improve.
+            </p>
+          </div>
+        </div>
 
-/* ===== Contact ===== */
-.contact-container{ display:grid; grid-template-columns:1.3fr .9fr; gap:2.2rem; align-items:center; }
-@media (max-width:900px){ .contact-container{ grid-template-columns:1fr; } }
-.contact-headline{ text-transform:uppercase; }
-.contact-paragraph{ color:var(--dim); margin-top:.6rem; }
-.contact-details{ display:grid; gap:1rem; }
-.contact-info-group{ display:grid; gap:.15rem; }
-.contact-bold-text{ font-weight:700; }
-.contact-info-text{ color:var(--dim); }
+        <!-- Tile 3 -->
+        <div class="offer-item">
+          <div class="offer-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 0C16.2412 8.73471 23.2653 15.7588 32 16C23.2653 16.2412 16.2412 23.2653 16 32C15.7588 23.2653 8.73471 16.2412 0 16C8.73471 15.7588 15.7588 8.73471 16 0Z" fill="#171717"/></svg>
+          </div>
+          <div class="offer-item-text">
+            <h3 class="offer-item-title">Flexibility</h3>
+            <p class="offer-item-description">
+              Start small or scale as needed—fixed-scope audits or monthly retainers; fractional leadership or embedded partner; async/remote with clear weekly milestones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ===== Footer ===== */
-footer { border-top:1px solid var(--line); background:#121212; color:#aaa; }
-.footer-container { padding:22px 0; display:flex; flex-wrap:wrap; gap:.5rem; justify-content:space-between; }
-@media (max-width:640px){ .footer-container { flex-direction:column; gap:.25rem; } }
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <div class="contact-text">
+        <h2 class="contact-headline">Ready to supercharge your growth?</h2>
+        <p class="contact-paragraph">
+          Implement best practices and grow your business. Reach out to me now and let's see how I can help you.
+        </p>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Location</p>
+          <p class="contact-info-text">Remote (GMT +1)</p>
+        </div>
+        <div class="contact-info-group">
+          <p class="contact-bold-text">Phone</p>
+          <p class="contact-info-text">+31 6 1569 5130</p>
+        </div>
+        <a href="mailto:ronan@example.com" class="btn btn-contact-outline">GET IN TOUCH</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-container">
+      <p>© Ronan Liedmeier · RLGrowth</p>
+      <p>Privacy Policy · Cookie Policy</p>
+    </div>
+  </footer>
+
+</body>
+</html>

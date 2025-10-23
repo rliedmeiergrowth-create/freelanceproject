@@ -26,7 +26,7 @@ h1, h2, h3 {
   -webkit-text-fill-color: transparent; color: transparent;
 }
 
-/* Eyebrow (overline) + lead */
+/* Eyebrow + lead */
 .eyebrow{
   text-transform: uppercase; letter-spacing:.18em; font-weight:600;
   font-size:.8rem; opacity:.85; margin-bottom:.6rem;
@@ -50,23 +50,20 @@ h1, h2, h3 {
 /* ===== Sections ===== */
 .section { padding: 100px 0; }
 
-/* ===== Hero (portrait removed, wave lowered) ===== */
+/* ===== Hero (wave removed here) ===== */
 .hero {
-  position: relative;
-  min-height: 92vh;             /* tall enough, but allows scroll to others */
-  display: grid;
-  align-items: center;
+  position: relative; min-height: 72vh;  /* a bit shorter now that wave is gone */
+  display: grid; align-items: center;
   border-bottom: 1px solid var(--line);
-  overflow: hidden;              /* only clips decorations, not sections */
-  background: #0f0f0f;
+  overflow: hidden; background: #0f0f0f;
 }
-.hero-inner { position: relative; z-index: 3; padding: 6vh 0 14vh; }
+.hero-inner { position: relative; z-index: 3; padding: 6vh 0 10vh; }
 .hero h1 {
   text-transform: uppercase; font-weight: 700; letter-spacing: .01em;
   line-height: 1.08; font-size: clamp(2rem, 5vw, 3.8rem); max-width: 20ch;
 }
 
-/* Ellipse (keep) */
+/* keep the ellipse only in hero */
 .hero-ellipse{
   position:absolute;
   left: clamp(-40px, calc((100vw - var(--container-w))/2 - 24px), 40px);
@@ -75,15 +72,8 @@ h1, h2, h3 {
   opacity:.55; filter: blur(12px) saturate(120%); mix-blend-mode: screen;
   pointer-events:none; z-index:1;
 }
-
-/* Wave — shifted down for better text contrast */
-.hero-wave{
-  position:absolute; left:50%; bottom:-160px; transform:translateX(-50%);
-  width: clamp(1280px, 120vw, 1920px); max-width:none; z-index:0; pointer-events:none;
-}
 @media (max-width: 900px){
   .hero-ellipse{ left:-28px; top:-36px; width:180px; opacity:.48; }
-  .hero-wave{ bottom:-120px; }
 }
 
 /* ===== Companies marquee ===== */
@@ -100,20 +90,53 @@ h1, h2, h3 {
 }
 @keyframes marquee { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
-/* ===== About (no box; backdrop behind photo) ===== */
-.about-container { display:grid; grid-template-columns: 1fr 1.1fr; align-items:center; gap:3rem; }
+/* ===== About ===== */
+#about { position: relative; overflow: visible; }
+
+/* wave now lives in About (behind content) */
+.about-wave{
+  position: absolute;
+  left: 50%;
+  bottom: -120px;             /* tuck it slightly below for a nice fade */
+  transform: translateX(-50%);
+  width: clamp(1280px, 120vw, 1920px);
+  max-width: none;
+  opacity: 1;
+  z-index: 0;                 /* behind everything in About */
+  pointer-events: none;
+}
+
+.about-container {
+  position: relative; z-index: 1;            /* keep content above the wave */
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 3rem;
+}
 @media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
 
-.about-image-wrapper { position:relative; min-height: 380px; }
+/* image area: center content so scaling is easy */
+.about-image-wrapper {
+  position: relative; min-height: 360px; display: grid; place-items: center;
+}
+
+/* 75% sized portrait (was 100%) */
 .about-photo{
-  position:relative; z-index:2; display:block; width:100%; height:auto;
+  position:relative; z-index:2; display:block; width:75%; height:auto;
   border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
+
+/* backdrop sits behind the photo, sized to the same “block” */
 .about-backdrop{
-  position:absolute; inset:-18px -22px -22px -18px;
+  position:absolute;
+  width: 85%;
+  height: 85%;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
   background:#1a1a1a url("assets/services-placeholder.svg") center/cover no-repeat;
   border-radius:20px; filter: blur(1px) saturate(110%); opacity:.5; z-index:1;
 }
+
+.lead-paragraph { margin-top: .6rem; }
 
 /* ===== Services (text-only rows) ===== */
 .services-header { margin-bottom: 1.25rem; }

@@ -51,6 +51,8 @@ h1, h2, h3 {
 .btn-dark-outline { border-color:#3a3a3a; color:#fff; background:transparent; }
 .btn-dark-outline:hover { background:#fff; color:#111; }
 .btn-contact-outline { background:transparent; color:#fff; border:2px solid #fff; padding:.85rem 1.5rem; border-radius:999px; text-align:center; }
+
+/* LinkedIn button */
 .btn-linkedin{
   display:inline-flex; align-items:center; gap:.4rem;
   border-color:#0A66C2; color:#0A66C2; background:transparent;
@@ -118,8 +120,10 @@ h1, h2, h3 {
 }
 @media (max-width: 900px){ .about-container { grid-template-columns:1fr; } }
 .about-image-wrapper { position: relative; min-height: 360px; display: grid; place-items: center; }
-.about-photo{ position:relative; z-index:2; width:75%; height:auto; border-radius:16px; box-shadow:none; }
-.about-button-group { margin-top: 18px; }
+.about-photo{
+  position:relative; z-index:2; width:75%; height:auto; border-radius:16px; box-shadow:none;
+}
+.about-button-group { margin-top: 18px; display:flex; gap:.6rem; flex-wrap:wrap; }
 
 /* ===== Services ===== */
 .services-header { margin-bottom: 1.25rem; }
@@ -170,13 +174,21 @@ h1, h2, h3 {
   .service-collapse{ display: block !important; padding-left: 0; }
 }
 
-/* ===== Offer (two-column; diamond + divider) ===== */
+/* ===== Offer (two-column; diamond + divider; FULL-BLEED GRADIENT) ===== */
 #offer { position:relative; overflow:hidden; }
-.offer-ellipse{
-  position:absolute; inset:-20% -10% auto -10%;
-  background: radial-gradient(50% 50% at 30% 40%, rgba(200,80,192,.25), transparent 60%),
-              radial-gradient(40% 40% at 70% 60%, rgba(255,111,97,.18), transparent 70%);
-  filter: blur(18px); z-index:0; height:60vh;
+.offer-bleed{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;              /* full viewport width */
+  height: 320px;             /* height of the gradient band */
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 80% at 25% 20%, rgba(200,80,192,.28), transparent 70%),
+    radial-gradient(60% 80% at 75% 40%, rgba(255,111,97,.24), transparent 72%);
+  filter: blur(18px);
 }
 .offer-container{ position:relative; z-index:1; display:grid; grid-template-columns:1fr 1.4fr; gap:2.2rem; align-items:start; }
 .offer-intro{ display:grid; align-content:start; gap:.85rem; }

@@ -50,7 +50,7 @@ h1, h2, h3 {
 /* ===== Sections ===== */
 .section { padding: 100px 0; }
 
-/* ===== Hero (no ellipse, no wave) ===== */
+/* ===== Hero (clean) ===== */
 .hero {
   position: relative; min-height: 64vh;
   display: grid; align-items: center;
@@ -77,39 +77,27 @@ h1, h2, h3 {
 }
 @keyframes marquee { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
-/* ===== About (gradient starts RIGHT BELOW marquee) ===== */
+/* ===== About (gradient starts at top of section) ===== */
 #about { position: relative; overflow: visible; }
 
 /* Gradient begins at the very TOP of #about */
 #about::before{
   content:"";
   position: absolute;
-  top: 0;                      /* <-- starts directly below the company names section */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0; left: 50%; transform: translateX(-50%);
   width: clamp(1280px, 120vw, 1920px);
   height: 520px;
   pointer-events: none;
   z-index: 0;
-
-  /* CSS fallback gradient (no asset dependency) */
   background:
     radial-gradient(120% 100% at 50% 0%,
       rgba(255,111,97,0.28) 0%,
       rgba(200,80,192,0.22) 38%,
       rgba(20,20,20,0) 70%);
-  /* If you want to layer the SVG wave on top too, uncomment the next line:
-     background:
-       radial-gradient(120% 100% at 50% 0%,
-         rgba(255,111,97,0.28) 0%,
-         rgba(200,80,192,0.22) 38%,
-         rgba(20,20,20,0) 70%),
-       url("assets/hero-wave.svg") center top / contain no-repeat;
-  */
 }
 
 .about-container {
-  position: relative; z-index: 1;  /* keep content above the gradient */
+  position: relative; z-index: 1;  /* above the gradient */
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   align-items: center;
@@ -122,34 +110,49 @@ h1, h2, h3 {
   position: relative; min-height: 360px; display: grid; place-items: center;
 }
 
-/* Portrait at 75% width, with NO shadow now */
+/* Portrait at 75% width, no shadow */
 .about-photo{
   position:relative; z-index:2; display:block;
   width:75%; height:auto;
-  border-radius:16px; box-shadow:none;   /* <-- removed any shadow */
+  border-radius:16px; box-shadow:none;
 }
 
-/* Soft backdrop (kept subtle, not a shadow) */
-.about-backdrop{
-  position:absolute;
-  width: 85%;
-  height: 85%;
-  top: 50%; left: 50%; transform: translate(-50%, -50%);
-  background:#1a1a1a url("assets/services-placeholder.svg") center/cover no-repeat;
-  border-radius:20px; filter:none; opacity:.35; z-index:1;  /* no blur, lighter opacity */
-}
+/* Button spacing tweak (a few px more) */
+.about-button-group { margin-top: 18px; }
 
-.lead-paragraph { margin-top: .6rem; }
-
-/* ===== Services (text-only rows) ===== */
+/* ===== Services (image + text) ===== */
 .services-header { margin-bottom: 1.25rem; }
 #services h2 { text-transform: uppercase; }
-.service-item{ display:block; padding:24px 0; border-top:1px solid var(--line); }
+
+.service-item{
+  display:grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap:2rem;
+  align-items:center;
+  padding:20px 0;
+  border-top:1px solid var(--line);
+}
 .service-item:last-of-type{ border-bottom:1px solid var(--line); }
+.service-item.reverse{ grid-template-columns: 1fr 1.25fr; }
+
+.service-image img{
+  width:100%; height:auto; display:block;
+  background:#121212;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+.service-image-large img { aspect-ratio: 4 / 3; object-fit: cover; }
+.service-image-small img { aspect-ratio: 1 / 1; object-fit: cover; }
+
 .service-title-italic { font-style: italic; font-weight:700; font-size:1.25rem; margin-bottom:.35rem; }
 .service-paragraph { color: var(--dim); margin-bottom:.5rem; }
 .service-subtitle { font-weight:700; margin:.35rem 0; }
 .service-paragraph-small { color: var(--dim); font-size:.95rem; }
+
+@media (max-width: 950px){
+  .service-item,
+  .service-item.reverse { grid-template-columns: 1fr; }
+}
 
 /* ===== Offer ===== */
 #offer { position:relative; overflow:hidden; }

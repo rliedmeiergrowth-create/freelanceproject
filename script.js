@@ -137,3 +137,43 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const nav    = document.querySelector(".site-nav");
+  const burger = document.querySelector(".nav-burger");
+  const drawer = document.getElementById("nav-drawer");
+
+  const closeMenu = () => {
+    nav?.classList.remove("menu-open");
+    burger?.setAttribute("aria-expanded", "false");
+    // emergency unfreeze
+    document.documentElement.style.overflowY = "auto";
+    document.body.style.overflowY = "auto";
+  };
+
+  const openMenu = () => {
+    nav?.classList.add("menu-open");
+    burger?.setAttribute("aria-expanded", "true");
+    // do NOT touch body overflow
+  };
+
+  // Always start closed on every page
+  closeMenu();
+
+  // Toggle only the nav class; never add/remove body classes
+  burger?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("menu-open");
+    burger?.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  // Close when a drawer link is clicked
+  drawer?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+
+  // Close when resizing up to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 901) closeMenu();
+  });
+
+  // Safety: close on history nav / page cache restore
+  window.addEventListener("pageshow", closeMenu);
+});
+

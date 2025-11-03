@@ -649,3 +649,30 @@ body.nav-open{ overflow:hidden; }
   .nav-cta{ display:inline-block; }
 }
 
+/* Brand logo */
+.nav-brand{
+  display:flex; align-items:center; gap:.5rem; text-decoration:none;
+}
+.nav-brand img{
+  height:28px; width:auto; display:block;
+}
+@media (max-width:900px){
+  .nav-brand img{ height:24px; }
+}
+
+/* Make sure CTA is displayable on desktop, and hidden on mobile */
+.nav-cta{
+  display:inline-block;            /* visible in layout */
+  opacity:0;                       /* hidden until scrolled */
+  pointer-events:none;
+  transform: translateY(-4px);
+  transition: all .25s ease;
+}
+.site-nav.is-scrolled .nav-cta{
+  opacity:1;
+  pointer-events:auto;
+  transform:none;
+}
+@media (max-width:900px){
+  .nav-cta{ display:none !important; }   /* mobile uses drawer CTA */
+}

@@ -751,3 +751,40 @@ body.has-nav{ padding-top:72px; }
 .site-nav{ position: fixed; top:0; left:0; right:0; z-index:1000; }
 body.has-nav{ padding-top: var(--nav-h); }
 
+/* === NAV HOTFIX: always allow page scroll, drawer never blocks === */
+
+/* Fixed header site-wide */
+:root { --nav-h: 64px; }
+.site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+
+/* Give pages room under fixed header */
+body { padding-top: var(--nav-h); }
+
+/* Drawer sits below header and is closed by default */
+.nav-drawer{
+  position: absolute;         /* important: not fixed, so it won't cover page */
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: #0f0f0f;
+  border-bottom: 1px solid var(--line);
+  max-height: 0;
+  overflow: hidden;           /* closed */
+  pointer-events: none;       /* closed: not clickable, doesn't block scroll */
+  transition: max-height .25s ease;
+  z-index: 999;               /* below the header */
+}
+
+/* Open state: still doesn't lock the page */
+.site-nav.menu-open .nav-drawer{
+  max-height: 70vh;           /* the drawer itself can scroll if long */
+  overflow: auto;
+  pointer-events: auto;
+}
+
+/* Ensure no global scroll lock is lingering */
+html, body { overflow-y: auto !important; }
+
+/* Optional: desktop hides drawer, uses inline links */
+@media (min-width: 901px){
+  .nav-drawer{ display:block; max-height:0; pointer-events:none; }
+}

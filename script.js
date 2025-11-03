@@ -75,22 +75,33 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll, { passive: true });
 
   if (burger) {
-    burger.addEventListener("click", () => {
-      const open = nav.classList.toggle("menu-open");
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.classList.toggle("nav-open", open);
-    });
-  }
+    // Always start closed
+  nav?.classList.remove("menu-open");
+  burger?.setAttribute("aria-expanded", "false");
 
-  // Close drawer when a link is tapped
-  drawer?.querySelectorAll("a").forEach((a) => {
+  // Toggle only the nav, never the body
+  burger?.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("menu-open");
+    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  // Close drawer after any link click
+  drawer?.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       nav.classList.remove("menu-open");
-      burger?.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("nav-open");
+      burger.setAttribute("aria-expanded", "false");
     });
   });
+
+  // (Optional) close when resizing up to desktop
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 901) {
+      nav.classList.remove("menu-open");
+      burger?.setAttribute("aria-expanded", "false");
+    }
+  });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // --- existing bits (form, accordion, etc.) remain ---

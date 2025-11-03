@@ -654,10 +654,10 @@ body.nav-open{ overflow:hidden; }
   display:flex; align-items:center; gap:.5rem; text-decoration:none;
 }
 .nav-brand img{
-  height:28px; width:auto; display:block;
+  height:32px; width:auto; display:block;
 }
 @media (max-width:900px){
-  .nav-brand img{ height:24px; }
+  .nav-brand img{ height:32px; }
 }
 
 /* Make sure CTA is displayable on desktop, and hidden on mobile */

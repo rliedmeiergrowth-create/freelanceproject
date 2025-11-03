@@ -8,6 +8,41 @@
 </head>
 <body>
   <!-- your sticky nav here if you want it site-wide -->
+  <a id="top"></a>
+<header class="site-nav" role="navigation" aria-label="Primary">
+  <div class="container nav-inner">
+
+    <a class="nav-brand" href="index.html" aria-label="Growth Marketing Solutions — Home">
+  <img src="assets/GMS_Logo.svg" alt="Growth Marketing Solutions logo">
+</a>
+
+
+    <nav class="nav-links" aria-label="Site">
+      <a href="#top">Home</a>
+      <a href="about.html">About me</a>
+      <a href="#services">Services</a>
+      <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
+    </nav>
+
+    <!-- CTA only shows after scroll on desktop -->
+    <a class="btn btn-fill nav-cta" href="about.html">Get to know me</a>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-burger" aria-expanded="false" aria-controls="nav-drawer" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" id="nav-drawer">
+    <nav class="nav-drawer-links">
+      <a href="#top">Home</a>
+      <a href="about.html">About me</a>
+      <a href="#services">Services</a>
+      <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
+      <a class="btn btn-fill drawer-cta" href="about.html">Get to know me</a>
+    </nav>
+  </div>
   {{ content }}
   <footer>
     <div class="container footer-container">

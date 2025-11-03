@@ -636,7 +636,6 @@ html { scroll-padding-top: calc(var(--nav-h) + 10px); } /* avoids anchor jump un
 .site-nav.menu-open .nav-burger span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
 .site-nav.menu-open .nav-burger span:nth-child(2){ opacity:0; }
 .site-nav.menu-open .nav-burger span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
-body.nav-open{ overflow:hidden; }
 
 /* Responsive */
 @media (max-width: 900px){
@@ -727,4 +726,28 @@ body.nav-open{ overflow:hidden; }
 /* Give the page room under a fixed header */
 body.has-nav{ padding-top:72px; }
 @media (max-width:900px){ body.has-nav{ padding-top:64px; } }
+
+/* NAV: drawer shouldn't block page scroll */
+.nav-drawer{
+  position: absolute;           /* sits under the header */
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: #0f0f0f;
+  border-bottom: 1px solid var(--line);
+  max-height: 0;
+  overflow: hidden;             /* closed */
+  pointer-events: none;         /* closed: don't block clicks/scroll */
+  transition: max-height .25s ease;
+  z-index: 999;                 /* under header but above content */
+}
+
+.site-nav.menu-open .nav-drawer{
+  max-height: 70vh;             /* open, but page still scrolls */
+  overflow: auto;               /* drawer itself scrolls if long */
+  pointer-events: auto;         /* interactable */
+}
+
+/* (Optional) keep the header fixed or sticky as you prefer */
+.site-nav{ position: fixed; top:0; left:0; right:0; z-index:1000; }
+body.has-nav{ padding-top: var(--nav-h); }
 

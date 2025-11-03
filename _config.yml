@@ -1,0 +1,10 @@
+title: Growth Marketing Solutions
+url: https://growthmarketing.solutions
+collections:
+  toolbox:
+    output: true
+    permalink: /toolbox/:slug/
+defaults:
+  - scope: { path: "", type: toolbox }
+    values: { layout: toolbox_item }
+markdown: kramdown

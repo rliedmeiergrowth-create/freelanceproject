@@ -676,3 +676,28 @@ body.nav-open{ overflow:hidden; }
 @media (max-width:900px){
   .nav-cta{ display:none !important; }   /* mobile uses drawer CTA */
 }
+
+/* Toolbox grid */
+.toolbox-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+}
+.toolbox-card{
+  display:block;
+  background:#161616;
+  border:1px solid #222;
+  border-radius:14px;
+  overflow:hidden;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.toolbox-card:hover{ transform: translateY(-3px); border-color:#3a3a3a; }
+.toolbox-card img{
+  width:100%; aspect-ratio: 16 / 9; object-fit: cover; display:block;
+}
+.toolbox-card-title{
+  padding: 12px 14px 16px;
+  font-size: 1rem; line-height: 1.35;
+  background: linear-gradient(90deg, #ffb347, #ff6f61, #c850c0);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}

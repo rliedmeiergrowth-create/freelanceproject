@@ -43,3 +43,51 @@ document.addEventListener('DOMContentLoaded', () => {
   mq.addEventListener ? mq.addEventListener('change', setupAccordions)
                       : mq.addListener(setupAccordions);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  // --- existing contact form (keep) ---
+  const form = document.querySelector(".contact-form");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Thanks for reaching out! I'll get back to you soon.");
+    });
+  }
+
+  // --- Services mobile accordion (keep if you already have it) ---
+  document.querySelectorAll(".service-title-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        btn.closest(".service-item")?.classList.toggle("open");
+      }
+    });
+  });
+
+  // --- NEW: Sticky nav state + hamburger ---
+  const nav = document.querySelector(".site-nav");
+  const burger = document.querySelector(".nav-burger");
+  const drawer = document.getElementById("nav-drawer");
+
+  const onScroll = () => {
+    if (window.scrollY > 24) nav.classList.add("is-scrolled");
+    else nav.classList.remove("is-scrolled");
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  if (burger) {
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("menu-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("nav-open", open);
+    });
+  }
+
+  // Close drawer when a link is tapped
+  drawer?.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("menu-open");
+      burger?.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open");
+    });
+  });
+});

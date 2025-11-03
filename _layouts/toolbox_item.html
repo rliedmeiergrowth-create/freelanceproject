@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">TOOLBOX</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.image %}
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title | escape }}" style="margin:16px 0;border-radius:14px;border:1px solid #222;max-width:820px;">
+    {% endif %}
+    {% if page.excerpt %}
+      <p class="lead-paragraph" style="margin:8px 0 16px;">{{ page.excerpt }}</p>
+    {% endif %}
+    <div class="toolbox-body">
+      {{ content }}
+    </div>
+  </div>
+</section>

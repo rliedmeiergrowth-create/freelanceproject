@@ -91,3 +91,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // --- existing bits (form, accordion, etc.) remain ---
+
+  const nav = document.querySelector(".site-nav");
+  if (!nav) return;
+
+  // Fallback scroll (kept, but IO below is preferred)
+  const onScrollFallback = () => {
+    if (window.scrollY > 24) nav.classList.add("is-scrolled");
+    else nav.classList.remove("is-scrolled");
+  };
+
+  // Prefer IntersectionObserver to detect when HERO is out of view
+  const hero = document.querySelector(".hero");
+  if ("IntersectionObserver" in window && hero) {
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          nav.classList.remove("is-scrolled");
+        } else {
+          nav.classList.add("is-scrolled");
+        }
+      },
+      { root: null, rootMargin: "-64px 0px 0px 0px", threshold: 0 }
+    );
+    io.observe(hero);
+  } else {
+    // pages without a hero (e.g., about.html) → show CTA by default
+    nav.classList.add("is-scrolled");
+    window.addEventListener("scroll", onScrollFallback, { passive: true });
+    onScrollFallback();
+  }
+});
+

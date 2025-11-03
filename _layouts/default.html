@@ -12,9 +12,10 @@
 <header class="site-nav" role="navigation" aria-label="Primary">
   <div class="container nav-inner">
 
-    <a class="nav-brand" href="index.html" aria-label="Growth Marketing Solutions — Home">
-  <img src="assets/GMS_Logo.svg" alt="Growth Marketing Solutions logo">
+   <a class="nav-logo" href="{{ '/' | relative_url }}">
+  <img src="{{ '/assets/GMS_Logo.svg' | relative_url }}" alt="GMS logo" />
 </a>
+
 
 
     <nav class="nav-links" aria-label="Site">
@@ -23,6 +24,7 @@
       <a href="#services">Services</a>
       <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
     </nav>
+    
 
     <!-- CTA only shows after scroll on desktop -->
     <a class="btn btn-fill nav-cta" href="about.html">Get to know me</a>

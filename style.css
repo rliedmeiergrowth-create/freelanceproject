@@ -377,3 +377,31 @@ footer{ border-top: 1px solid var(--line); background: #121212; color: #aaa; }
   .about-portrait-wrap{ justify-content: center; }
   .about-portrait{ width: 100%; max-width: 420px; }
 }
+/* --- about.html scroll/hamburger overrides --- */
+html, body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* fixed header, room below it */
+:root { --nav-h: 64px; }
+.site-nav { position: fixed !important; top: 0; left: 0; right: 0; z-index: 1000; }
+body { padding-top: var(--nav-h) !important; }
+
+/* drawer never blocks the page when closed */
+.nav-drawer {
+  position: absolute !important;
+  top: var(--nav-h); left: 0; right: 0;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  display: block !important;
+  z-index: 999;
+}
+.site-nav.menu-open .nav-drawer {
+  max-height: 70vh !important;
+  overflow: auto !important;
+  pointer-events: auto !important;
+}

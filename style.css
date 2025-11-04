@@ -405,3 +405,48 @@ body { padding-top: var(--nav-h) !important; }
   overflow: auto !important;
   pointer-events: auto !important;
 }
+
+/* === ABOUT/POLICY scroll + nav-drawer safety (append at end) === */
+
+/* The page must always be scrollable */
+html, body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+/* Fixed header site-wide + space below it */
+:root { --nav-h: 64px; }
+.site-nav {
+  position: fixed !important;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+body { padding-top: var(--nav-h) !important; }
+
+/* Drawer: closed state must NOT block the page */
+.nav-drawer {
+  position: absolute !important;   /* below the header */
+  top: var(--nav-h); left: 0; right: 0;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important; /* can't intercept scroll/clicks */
+  display: block !important;
+  z-index: 999;
+}
+
+/* Open state (mobile): drawer can scroll, page still scrolls */
+@media (max-width: 900px){
+  .site-nav.menu-open .nav-drawer{
+    max-height: 70vh !important;
+    overflow: auto !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* Desktop: inline links visible; CTA available */
+@media (min-width: 901px){
+  .nav-links { display: flex !important; }
+  .nav-cta   { display: inline-block !important; }
+}

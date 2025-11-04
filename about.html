@@ -184,5 +184,40 @@
     </div>
   </footer>
   <script src="/script.js?v=20251104"></script>
+  <script>
+(function () {
+  const nav = document.querySelector('.site-nav');
+  const burger = document.querySelector('.nav-burger');
+  const drawer = document.getElementById('nav-drawer');
+
+  // Always start closed and ensure page scroll is allowed
+  const closeMenu = () => {
+    nav && nav.classList.remove('menu-open');
+    burger && burger.setAttribute('aria-expanded', 'false');
+    document.documentElement.style.overflowY = 'auto';
+    document.body.style.overflowY = 'auto';
+  };
+  closeMenu();
+
+  // Toggle only a class on the header (never touch body/html overflow)
+  burger && burger.addEventListener('click', () => {
+    const open = nav.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // Close drawer when a link is clicked
+  drawer && drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeMenu);
+  });
+
+  // Close drawer when resizing up to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 901) closeMenu();
+  });
+
+  // Show the CTA on subpages (no hero to observe)
+  nav && nav.classList.add('is-scrolled');
+})();
+</script>
 </body>
 </html>

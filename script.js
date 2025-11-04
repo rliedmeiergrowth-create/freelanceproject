@@ -1,179 +1,73 @@
-// script.js
-
-// Contact form fallback (kept for compatibility if a form is added later)
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".contact-form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thanks for reaching out! I'll get back to you soon.");
-    });
-  }
-});
-
-// Mobile accordion for Services (titles only expand/collapse)
-document.addEventListener('DOMContentLoaded', () => {
-  const mq = window.matchMedia('(max-width: 768px)');
-
-  function setupAccordions() {
-    const isMobile = mq.matches;
-    document.querySelectorAll('.service-item').forEach(item => {
-      const btn = item.querySelector('.service-title-btn');
-      const collapse = item.querySelector('.service-collapse');
-      if (!btn || !collapse) return;
-
-      if (isMobile) {
-        // start collapsed
-        item.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.onclick = () => {
-          const open = item.classList.toggle('open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        };
-      } else {
-        // desktop: always open
-        item.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.onclick = null;
-      }
-    });
-  }
-
-  setupAccordions();
-  mq.addEventListener ? mq.addEventListener('change', setupAccordions)
-                      : mq.addListener(setupAccordions);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  // --- existing contact form (keep) ---
-  const form = document.querySelector(".contact-form");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thanks for reaching out! I'll get back to you soon.");
-    });
-  }
-
-  // --- Services mobile accordion (keep if you already have it) ---
-  document.querySelectorAll(".service-title-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        btn.closest(".service-item")?.classList.toggle("open");
-      }
-    });
-  });
-
-  // --- NEW: Sticky nav state + hamburger ---
-  const nav = document.querySelector(".site-nav");
-  const burger = document.querySelector(".nav-burger");
-  const drawer = document.getElementById("nav-drawer");
-
-  const onScroll = () => {
-    if (window.scrollY > 24) nav.classList.add("is-scrolled");
-    else nav.classList.remove("is-scrolled");
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  if (burger) {
-    // Always start closed
-  nav?.classList.remove("menu-open");
-  burger?.setAttribute("aria-expanded", "false");
-
-  // Toggle only the nav, never the body
-  burger?.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("menu-open");
-    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  // Close drawer after any link click
-  drawer?.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      nav.classList.remove("menu-open");
-      burger.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  // (Optional) close when resizing up to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 901) {
-      nav.classList.remove("menu-open");
-      burger?.setAttribute("aria-expanded", "false");
-    }
-  });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  // --- existing bits (form, accordion, etc.) remain ---
-
-  const nav = document.querySelector(".site-nav");
-  if (!nav) return;
-
-  // Fallback scroll (kept, but IO below is preferred)
-  const onScrollFallback = () => {
-    if (window.scrollY > 24) nav.classList.add("is-scrolled");
-    else nav.classList.remove("is-scrolled");
-  };
-
-  // Prefer IntersectionObserver to detect when HERO is out of view
-  const hero = document.querySelector(".hero");
-  if ("IntersectionObserver" in window && hero) {
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          nav.classList.remove("is-scrolled");
-        } else {
-          nav.classList.add("is-scrolled");
-        }
-      },
-      { root: null, rootMargin: "-64px 0px 0px 0px", threshold: 0 }
-    );
-    io.observe(hero);
-  } else {
-    // pages without a hero (e.g., about.html) → show CTA by default
-    nav.classList.add("is-scrolled");
-    window.addEventListener("scroll", onScrollFallback, { passive: true });
-    onScrollFallback();
-  }
-});
-
+// script.js — global nav + CTA + mobile accordion
 document.addEventListener("DOMContentLoaded", () => {
   const nav    = document.querySelector(".site-nav");
   const burger = document.querySelector(".nav-burger");
   const drawer = document.getElementById("nav-drawer");
 
+  // --- Burger / drawer (never lock page scroll) ---
   const closeMenu = () => {
-    nav?.classList.remove("menu-open");
-    burger?.setAttribute("aria-expanded", "false");
-    // emergency unfreeze
-    document.documentElement.style.overflowY = "auto";
-    document.body.style.overflowY = "auto";
+    if (!nav) return;
+    nav.classList.remove("menu-open");
+    if (burger) burger.setAttribute("aria-expanded", "false");
+    // never touch body/html overflow here
   };
 
-  const openMenu = () => {
-    nav?.classList.add("menu-open");
-    burger?.setAttribute("aria-expanded", "true");
-    // do NOT touch body overflow
-  };
+  if (burger) {
+    burger.addEventListener("click", () => {
+      if (!nav) return;
+      const open = nav.classList.toggle("menu-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
 
-  // Always start closed on every page
-  closeMenu();
+  if (drawer) {
+    drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  }
 
-  // Toggle only the nav class; never add/remove body classes
-  burger?.addEventListener("click", () => {
-    const isOpen = nav?.classList.toggle("menu-open");
-    burger?.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-
-  // Close when a drawer link is clicked
-  drawer?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-
-  // Close when resizing up to desktop
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 901) closeMenu();
   });
 
-  // Safety: close on history nav / page cache restore
-  window.addEventListener("pageshow", closeMenu);
-});
+  // --- CTA reveal behavior ---
+  const revealCTA = () => nav?.classList.add("is-scrolled");
+  const hideCTA   = () => nav?.classList.remove("is-scrolled");
 
+  const hero = document.querySelector(".hero");
+  if (hero) {
+    // Home page: show CTA after user scrolls past part of the hero
+    try {
+      const io = new IntersectionObserver(
+        ([entry]) => {
+          // When hero is mostly in view -> hide CTA; when leaving -> show CTA
+          if (entry.intersectionRatio > 0.55) hideCTA();
+          else revealCTA();
+        },
+        {
+          root: null,
+          rootMargin: "-64px 0px 0px 0px", // account for fixed nav
+          threshold: [0, 0.25, 0.55, 0.75, 1]
+        }
+      );
+      io.observe(hero);
+    } catch {
+      // Fallback for older browsers: simple scroll threshold
+      const onScroll = () => (window.scrollY > 10 ? revealCTA() : hideCTA());
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+  } else {
+    // Subpages (e.g., about.html): show CTA by default
+    revealCTA();
+  }
+
+  // --- Services mobile accordion ---
+  document.querySelectorAll("#services .service-item").forEach(item => {
+    const btn = item.querySelector(".service-title-btn");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        item.classList.toggle("open");
+      }
+    });
+  });
+});

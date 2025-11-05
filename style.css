@@ -232,7 +232,7 @@ body{
   font-weight: 700;
   letter-spacing: .01em;
   line-height: 1.08;
-  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-size: clamp(1.6rem, 4vw, 3.8=2rem);
   max-width: 20ch;
 }
 .hero::before{

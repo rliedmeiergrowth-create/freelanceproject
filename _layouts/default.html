@@ -3,34 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=20251105">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
-
-<a id="top"></a>
+  <!-- your sticky nav here if you want it site-wide -->
+  <a id="top"></a>
 <header class="site-nav" role="navigation" aria-label="Primary">
   <div class="container nav-inner">
 
-    <!-- Brand (uses .nav-brand so the logo size matches your CSS) -->
-    <a class="nav-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — Home">
-      <img src="{{ '/assets/GMS_Logo.svg' | relative_url }}" alt="Growth Marketing Solutions logo">
-    </a>
+   <a class="nav-logo" href="{{ '/' | relative_url }}">
+  <img src="{{ '/assets/GMS_Logo.svg' | relative_url }}" alt="GMS logo" />
+</a>
+
+
 
     <nav class="nav-links" aria-label="Site">
-      <a href="{{ '/' | relative_url }}#top">Home</a>
-      <a href="{{ '/about.html' | relative_url }}">About me</a>
-      <a href="{{ '/' | relative_url }}#services">Services</a>
-      <a href="{{ '/toolbox/' | relative_url }}">Toolbox</a>
+      <a href="#top">Home</a>
+      <a href="about.html">About me</a>
+      <a href="#services">Services</a>
+      <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
     </nav>
+    
 
-    <!-- CTA appears after scroll on desktop -->
-    <a class="btn btn-fill nav-cta" href="{{ '/about.html' | relative_url }}">Get to know me</a>
+    <!-- CTA only shows after scroll on desktop -->
+    <a class="btn btn-fill nav-cta" href="about.html">Get to know me</a>
 
     <!-- Mobile hamburger -->
     <button class="nav-burger" aria-expanded="false" aria-controls="nav-drawer" aria-label="Toggle menu">
@@ -41,33 +38,20 @@
   <!-- Mobile drawer -->
   <div class="nav-drawer" id="nav-drawer">
     <nav class="nav-drawer-links">
-      <a href="{{ '/' | relative_url }}#top">Home</a>
-      <a href="{{ '/about.html' | relative_url }}">About me</a>
-      <a href="{{ '/' | relative_url }}#services">Services</a>
-      <a href="{{ '/toolbox/' | relative_url }}">Toolbox</a>
-      <a class="btn btn-fill drawer-cta" href="{{ '/about.html' | relative_url }}">Get to know me</a>
+      <a href="#top">Home</a>
+      <a href="about.html">About me</a>
+      <a href="#services">Services</a>
+      <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
+      <a class="btn btn-fill drawer-cta" href="about.html">Get to know me</a>
     </nav>
   </div>
-</header>
-<!-- ^ Close the header BEFORE content so the page can scroll -->
-
-{{ content }}
-
-<footer>
-  <div class="container footer-container">
-    <p>© Ronan Liedmeier · RLGrowth</p>
-    <p><a href="{{ '/privacy.html' | relative_url }}">Privacy &amp; Cookies</a></p>
-  </div>
-</footer>
-
-<script src="{{ '/script.js' | relative_url }}?v=20251105-cta1"></script>
-<script>
-  // Ensure CTA shows on pages without a hero (e.g., Toolbox)
-  (function(){
-    var hero = document.querySelector('.hero');
-    var nav  = document.querySelector('.site-nav');
-    if (!hero && nav) nav.classList.add('is-scrolled');
-  })();
-</script>
+  {{ content }}
+  <footer>
+    <div class="container footer-container">
+      <p>© Ronan Liedmeier · RLGrowth</p>
+      <p><a href="{{ '/privacy.html' | relative_url }}">Privacy & Cookies</a></p>
+    </div>
+  </footer>
+  <script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 </html>

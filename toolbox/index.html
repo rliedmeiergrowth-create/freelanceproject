@@ -7,7 +7,7 @@ permalink: /toolbox/
 <section class="section">
   <div class="container">
     <p class="eyebrow">TOOLBOX</p>
-    <h1>Playbooks & Case Materials</h1>
+    <h1>Playbooks &amp; Case Materials</h1>
     <p class="lead-paragraph" style="margin-top:.5rem;">
       A growing library of audits, GTM plans, CRM builds, AI workflows, and PPC teardowns.
     </p>
@@ -25,18 +25,19 @@ permalink: /toolbox/
 </section>
 
 <!-- SEO: JSON-LD Item List -->
+{% assign items = site.toolbox | sort: 'date' | reverse %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "Toolbox",
-  "url": "{{ site.url }}/toolbox",
+  "url": "{{ site.url }}{{ '/toolbox/' | relative_url }}",
   "hasPart": [
     {% for item in items %}
     {
       "@type": "BlogPosting",
       "headline": {{ item.title | jsonify }},
-      "url": "{{ site.url }}{{ item.link | default: item.url }}"
+      "url": "{{ site.url }}{{ item.link | default: item.url | relative_url }}"
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ]

@@ -3,8 +3,9 @@ layout: default
 title: AI-assisted CRM teardown (HubSpot)
 permalink: /blog/ai-crm-teardown/
 description: How to diagnose pipeline health, fix attribution, and ship quick wins with AI agents.
-image: /assets/toolbox/ai-crm.jpg
+image: /assets/CRM.svg   
 ---
+
 
 <section class="section">
   <div class="container">

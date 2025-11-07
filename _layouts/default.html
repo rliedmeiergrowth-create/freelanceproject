@@ -1,8 +1,9 @@
-{% assign passthrough = (page.url == '/' or page.path == 'index.html' or page.url == '/about.html' or page.path == 'about.html') %}
+{% assign passthrough = false %}
+{% comment %}
+  Only wrap pages that explicitly use this layout.
+  (Index/About should be plain files without front matter or with layout: none.)
+{% endcomment %}
 
-{% if passthrough %}
-  {{ content }}
-{% else %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Site CSS (relative_url works with/without a baseurl) -->
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=layout-20251106">
 </head>
 <body>
@@ -25,19 +26,19 @@
   <div class="container nav-inner">
 
     <!-- Brand -->
-    <a class="nav-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — Home">
+    <a class="nav-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Home' }}">
       <img src="{{ '/assets/GMS_Logo.svg' | relative_url }}" alt="Growth Marketing Solutions logo">
     </a>
 
-    <!-- Inline links (desktop) -->
+    <!-- Desktop links -->
     <nav class="nav-links" aria-label="Site">
-      <a href="{{ '/' | relative_url }}#top">Home</a>
-      <a href="{{ '/about.html' | relative_url }}">About me</a>
-      <a href="{{ '/' | relative_url }}#services">Services</a>
-      <a href="{{ '/toolbox/' | relative_url }}">Toolbox</a>
+      <a href="{{ '/'            | relative_url }}#top">Home</a>
+      <a href="{{ '/about.html'  | relative_url }}">About me</a>
+      <a href="{{ '/'            | relative_url }}#services">Services</a>
+      <a href="{{ '/toolbox/'    | relative_url }}">Toolbox</a>
     </nav>
 
-    <!-- CTA (shows after scroll on pages with hero; always visible here via script below if no hero) -->
+    <!-- CTA (shows after scroll or always for pages without a hero via script) -->
     <a class="btn btn-fill nav-cta" href="{{ '/about.html' | relative_url }}">Get to know me</a>
 
     <!-- Mobile hamburger -->
@@ -49,15 +50,14 @@
   <!-- Mobile drawer -->
   <div class="nav-drawer" id="nav-drawer">
     <nav class="nav-drawer-links">
-      <a href="{{ '/' | relative_url }}#top">Home</a>
-      <a href="{{ '/about.html' | relative_url }}">About me</a>
-      <a href="{{ '/' | relative_url }}#services">Services</a>
-      <a href="{{ '/toolbox/' | relative_url }}">Toolbox</a>
+      <a href="{{ '/'            | relative_url }}#top">Home</a>
+      <a href="{{ '/about.html'  | relative_url }}">About me</a>
+      <a href="{{ '/'            | relative_url }}#services">Services</a>
+      <a href="{{ '/toolbox/'    | relative_url }}">Toolbox</a>
       <a class="btn btn-fill drawer-cta" href="{{ '/about.html' | relative_url }}">Get to know me</a>
     </nav>
   </div>
 </header>
-<!-- ^ Header closes BEFORE content so pages scroll normally -->
 
 {{ content }}
 
@@ -68,17 +68,15 @@
   </div>
 </footer>
 
-<!-- Scripts -->
+<!-- Site JS -->
 <script src="{{ '/script.js' | relative_url }}?v=layout-20251106"></script>
 <script>
-  // Ensure CTA shows on pages without a hero (collections, toolbox, blog, etc.)
+  // If a page doesn’t have a .hero, show the nav CTA immediately
   (function(){
     var hero = document.querySelector('.hero');
     var nav  = document.querySelector('.site-nav');
     if (!hero && nav) nav.classList.add('is-scrolled');
   })();
 </script>
-
 </body>
 </html>
-{% endif %}

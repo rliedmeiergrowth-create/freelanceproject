@@ -74,6 +74,7 @@ tags: [marketing automation workflows, zapier marketing automation, ai marketing
     <p>Each recipe shows <strong>Trigger → Build in Zapier → AI prompt → CRM mapping → KPI &amp; Guardrails</strong>.</p>
 
     <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
+    
 
     <h2>1) Speed-to-Lead Router (+ Slack ping)</h2>
     <p><strong>Intent:</strong> Reply within minutes, every time.<br>
@@ -94,6 +95,8 @@ Summarize this lead in 4 bullets: company, role, likely pain inferred from {{lan
     <p><strong>CRM mapping:</strong> HubSpot (Owner, Lifecycle), Zoho (Owner, Lead Status), ActiveCampaign (Contact + Tag=lead), Pipedrive (Person Owner).<br>
        <strong>KPI:</strong> Time-to-first-touch.<br>
        <strong>Guardrails:</strong> Filter out test/free domains; store the Slack message JSON in <strong>Storage</strong> for audit.</p>
+
+        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
 
     <h2>2) Lead Magnet Delivery → Micro-Nurture (draft only)</h2>
     <p><strong>Intent:</strong> Deliver value fast and ask one smart question.<br>
@@ -131,6 +134,8 @@ Turn this UTM JSON {{utm_json}} into one human-readable Source Note for sales; s
     <p><strong>KPI:</strong> % “Unknown source” records.<br>
        <strong>Guardrails:</strong> Never overwrite raw UTM fields; only write derived “Source Note.”</p>
 
+ <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
+ 
     <h2>4) Ad Creative Helper (8 quick variants)</h2>
     <p><strong>Intent:</strong> Ship fresh creative without creative block.<br>
        <strong>Trigger:</strong> New row in “Ad Ideas” sheet: <code>offer | audience | angle</code>.</p>
@@ -150,6 +155,8 @@ Generate 8 ad variants for {{offer}} to {{audience}}. Headline ≤ 30 chars, bod
     <p><strong>KPI:</strong> CTR/CPC.<br>
        <strong>Guardrails:</strong> Keep disclaimers in a locked sheet column; quick factual review before launch.</p>
 
+        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
+
     <h2>5) Call/Support Transcript → CRM Summary</h2>
     <p><strong>Intent:</strong> Clear, structured notes AEs/CSMs actually read.<br>
        <strong>Trigger:</strong> Transcript text dropped into Drive or sent via webhook.</p>
@@ -165,6 +172,8 @@ Summarize this call into bullets: pains, impact, timeline, decision process, com
     <p><strong>KPI:</strong> Next-step set rate, note completeness.<br>
        <strong>Guardrails:</strong> Attach transcript URL; avoid unnecessary PII in the prompt.</p>
 
+        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
+
     <h2>6) NPS/CSAT Router (Promoter vs Detractor)</h2>
     <p><strong>Intent:</strong> Turn promoters into reviews; save detractor relationships.<br>
        <strong>Trigger:</strong> Survey tool → New response.</p>
@@ -179,6 +188,8 @@ Write a calm, empathetic reply to this comment. Offer two concrete fixes and pro
 </code></pre>
     <p><strong>KPI:</strong> Follow-up &lt;24h, review volume.<br>
        <strong>Guardrails:</strong> Store marketing consent before public review asks.</p>
+
+        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
 
     <h2>7) Weekly KPI Digest (truthful summary)</h2>
     <p><strong>Intent:</strong> Replace status meetings with a crisp weekly narrative.<br>
@@ -198,6 +209,8 @@ Write a 200-word weekly GTM recap using these metrics {{json}}. Call out 2 anoma
     <p><strong>KPI:</strong> Decisions made; meeting time saved.<br>
        <strong>Guardrails:</strong> Always link to the sheet/dashboard as source of truth.</p>
 
+        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
+
     <h2>8) Missing-Fields Poke (light data hygiene)</h2>
     <p><strong>Intent:</strong> Improve data quality without slowing the team.<br>
        <strong>Trigger:</strong> Weekly.</p>
@@ -209,6 +222,8 @@ Write a 200-word weekly GTM recap using these metrics {{json}}. Call out 2 anoma
     </ol>
     <p><strong>KPI:</strong> % complete records.<br>
        <strong>Guardrails:</strong> Nudge only; don’t block deals or auto-edit fields.</p>
+
+        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
 
     <h2>9) Win-Back Nudges (B2B dormant leads &amp; B2C lapsed buyers)</h2>
     <p><strong>Intent:</strong> Re-engage quietly and respectfully.<br>

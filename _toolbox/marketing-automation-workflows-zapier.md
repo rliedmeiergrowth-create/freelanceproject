@@ -251,7 +251,8 @@ Email 2 (4 days later): one-liner check-in + soft CTA. Keep both under 110 words
     <p><strong>KPI:</strong> Re-engage rate, recovered revenue.<br>
        <strong>Guardrails:</strong> For B2C, add a time-boxed incentive in Email 2.</p>
 
-        <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
+      
+         <hr style="border:none;border-top:1px solid #222;margin:22px 0;">
 
     <h2>10) Owner-Aware SLA Alert (quiet hours respected)</h2>
     <p><strong>Intent:</strong> Catch idle MQLs and deals without spamming at night.<br>

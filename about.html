@@ -2,289 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- SEO -->
-  <title>About — RLGrowth | Ronan Liedmeier</title>
-  <meta name="description" content="Hands-on growth and AI automation by Ronan Liedmeier. Design → build → measure across GTM, CRM, PPC, and AI agents. Book a 15-min consult." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet" />
-
-  <!-- single stylesheet include -->
-  <link rel="stylesheet" href="style.css?v=20251105" />
-
-  <style>
-    /* Page-local layout for About */
-    .about-hero {
-      border-bottom: 1px solid var(--line);
-      padding: 48px 0 42px;
-      background: #0f0f0f;
-    }
-    .about-hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;  /* text | portrait */
-      gap: 2.2rem;
-      align-items: center;
-    }
-    .about-cta-group {
-      display:flex;
-      gap:.6rem;
-      flex-wrap:wrap;
-      margin-top: 18px;
-    }
-
-    /* Portrait in hero (top right) */
-    .about-portrait-wrap { display:flex; justify-content:flex-end; }
-    .about-portrait{
-      width: 85%;
-      max-width: 420px;
-      height:auto;
-      display:block;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:#121212;
-    }
-
-    /* Main body */
-    .about-body { padding: 70px 0 80px; }
-    .about-grid {
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 2.2rem;
-      align-items: start;
-    }
-    .about-card {
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
-    }
-    .about-list {
-      margin:.5rem 0 0 1.1rem;
-      color: var(--dim);
-    }
-
-    @media (max-width: 980px){
-      .about-hero-grid{ grid-template-columns: 1fr; }
-      .about-portrait-wrap{ justify-content:center; }
-      .about-portrait{ width: 100%; max-width: 420px; }
-
-      .about-grid{ grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Your Name</title>
+  <link rel="stylesheet" href="/style.css?v=20251105" />
 </head>
-  
+
 <body>
-<!-- ===== Sticky Navbar ===== -->
-<a id="top"></a>
-<header class="site-nav" role="navigation" aria-label="Primary">
-  <div class="container nav-inner">
+  <!-- ================= NAVIGATION ================= -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="/" class="nav-logo">YourName</a>
 
-    <a class="nav-brand" href="index.html" aria-label="Growth Marketing Solutions — Home">
-      <img src="assets/GMS_Logo.svg" alt="Growth Marketing Solutions logo">
-    </a>
+      <button
+        class="nav-burger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
 
-    <nav class="nav-links" aria-label="Site">
-      <a href="#top">Home</a>
-      <a href="about.html">About me</a>
-      <a href="#services">Services</a>
-      <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
+      <div id="nav-drawer" class="nav-drawer">
+        <a href="/">Home</a>
+        <a href="/about.html" class="active">About</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+
+      <a href="/contact.html" class="nav-cta">Let’s Talk</a>
     </nav>
+  </header>
 
-    <!-- CTA only shows after scroll on desktop -->
-    <a class="btn btn-fill nav-cta" href="about.html">Get to know me</a>
-
-    <!-- Mobile hamburger -->
-    <button class="nav-burger" aria-expanded="false" aria-controls="nav-drawer" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-
-  <!-- Mobile drawer (sits below the fixed header) -->
-  <div class="nav-drawer" id="nav-drawer">
-    <nav class="nav-drawer-links">
-      <a href="#top">Home</a>
-      <a href="about.html">About me</a>
-      <a href="#services">Services</a>
-      <a href="https://growthmarketing.solutions/toolbox" target="_blank" rel="noopener">Toolbox</a>
-      <a class="btn btn-fill drawer-cta" href="about.html">Get to know me</a>
-    </nav>
-  </div>
-</header>
-<!-- ===== END Sticky Navbar ===== -->
-
-<!-- ABOUT HERO (now outside the nav header) -->
-<header class="about-hero">
-  <div class="container about-hero-grid">
-    <!-- ...the rest of your About hero content... -->
-
-
-    <!-- Left: title + intro + CTAs -->
-    <div>
-      <p class="eyebrow">ABOUT</p>
-      <h1>Hey, I’m Ronan</h1>
-      <p class="lead-paragraph" style="max-width: 780px; margin-top: .5rem;">
-        I’m a hands-on operator who designs, builds, and measures growth systems. I focus on GTM, AI automation, CRM, PPC, and the instrumentation that proves impact. Fewer slides, more shipping.
-      </p>
-      <div class="about-cta-group">
-        <a href="https://calendly.com/rliedmeier-growth/15min"
-           class="btn btn-fill"
-           target="_blank" rel="noopener">
-           Book a 15-min consult
-        </a>
-
-        <a href="https://www.linkedin.com/in/startup-growthhacker/"
-           class="btn btn-linkedin"
-           target="_blank"
-           rel="noopener"
-           aria-label="Ronan on LinkedIn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="margin-right:8px;">
-            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.84v1.98h.05c.53-.99 1.84-2.03 3.79-2.03 4.05 0 4.8 2.67 4.8 6.14V23h-4v-5.87c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.09V23h-4V8.5z"/>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <!-- Right: portrait -->
-    <div class="about-portrait-wrap">
-      <img
-        src="assets/ronan.svg"
-        alt="Ronan Liedmeier headshot — growth marketing consultant"
-        class="about-portrait" />
-    </div>
-  </div>
-</section>
-
-
-<!-- MAIN ABOUT CONTENT -->
-<main class="about-body">
-  <div class="container about-grid">
-
-    <!-- LEFT column -->
-    <section>
-      <h2>My approach</h2>
-      <p style="color:var(--dim);">
-        Design → build → measure. Identify the few moves that matter, ship them fast, track outcomes cleanly, and iterate. I work across strategy, channels, and the ops layer so the machine keeps compounding.
-      </p>
-
-      <div class="about-card" style="margin-top:1rem;">
-        <h3 class="service-title-italic">Focus areas</h3>
-        <ul class="about-list">
-          <li>Go-to-market, positioning, messaging, and launch planning</li>
-          <li>AI agents &amp; automation for growth and customer operations</li>
-          <li>RevOps &amp; CRM (HubSpot / Zoho / ActiveCampaign)</li>
-          <li>PPC across Google, LinkedIn, Bing, and Meta</li>
-          <li>CRO, analytics, and clear reporting</li>
-        </ul>
-      </div>
-
-      <div class="about-card" style="margin-top:1rem;">
-        <h3 class="service-title-italic">Ways to work</h3>
-        <ul class="about-list">
-          <li>Audit &amp; roadmap</li>
-          <li>Monthly execution &amp; iteration</li>
-          <li>Fractional leadership or embedded build cycles</li>
-        </ul>
-      </div>
-
-      <div class="about-cta-group">
-        <a href="https://calendly.com/rliedmeier-growth/15min"
-           class="btn btn-fill"
-           target="_blank" rel="noopener">
-           Book a 15-min consult
-        </a>
-        <a href="mailto:rliedmeier.growth@gmail.com" class="btn btn-dark-outline">
-          Email me
-        </a>
-      </div>
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="page about-page">
+    <section class="about-hero">
+      <h1>About Me</h1>
+      <p>Building things for the web — thoughtfully and intentionally.</p>
     </section>
 
-    <!-- RIGHT column -->
-    <aside>
-      <h2>Highlights</h2>
-      <div class="about-card" style="margin-top:.5rem;">
-        <ul class="about-list">
-          <li>10+ years across B2B &amp; B2C ($500k – $100M ARR)</li>
-          <li>End-to-end: strategy → setup → reporting</li>
-          <li>Clients &amp; roles with Kenjo, Fangage, Volstora, Timewax, Psyflix, Greyt, Datenna,
-              Icemobile, Homefans, Egerie, SignPath, Kader, and more</li>
-        </ul>
-      </div>
+    <section class="about-section">
+      <h2>My Journey</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida
+        libero vel lacus fermentum, nec placerat libero pretium.
+      </p>
+    </section>
 
-      <div class="about-card" style="margin-top:1rem;">
-        <h3 class="service-title-italic">Languages &amp; certs</h3>
-        <ul class="about-list">
-          <li>EN / DE (Native/Bilingual), NL (Full Professional), FR (Limited)</li>
-          <li>Google Ads (Search), Shopify Store Optimization, TNW T500 2022</li>
-        </ul>
-      </div>
+    <section class="about-section">
+      <h2>What I Do</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+        tincidunt, enim vitae elementum malesuada, felis arcu fermentum elit.
+      </p>
+    </section>
 
-      <a href="index.html" class="btn btn-dark-outline" style="margin-top: 28px;">
-        ← Back to Home
-      </a>
-    </aside>
-  </div>
-</main>
+    <section class="about-section">
+      <h2>How I Work</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+        interdum ligula ut facilisis egestas.
+      </p>
+    </section>
+  </main>
 
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+  </footer>
 
-<footer>
-  <div class="container footer-container">
-    <p>© Ronan Liedmeier · RLGrowth</p>
-    <p><a href="privacy.html">Privacy &amp; Cookies</a></p>
-  </div>
-</footer>
-
-<!-- global script for nav behavior + CTA reveal -->
-<script src="/script.js?v=20251105"></script>
-
-<!-- page-local safety script -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const nav    = document.querySelector(".site-nav");
-  const burger = document.querySelector(".nav-burger");
-  const drawer = document.getElementById("nav-drawer");
-
-  function closeMenu() {
-    if (nav) nav.classList.remove("menu-open");
-    if (burger) burger.setAttribute("aria-expanded", "false");
-    // critically: NEVER lock scroll
-    document.documentElement.style.overflowY = "auto";
-    document.body.style.overflowY = "auto";
-  }
-
-  // start closed
-  closeMenu();
-
-  // burger toggle
-  if (burger) {
-    burger.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("menu-open");
-      burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  }
-
-  // close drawer on link click
-  if (drawer) {
-    drawer.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", closeMenu);
-    });
-  }
-
-  // close drawer if resizing up to desktop
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 901) {
-      closeMenu();
-    }
-  });
-
-  // about.html has no hero IntersectionObserver,
-  // so we just force the nav CTA visible:
-  if (nav) nav.classList.add("is-scrolled");
-});
-</script>
-
+  <!-- Global script (handles nav + CTA visibility) -->
+  <script src="/script.js?v=20251105"></script>
 </body>
 </html>

@@ -63,11 +63,24 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
       </p>
     </div>
 
-        <!-- Google Calendar Appointment Scheduling begin -->
-<iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3bfyfPUFH2JArMrGidOKlG65dtBUnbCZ1W5RFPaQ4yGgX5zr6Yzleu9lyTuM_jeZ2je6i-INTk?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-<!-- end Google Calendar Appointment Scheduling -->
+    <!-- Right: Google Calendar embed inside card -->
+    <div class="contact-right">
+      <div class="cal-card">
+        <div class="cal-embed">
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <iframe
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3bfyfPUFH2JArMrGidOKlG65dtBUnbCZ1W5RFPaQ4yGgX5zr6Yzleu9lyTuM_jeZ2je6i-INTk?gv=true"
+            frameborder="0"
+            loading="lazy"
+            width="100%"
+            height="600"
+            style="border:0;">
+          </iframe>
+          <!-- end Google Calendar Appointment Scheduling -->
+        </div>
       </div>
-    </aside>
+    </div>
+
   </div>
 </section>
 
@@ -105,7 +118,7 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
   font-weight: 700;
   line-height: 1.03;
   font-size: clamp(2rem, 6vw, 4rem);
-  text-transform: none; /* keep sentence case like the reference */
+  text-transform: none;
   margin-bottom: 1rem;
 }
 .hide-sm{ display: none; }
@@ -120,6 +133,9 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
 .contact-bullets li{ display:flex; align-items:center; gap:.6rem; }
 .tick{ display:inline-flex; width:22px; height:22px; }
 
+.contact-note{ color: var(--dim); margin-top: .75rem; }
+.contact-note a{ text-decoration: underline; text-underline-offset: 2px; }
+
 /* Right column card */
 .cal-card{
   background: var(--card);
@@ -128,11 +144,19 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
   padding: clamp(10px, 1vw, 14px);
   box-shadow: 0 10px 35px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.02);
 }
-.cal-embed{ border-radius: 12px; overflow: hidden; }
-@media (max-width: 640px){
-  .calendly-inline-widget{ height: 640px !important; }
+.cal-embed{
+  border-radius: 12px;
+  overflow: hidden;
+}
+.cal-embed iframe{
+  display:block;
+  width:100%;
+  min-height:600px;
 }
 
-.contact-note{ color: var(--dim); margin-top: .75rem; }
-.contact-note a{ text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 640px){
+  .cal-embed iframe{
+    min-height: 640px;
+  }
+}
 </style>

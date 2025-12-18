@@ -28,6 +28,7 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
           </span>
           Let's see if we're a fit!
         </li>
+
         <li>
           <span class="tick" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -42,6 +43,7 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
           </span>
           Learn more about my services
         </li>
+
         <li>
           <span class="tick" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
@@ -54,33 +56,29 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
               </defs>
             </svg>
           </span>
-          Explain your challenges and goals 
+          Explain your challenges and goals
         </li>
       </ul>
 
       <p class="contact-note">
-        Prefer email? <a href="mailto:rliedmeier.growth@gmail.com">rliedmeier.growth@gmail.com</a>
+        Prefer email?
+        <a href="mailto:rliedmeier.growth@gmail.com">rliedmeier.growth@gmail.com</a>
       </p>
     </div>
 
-    <!-- Right: Google Calendar embed inside card -->
+    <!-- Right: Google Calendar Appointment Scheduling (scrollable inside iframe) -->
     <div class="contact-right">
       <div class="cal-card">
         <div class="cal-embed">
-          <!-- Google Calendar Appointment Scheduling begin -->
           <iframe
-            class="gcal-embed"
             src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3bfyfPUFH2JArMrGidOKlG65dtBUnbCZ1W5RFPaQ4yGgX5zr6Yzleu9lyTuM_jeZ2je6i-INTk?gv=true"
             frameborder="0"
             loading="lazy"
-            scrolling="no"
-            style="border:0;">
-          </iframe>
-          <!-- end Google Calendar Appointment Scheduling -->
+            title="Book a meeting with Ronan"
+          ></iframe>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -99,97 +97,3 @@ description: Get in touch to discuss goals, timelines, and the fastest path to i
   }
 }
 </script>
-
-<style>
-/* ===== Contact page styles (scoped) ===== */
-.contact-wrap{
-  padding: clamp(48px, 6vw, 96px) 0;
-}
-.contact-grid{
-  display:grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: start;
-}
-@media (max-width: 980px){
-  .contact-grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Left column */
-.contact-title{
-  font-weight: 700;
-  line-height: 1.03;
-  font-size: clamp(2rem, 6vw, 4rem);
-  text-transform: none;
-  margin-bottom: 1rem;
-}
-.hide-sm{ display: none; }
-@media (min-width: 700px){
-  .hide-sm{ display: inline; }
-}
-
-.contact-bullets{
-  display:flex;
-  flex-direction:column;
-  gap:.85rem;
-  margin: 1rem 0 1.25rem;
-  font-size: clamp(1rem, 1.6vw, 1.15rem);
-  color: var(--dim);
-}
-.contact-bullets li{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-}
-.tick{
-  display:inline-flex;
-  width:22px;
-  height:22px;
-}
-
-.contact-note{
-  color: var(--dim);
-  margin-top: .75rem;
-}
-.contact-note a{
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-/* Right column card */
-.cal-card{
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: clamp(10px, 1vw, 14px);
-  box-shadow: 0 10px 35px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.02);
-}
-.cal-embed{
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* Make Google Calendar tall enough so it doesn't scroll internally */
-.gcal-embed{
-  display:block;
-  width:100%;
-  height: 780px;        /* desktop */
-  min-height: 780px;
-}
-
-@media (max-width: 980px){
-  .gcal-embed{
-    height: 700px;
-    min-height: 700px;
-  }
-}
-
-@media (max-width: 640px){
-  .gcal-embed{
-    height: 640px;
-    min-height: 640px;
-  }
-}
-</style>
